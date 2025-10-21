@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+ul {
+  list-style: none;
+}
+/*header*/
+header {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+header ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+header h1 img {
+  width: 60px;
+}
