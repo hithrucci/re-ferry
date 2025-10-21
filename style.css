@@ -1,0 +1,22 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+h1 {
+  font-style: italic;
+  color: red;
+}
+ul {
+  list-style: none;
+  display: flex;
+  background-color: pink;
+  justify-content: space-between;
+  align-items: center;
+}
+li {
+  padding: 30px;
+}
