@@ -4,9 +4,8 @@ gsap.registerPlugin(ScrollTrigger);
 const visualBg = document.querySelector("#visual .bg");
 const stickers = document.querySelectorAll("#visual .bg .stickers li");
 const visualLogo = stickers[0];
-const stkrArr = [...stickers].slice(1); // stkr1~6
+const stkrArr = [...stickers].slice(1);
 
-// 스티커 버스트 오프셋 (기존 동작 유지)
 const stkrOffsets = [
   { x: 200, y: 100 }, // stkr1
   { x: -200, y: 100 }, // stkr2
@@ -73,26 +72,9 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
   }
 );
 
-// tl이 끝나면 t2 실행
 tl.add(() => t2.play(0));
 
-/* =====================
-   about
-===================== */
-
-// #menu 핀 고정 + 위로 슬라이드
-// gsap.to("#menu", {
-//   y: "-100vh",
-//   scrollTrigger: {
-//     trigger: "#about",
-//     // markers: true,
-//     start: "bottom bottom",
-//     end: "+=1200",
-//     pin: true,
-//   },
-// });
-
-/* text h2 after 애니메이션 (1회) */
+/* text h2 after */
 ScrollTrigger.create({
   trigger: "#about",
   start: "top top",
@@ -223,3 +205,5 @@ gsap.to("#visual .bg", {
     scrub: true,
   },
 });
+
+/*메뉴 롤링*/
