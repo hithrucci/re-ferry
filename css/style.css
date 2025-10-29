@@ -601,4 +601,25 @@ nav .gnb {
   height: 100vh;
   background-color: #fffae6;
   position: sticky;
+  overflow: hidden;
+}
+#event .inner {
+  margin-top: 340px;
+  padding: 0;
+  position: relative;
+}
+#event .inner div {
+  position: absolute;
+}
+#event .inner img {
+  width: 100%;
+}
+#event .inner .event1 {
+  transform: rotate(-5deg);
+}
+#event .inner .event2 {
+  transform: rotate(15deg) translate(-200px, 300px);
+}
+#event .inner .event3 {
+  transform: rotate(-15deg) translate(250px, 300px) scale(1.1);
 }
