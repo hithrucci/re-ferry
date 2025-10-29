@@ -125,3 +125,79 @@ listItems.forEach((li, i) => {
 });
 
 showStore(index);
+
+// store 페이지
+gsap.registerPlugin(ScrollTrigger);
+
+// ✅ 스토어 섹션 등장
+gsap.from(".store-left", {
+  scrollTrigger: {
+    trigger: "#store",
+    start: "top 85%",
+    toggleActions: "play none none none",
+  },
+  y: 80,
+  scale: 0.9,
+  opacity: 0,
+  duration: 1.2,
+  ease: "back.out(1.7)",
+});
+
+gsap.from(".store-right", {
+  scrollTrigger: {
+    trigger: "#store",
+    start: "top 85%",
+    toggleActions: "play none none none",
+  },
+  y: 100,
+  opacity: 0,
+  duration: 1.2,
+  delay: 0.3,
+  ease: "power3.out",
+});
+
+// ✅ 매장 리스트 순차 등장
+ScrollTrigger.create({
+  trigger: ".store-right",
+  start: "top 90%",
+  once: true, // 한 번만 실행
+  onEnter: () => {
+    gsap.fromTo(
+      ".store-list li",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+      }
+    );
+  },
+});
+
+// catering01 페이지
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".cater01-left", {
+  scrollTrigger: {
+    trigger: "#catering01",
+    start: "top 80%",
+  },
+  x: -100,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out",
+});
+
+gsap.from(".cater01-right", {
+  scrollTrigger: {
+    trigger: "#catering01",
+    start: "top 80%",
+  },
+  x: 100,
+  opacity: 0,
+  duration: 1.2,
+  ease: "power3.out",
+  delay: 0.2,
+});
