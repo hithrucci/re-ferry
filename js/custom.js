@@ -15,6 +15,22 @@ const stkrOffsets = [
   { x: 200, y: -120 }, // stkr5
   { x: 200, y: 0 }, // stkr6
 ];
+stkrArr.forEach((stkr) => {
+  stkr.addEventListener("mouseenter", () => {
+    gsap.to(stkr, {
+      rotation: 360,
+      duration: 0.5,
+      scale: 1.2,
+    });
+  });
+  stkr.addEventListener("mouseleave", () => {
+    gsap.to(stkr, {
+      rotation: 0,
+      scale: 1,
+      duration: 0.5,
+    });
+  });
+});
 
 // 로고 회전 (숫자 + rotation 사용)
 gsap.fromTo(
