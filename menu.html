@@ -26,12 +26,12 @@
     <div id="wrap">
       <header></header>
       <div class="visual"></div>
-      <ul class="button">
-        <li class="on"><a href="#">BEST</a></li>
-        <li><a href="#">DONUT</a></li>
-        <li><a href="#">BEVERAGE</a></li>
+      <ul class="menu button">
+        <li class="on"><a href="#best">BEST</a></li>
+        <li><a href="#donut">DONUT</a></li>
+        <li><a href="#beverage">BEVERAGE</a></li>
       </ul>
-      <section class="best">
+      <section class="best" id="best">
         <ul>
           <li>
             <a
@@ -119,12 +119,12 @@
       <div class="circle-text">
         <img src="img/BE HAPPY DONUT.png" alt="회전하는 글씨" />
       </div>
-      <ul class="button2">
-        <li><a href="#">BEST</a></li>
-        <li class="on"><a href="#">DONUT</a></li>
-        <li><a href="#">BEVERAGE</a></li>
+      <ul class="menu button2">
+        <li><a href="#best">BEST</a></li>
+        <li class="on"><a href="#donut">DONUT</a></li>
+        <li><a href="#beverage">BEVERAGE</a></li>
       </ul>
-      <section class="donut">
+      <section class="donut" id="donut">
         <ul>
           <li>
             <img src="img/1코코넛도넛.png" alt="" />
@@ -282,12 +282,12 @@
       <div class="circle-text2">
         <img src="img/Group 192.png" alt="회전하는 글씨" />
       </div>
-      <ul class="button3">
-        <li><a href="#">BEST</a></li>
-        <li><a href="#">DONUT</a></li>
-        <li class="on"><a href="#">BEVERAGE</a></li>
+      <ul class="menu button3">
+        <li><a href="#best">BEST</a></li>
+        <li><a href="#donut">DONUT</a></li>
+        <li class="on"><a href="#beverage">BEVERAGE</a></li>
       </ul>
-      <section class="beverage">
+      <section class="beverage" id="beverage">
         <ul>
           <li>
             <img src="img/01과일담은 살구복숭아주스.png" alt="" />
@@ -552,25 +552,60 @@
     </div>
 
     <script>
-      $(".donut ul li").on("click", function () {
-        let i = $(this).index();
-        $(".modalBox1").addClass("on");
-        $(".modalImg li").removeClass("on");
-        $(".modalImg li").eq(i).addClass("on");
-      });
+    
+      $(function () {        
+        $(".donut ul li").on("click", function () {
+          let index = $(this).index();
+          $(".modalBox1").addClass("on");
+          $(".modalBox1 .modalImg li").removeClass("on");
+          $(".modalBox1 .modalImg li").eq(index).addClass("on");
+        });
 
-      $("#btn").on("click", function () {
-        $(".modalBox1").removeClass("on");
-      });
-      $(".beverage ul li").on("click", function () {
-        let i = $(this).index();
-        $(".modalBox2").addClass("on");
-        $(".modalBox2 .modalImg li").removeClass("on");
-        $(".modalBox2 .modalImg li").eq(i).addClass("on");
-      });
+        $("#btn").on("click", function () {
+          $(".modalBox1").removeClass("on");
+        });
 
-      $("#btn2").on("click", function () {
-        $(".modalBox2").removeClass("on");
+       
+        $(".beverage ul li").on("click", function () {
+          let index = $(this).index();
+          $(".modalBox2").addClass("on");
+         
+          $(".modalBox2 .modalImg li").removeClass("on");
+          $(".modalBox2 .modalImg li").eq(index).addClass("on");
+        });
+
+       
+        $("#btn2").on("click", function () {
+          $(".modalBox2").removeClass("on");
+        });
+
+
+        $(".menu li a").on("click", function (e) {
+          e.preventDefault(); 
+
+  
+          let target = $(this).attr("href");
+
+          if (target.startsWith("#")) {
+         
+            let targetPosition = $(target).offset().top - 100;
+
+            
+            $("html, body").animate(
+              {
+                scrollTop: targetPosition,
+              },
+              500 
+            );
+
+            $(".menu li").removeClass("on");
+
+            
+            $('.menu a[href="' + target + '"]')
+              .parent() 
+              .addClass("on");
+          }
+        });
       });
     </script>
   </body>

@@ -230,6 +230,7 @@ a {
   z-index: 10;
   position: relative;
 }
+
 .donut ul li {
   width: calc(100% / 4 - 15px);
   height: 300px;
@@ -241,6 +242,11 @@ a {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   z-index: 10;
+}
+.donut li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 .donut ul li img {
   width: 65%;
@@ -470,16 +476,21 @@ a {
   height: 300px;
   background-color: white;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 30px;
   box-sizing: border-box;
-  border-radius: 30px;
+  border-radius: 20px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   margin-top: 20px;
   z-index: 10;
   position: relative;
 }
+.beverage li:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
 .beverage ul li img {
-  width: 65%;
+  width: 80%;
 }
 .beverage ul li h3 {
   font-family: "Pyeongchang";
