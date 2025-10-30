@@ -189,7 +189,7 @@ gsap.to("#menu .walk", {
     start: "bottom bottom",
     end: "bottom top",
     scrub: true,
-    markers: true,
+    // markers: true,
   },
 });
 
