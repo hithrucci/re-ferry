@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/store/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  </head>
+  <body>
+    <!-- 비주얼 영역 -->
+    <section id="visual">
+      <div class="visual">
+        <img class="bg" src="img/store/Group 91.png" alt="" />
+        <img class="store" src="img/store/매장누끼 1.png" />
+        <img class="belt" src="img/store/logo_belt.png" />
+      </div>
+    </section>
+
+    <!-- 스토어,온라인샵,케이터링 탭 메뉴-->
+
+    <section id="tab-menu">
+      <div class="tab01">
+        <button class="store"><a href="#store">STORE</a></button>
+        <button class="online">
+          <a href="https://brand.naver.com/oldferrydonut" target="_blank"
+            >ONLINE SHOP</a
+          >
+        </button>
+        <button class="catering"><a href="#catering01">CATERING</a></button>
+      </div>
+    </section>
+
+    <!-- 스토어 화면 -->
+
+    <section id="store">
+      <div class="store-container">
+        <div class="store-bg">
+          <img src="img/store/스토어배경테두리.png" alt="" />
+        </div>
+
+        <!-- 왼쪽 정보 -->
+        <div class="store-left">
+          <button class="arrow left">←</button>
+
+          <div class="store-photo">
+            <img src="img/store/가로수길마켓점.png" alt="가로수길 마켓점" />
+            <h3>가로수길 마켓점</h3>
+            <p>서울 강남구 강남대로162길 35 1층</p>
+            <p>0507-1339-2589</p>
+          </div>
+
+          <button class="arrow right">→</button>
+        </div>
+
+        <!-- 오른쪽 매장  -->
+        <div class="store-right">
+          <ul class="store-list">
+            <li>가로수길 마켓점</li>
+            <li>사당점</li>
+            <li>아이파크몰 고척점</li>
+            <li>시흥프리미엄 아울렛점</li>
+            <li>파주프리미엄 아울렛점</li>
+            <li>롯데프리미엄 아울렛 의왕점</li>
+            <li>수원오목천점</li>
+            <li>정자점</li>
+            <li>연남점</li>
+            <li>석촌호수점</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!--store, onlineshop, catering 탭 메뉴-->
+    <section id="tab-menu02">
+      <div class="tab02">
+        <button class="store"><a href="#store">STORE</a></button>
+        <button class="online">
+          <a href="https://brand.naver.com/oldferrydonut" target="_blank"
+            >ONLINE SHOP</a
+          >
+        </button>
+        <button class="catering"><a href="#catering01">CATERING</a></button>
+      </div>
+    </section>
+
+    <!--catering 01 -->
+    <section id="catering01">
+      <div class="cater01">
+        <div class="cater01-left">
+          <h2>
+            OLD FEERY`s<br />
+            CATERING SERVICE
+          </h2>
+          <p>
+            소중한 시간, 도넛 하나로 더 특별해져요.<br />
+            달콤한 도넛으로 마음을 전해보세요.
+          </p>
+        </div>
+        <div class="cater01-right">
+          <img src="img/store/Group 191.png" />
+        </div>
+      </div>
+    </section>
+    <!-- catering 02 -->
+    <section id="catering02">
+      <div class="cater02">
+        <div class="cater02-01">
+          <img src="img/store/Group 198.png" />
+          <h3>지친 오후, 팀을 위한 간식이 필요할 때</h3>
+          <p>
+            당 충전이 필요할 때, 올드페리의 도넛과<br />
+            커피로 팀의 집중력을 살려보세요
+          </p>
+        </div>
+        <div class="cater02-02">
+          <img src="img/store/Group 199.png" />
+          <h3>감사의 마음을 전하고 싶을 때</h3>
+          <p>
+            따뜻한 오렌지색 도넛 박스로 <br />
+            고마움을 표현해 보세요.
+          </p>
+        </div>
+        <div class="cater02-03">
+          <img src="img/store/Group 200.png" />
+          <h3>단체모임이나 행사 간식이 필요할 때</h3>
+          <p>어디서든 간편하게 즐길 수 있어요.</p>
+        </div>
+      </div>
+    </section>
+
+    <!--catering 03-->
+    <section id="cater03">
+      <h2>HOW to ORDER</h2>
+      <div class="order">
+        <p class="p1">업체명 및 주소를 입력해주세요.</p>
+        <input type="text" class="input-box" />
+        <p>케이터링 목적을 입력해주세요.</p>
+        <input type="text" class="input-box" />
+        <p>성함과 연락처를 입력해주세요.</p>
+        <input type="text" class="input-box" />
+        <p>희망하시는 날짜 및 시간을 입력해주세요.</p>
+        <input type="text" class="input-box" />
+        <p>품목 및 수량 구성을 입력해주세요.</p>
+        <input type="text" class="input-box" />
+        <p>결제방법을 선택해주세요.</p>
+        <div class="how">
+          <label><input type="radio" name="pay" /> 계좌이체</label>
+          <label><input type="radio" name="pay" /> 온라인 카드결제</label>
+          <label><input type="radio" name="pay" /> 현장결제</label>
+          <label><input type="radio" name="pay" /> 기타</label>
+        </div>
+        <button>작성</button>
+      </div>
+    </section>
+    <script src="js/store/script.js"></script>
+    <script src="js/store/gsap.js"></script>
+  </body>
+</html>
