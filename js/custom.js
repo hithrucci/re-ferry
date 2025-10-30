@@ -68,7 +68,6 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
     duration: 1.2,
     ease: "back.out(1.7)",
     overwrite: true,
-    // 동시에 폭발: stagger 없이
   }
 );
 
@@ -189,7 +188,7 @@ gsap.to("#menu .walk", {
     start: "bottom bottom",
     end: "bottom top",
     scrub: true,
-    markers: true,
+    // markers: true,
   },
 });
 
