@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neumorphism Box</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #e9eef5; /* 기본 배경 */
+      }
+
+      .box {
+        width: 200px;
+        height: 200px;
+        border-radius: 30px;
+        background: #e9eef5; /* 배경색과 동일해야 입체감이 생김 */
+        box-shadow: -15px -15px 30px #ffffff,
+          /* 왼쪽 위 하이라이트 */ 15px 15px 30px #c6ccd6; /* 오른쪽 아래 그림자 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>
