@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="css/menustyle/" />
+    <link rel="stylesheet" href="css/menustyle.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Special+Gothic:wdth,wght@101.4,400..700&display=swap"
       rel="stylesheet"
@@ -21,10 +21,48 @@
       referrerpolicy="no-referrer"
     />
     <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/menu.js"></script>
   </head>
   <body>
     <div id="wrap">
-      <header></header>
+      <header>
+        <h1>
+          <a href="#"><img src="img/headerfooter/logo_bk.png" alt="" /></a>
+        </h1>
+        <nav>
+          <ul class="menuBar">
+            <li>
+              <a href="#">ABOUT</a>
+              <ul class="about sub">
+                <li>HISTORY</li>
+                <li>BRAND</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">MENU</a>
+              <ul class="menu sub">
+                <li>DONUT</li>
+                <li>BAVERAGE</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">EVENT</a>
+              <ul class="event sub">
+                <li>EVENT</li>
+                <li>POP-UP</li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">STORE</a>
+              <ul class="store sub">
+                <li>STORE</li>
+                <li>ONLINE SHOP</li>
+                <li>CATERING</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <div class="visual"></div>
       <ul class="menu button">
         <li class="on"><a href="#best">BEST</a></li>
@@ -550,55 +588,36 @@
         </div>
       </div>
     </div>
+    <footer>
+      <div class="bg"><img src="img/headerfooter/bg_cream.png" /></div>
+      <div class="logo"><img src="img/headerfooter/logo_bk.png" /></div>
+      <div class="info">
+        <div class="add">
+          <div class="add_kor">서울특별시 강남구 압구정로10길 13</div>
 
-    <script>
-      $(function () {
-        $(".donut ul li").on("click", function () {
-          let index = $(this).index();
-          $(".modalBox1").addClass("on");
-          $(".modalBox1 .modalImg li").removeClass("on");
-          $(".modalBox1 .modalImg li").eq(index).addClass("on");
-        });
-
-        $("#btn").on("click", function () {
-          $(".modalBox1").removeClass("on");
-        });
-
-        $(".beverage ul li").on("click", function () {
-          let index = $(this).index();
-          $(".modalBox2").addClass("on");
-
-          $(".modalBox2 .modalImg li").removeClass("on");
-          $(".modalBox2 .modalImg li").eq(index).addClass("on");
-        });
-
-        $("#btn2").on("click", function () {
-          $(".modalBox2").removeClass("on");
-        });
-
-        $(".menu li a").on("click", function (e) {
-          e.preventDefault();
-
-          let target = $(this).attr("href");
-
-          if (target.startsWith("#")) {
-            let targetPosition = $(target).offset().top - 100;
-
-            $("html, body").animate(
-              {
-                scrollTop: targetPosition,
-              },
-              500
-            );
-
-            $(".menu li").removeClass("on");
-
-            $('.menu a[href="' + target + '"]')
-              .parent()
-              .addClass("on");
-          }
-        });
-      });
-    </script>
+          <div class="add_eng">
+            13, Apgujeong-ro 10-gil, Gangnam-gu, Seoul, Republic of Korea
+          </div>
+        </div>
+        <div class="wrap">
+          <div class="tel">Tel.070-4904-9081</div>
+          <div class="ceo">대표이사. 김상선</div>
+        </div>
+        <ul class="contact">
+          <li>
+            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="copy">
+        COPYRIGHT © 2025 OLD FERRY DONUT. ALL RIGHT RESERVED
+      </div>
+    </footer>
   </body>
 </html>
