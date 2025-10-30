@@ -448,7 +448,6 @@ nav .gnb {
 /*menu*/
 #menu {
   width: 100%;
-
   background-color: #f44f55;
   overflow: hidden;
   position: sticky;
@@ -466,14 +465,12 @@ nav .gnb {
   box-sizing: border-box;
   background-color: #fffae6;
   width: 100%;
-
-  transform-origin: bottom;
   position: relative;
 }
 #menu .donuts .inner {
   padding-top: 40px;
   border-radius: 80px 80px 0px 0px;
-  box-shadow: 1px -2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 /*menu inner title*/
 #menu .inner .title {
@@ -491,14 +488,16 @@ nav .gnb {
   margin-bottom: 60px;
   text-align: center;
   position: relative;
+  color: #333;
 }
 #menu .inner .title span {
   position: absolute;
   width: 300px;
   height: 1px;
-  background-color: #000;
+  background-color: #333;
   display: block;
   top: 50%;
+  transform: translateY(-50%);
 }
 #menu .inner .title span.leftLine {
   left: 300px;
@@ -511,7 +510,6 @@ nav .gnb {
 #menu .inner .warp {
   overflow: hidden;
   position: relative;
-  height: 800px;
 }
 #menu .inner .donutMenu {
   display: flex;
@@ -527,8 +525,8 @@ nav .gnb {
 }
 #menu .inner .donutMenu li {
   flex-shrink: 0;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
   background-color: #fff;
   border-radius: 26px;
   box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.3);
