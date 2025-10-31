@@ -71,8 +71,20 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
     // 동시에 폭발: stagger 없이
   }
 );
-
 tl.add(() => t2.play(0));
+
+//gnb more창
+let headMore = document.querySelector(".gnb li:nth-child(5)");
+let moreMenu = document.querySelector("header .moreMenu");
+let body = document.querySelector("body");
+headMore.addEventListener("click", () => {
+  body.classList.add("on");
+  gsap.to(moreMenu, {
+    duration: 1,
+    zIndex: 20,
+    width: 600,
+  });
+});
 
 /* text h2 after */
 ScrollTrigger.create({
@@ -181,7 +193,7 @@ content.addEventListener("mouseleave", () => {
   gsap.to(more, { rotation: 0, duration: 0.5 });
 });
 
-/* menu walk — 스크롤에 따라 오른쪽 이동 */
+/* menu walk */
 gsap.to("#menu .walk", {
   x: 1300,
   scrollTrigger: {
@@ -193,17 +205,24 @@ gsap.to("#menu .walk", {
   },
 });
 
-/* visual 배경에 약한 패럴랙스 */
-gsap.to("#visual .bg", {
-  yPercent: -6, // 살짝만
-  duration: 1,
-  ease: "none",
-  scrollTrigger: {
-    trigger: "#about",
-    start: "top bottom",
-    end: "bottom top",
-    scrub: true,
-  },
-});
-
-/*메뉴 롤링*/
+/*event 진입*/
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#event",
+      start: "20% 70%",
+      end: "bottom 20%",
+      // markers: true,
+    },
+  })
+  .from("#event .inner div:nth-child(3)", { opacity: 0, x: 1000, y: -200 }, 0)
+  .from(
+    "#event .inner div:nth-child(2)",
+    { opacity: 0, x: -1000, y: -200 },
+    0.2
+  )
+  .from(
+    "#event .inner div:nth-child(1)",
+    { opacity: 0, x: 1000, y: -300 },
+    0.3
+  );
