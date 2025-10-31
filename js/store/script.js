@@ -1,3 +1,29 @@
+//visual 비주얼 화면 효과
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  gsap.from(".visual .store", {
+    y: 150,
+    opacity: 0,
+    duration: 1.8,
+    ease: "power3.out",
+  });
+
+  gsap.from(".visual .belt", {
+    x: "100vw",
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.out",
+    delay: 0.5,
+  });
+  gsap.fromTo(
+    ".visual .belt",
+    { x: "-100vw" },
+    { x: "0", duration: 1.5, ease: "power3.out" }
+  );
+});
+
 // #store 스토어 화면
 const stores = [
   {
