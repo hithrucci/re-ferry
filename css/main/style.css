@@ -36,6 +36,16 @@
   font-display: swap;
 }
 body {
+  position: relative;
+}
+body.on::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(244, 79, 85, 0.3);
+  left: 0px;
+  top: 0px;
 }
 * {
   margin: 0;
@@ -71,14 +81,32 @@ header h1 {
   top: 50px;
   left: 0px;
   z-index: 1;
+  width: 180px;
 }
+header h1 a.logo_or {
+  opacity: 0;
+}
+header h1:hover a.logo_bk {
+  opacity: 0;
+  transition: 0.3s;
+}
+header h1:hover a.logo_or {
+  opacity: 1;
+  transition: 0.3s;
+}
+
 header h1 a {
   display: block;
+  position: absolute;
+  left: 0px;
+  height: 0px;
 }
 header h1 img {
   width: 100%;
   display: block;
 }
+
+/*gnb*/
 nav .gnb {
   display: flex;
   flex-direction: column;
@@ -92,12 +120,15 @@ nav .gnb {
   width: 158px;
   height: 61px;
   line-height: 61px;
-  border: 1px solid #222;
+  border: 1px solid #333;
   border-radius: 52px;
+  color: #333;
 }
 .gnb li:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid #ed7121;
+  color: #ed7121;
+  transition: 0.3s;
 }
 .gnb li:nth-child(1) {
   transform: rotate(-15deg);
@@ -106,18 +137,32 @@ nav .gnb {
   transform: rotate(10deg);
 }
 .gnb li:nth-child(3) {
-  transform: rotate(-5deg);
+  transform: rotate(-15deg);
 }
 .gnb li:nth-child(4) {
+  transform: rotate(8deg);
+}
+.gnb li:nth-child(5) {
   width: 104px;
   height: 104px;
   line-height: 104px;
+  cursor: pointer;
 }
 .gnb li a {
   display: block;
   border-radius: 52px;
 }
 
+/*moreMenu*/
+.moreMenu {
+  position: absolute;
+  left: -60px;
+  top: 0px;
+  width: 0px;
+  height: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
 /*visual*/
 #visual {
   width: 100%;
@@ -204,8 +249,8 @@ nav .gnb {
   max-height: 100px;
   overflow: hidden;
 }
-/*loopAria*/
-.loopAria {
+/*loopArea*/
+.loopArea {
   position: sticky;
   width: 100%;
   height: 72px;
@@ -612,6 +657,10 @@ nav .gnb {
   width: 100%;
   position: absolute;
   transform: scale(1.1);
+  filter: brightness(0.7);
+}
+#event .inner div:hover {
+  filter: brightness(1);
 }
 #event .inner div img {
   width: 100%;
@@ -628,7 +677,7 @@ nav .gnb {
 /*footer*/
 footer {
   width: 100%;
-  height: 740px;
+  height: 500px;
   background-color: #f44f55;
   position: sticky;
 }
@@ -640,10 +689,9 @@ footer .bg img {
 }
 footer .logo {
   width: 140px;
-
   left: 50%;
-  transform: translateX(-50%);
-  top: 50%;
+  transform: translate(-50%, -50%);
+  top: 40%;
   position: absolute;
 }
 footer .logo img {
@@ -680,7 +728,7 @@ footer .copy {
   left: 0px;
   bottom: 0px;
   width: 100%;
-  height: 70px;
+  height: 60px;
   color: #fff;
 
   display: flex;
