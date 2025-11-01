@@ -1,3 +1,54 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const basePath =
+    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  fetch(`${basePath}/header.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("header").innerHTML = data));
+
+  fetch(`${basePath}/footer.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("footer").innerHTML = data));
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const p = new URLSearchParams(location.search).get("scroll");
+  if (p) return scrollTo({ top: +p, behavior: "smooth" });
+
+  if (!location.hash) return; // ✅ 해시 없으면 바로 종료
+
+  const t = document.querySelector(location.hash);
+  if (t) {
+    const headerOffset = 100;
+    const y = t.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+});
+//visual 비주얼 화면 효과
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  gsap.from(".visual .store", {
+    y: 150,
+    opacity: 0,
+    duration: 1.8,
+    ease: "power3.out",
+  });
+
+  gsap.from(".visual .belt", {
+    x: "100vw",
+    opacity: 0,
+    duration: 1.5,
+    ease: "power3.out",
+    delay: 0.5,
+  });
+  gsap.fromTo(
+    ".visual .belt",
+    { x: "-100vw" },
+    { x: "0", duration: 1.5, ease: "power3.out" }
+  );
+});
+
 // #store 스토어 화면
 const stores = [
   {

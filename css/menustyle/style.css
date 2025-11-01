@@ -19,6 +19,13 @@
   font-weight: 700;
   font-display: swap;
 }
+@font-face {
+  font-family: "ChangwonDanggamAsak";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
 
 * {
   margin: 0px;
@@ -122,12 +129,103 @@ a {
     display: block;
   }
 
+  /*visual*/
   .visual {
     width: 100%;
     height: 400px;
-    background: url(../../img/menu_img/메뉴비주얼_메뉴.jpg) no-repeat center;
-    background-size: cover;
+    background-color: #f2591e;
+    position: relative;
   }
+  .visual .left_donut {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    animation: left_donut 1.5s ease-out 1 forwards;
+  }
+  @keyframes left_donut {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .visual .right_donut {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    animation: right_donut 1.5s ease-out 1 forwards;
+  }
+  @keyframes right_donut {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  .visual .center_donut {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    animation-delay: 1s;
+    animation: center_donut_slideup 1.5s ease-out 1 forwards;
+  }
+  @keyframes center_donut_slideup {
+    0% {
+      transform: translate(-50%, 50%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+  .visual .center_donut img {
+    width: 100%;
+  }
+  .visual .text_box {
+    position: absolute;
+    width: 40%;
+    height: 200px;
+    background-color: #f2591e;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    animation-delay: 3s;
+    animation: visual_textbox 0.5s ease-out 1 forwards;
+  }
+  @keyframes visual_textbox {
+    0% {
+      transform: translate(-50%, -40%);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      opacity: 1;
+    }
+  }
+  .visual .line {
+    width: 95%;
+    height: 170px;
+    border: 10px dashed #fda186;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
   /*best버튼*/
   .button {
     position: absolute;
@@ -168,11 +266,19 @@ a {
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
     font-family: "Special Gothic", sans-serif;
   }
+  .button li:hover a {
+    display: block;
+    background-color: #c5c0a9;
+    border-radius: 50px;
+    color: #404040;
+    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+    font-family: "Special Gothic", sans-serif;
+  }
 
   /*section best */
   .best {
     width: 100%;
-    background-color: #e5e0cc;
+    background-color: #fff8e2;
     height: 1000px;
     position: relative;
     margin: 0;
@@ -194,7 +300,7 @@ a {
   }
   .best ul {
     margin: 0px auto;
-    width: 80%;
+    width: 70%;
     padding-top: 200px;
     box-sizing: border-box;
     display: flex;
@@ -244,7 +350,7 @@ a {
   .old-price {
     color: #aaa;
     text-decoration: line-through;
-    font-size: 13px;
+    font-size: 1vw;
   }
 
   .discount {
@@ -254,14 +360,14 @@ a {
   }
 
   .price {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     color: #111;
   }
 
   .shipping {
     color: #777;
-    font-size: 13px;
+    font-size: 0.7vw;
     margin-left: 4px;
   }
 
@@ -549,7 +655,7 @@ a {
     padding-top: 150px;
     box-sizing: border-box;
     width: 100%;
-    background-color: #e5e0cc;
+    background-color: #fff8e2;
     height: 1700px;
     position: relative;
     overflow: hidden;
@@ -826,7 +932,7 @@ a {
     top: 350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 90%;
     height: 100px;
     background-color: #e5e0cc;
     border-radius: 50px;
@@ -860,7 +966,14 @@ a {
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
     font-family: "Special Gothic", sans-serif;
   }
-
+  .button li:hover a {
+    display: block;
+    background-color: #c5c0a9;
+    border-radius: 50px;
+    color: #404040;
+    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+    font-family: "Special Gothic", sans-serif;
+  }
   /*section best */
   .best {
     width: 100%;
@@ -886,11 +999,11 @@ a {
   }
   .best ul {
     margin: 0px auto;
-    width: 1300px;
+    width: 90%;
     padding-top: 200px;
     box-sizing: border-box;
     display: flex;
-    gap: 40px;
+    gap: 20px;
   }
 
   .best li:hover {
@@ -927,9 +1040,8 @@ a {
 
   /* 가격 */
   .price-box {
-    display: flex;
     align-items: baseline;
-    gap: 6px;
+
     margin-bottom: 6px;
   }
 
@@ -980,7 +1092,7 @@ a {
     top: 1350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 90%;
     height: 100px;
     background-color: #e5e0cc;
     border-radius: 50px;
@@ -1202,7 +1314,7 @@ a {
     top: 2400px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 90%;
     height: 100px;
     background-color: #e5e0cc;
     border-radius: 50px;
@@ -1241,7 +1353,7 @@ a {
     padding-top: 150px;
     box-sizing: border-box;
     width: 100%;
-    background-color: #e5e0cc;
+    background-color: #fff8e2;
     height: 1700px;
     position: relative;
     overflow: hidden;
@@ -1547,7 +1659,14 @@ a {
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
     font-family: "Special Gothic", sans-serif;
   }
-
+  .button li:hover a {
+    display: block;
+    background-color: #c5c0a9;
+    border-radius: 50px;
+    color: #404040;
+    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+    font-family: "Special Gothic", sans-serif;
+  }
   /*section best */
   .best {
     width: 100%;
@@ -1928,7 +2047,7 @@ a {
     padding-top: 150px;
     box-sizing: border-box;
     width: 100%;
-    background-color: #e5e0cc;
+    background-color: #fff8e2;
     height: 1700px;
     position: relative;
     overflow: hidden;
