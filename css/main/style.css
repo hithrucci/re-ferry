@@ -489,7 +489,7 @@ nav .gnb {
 /*menu*/
 #menu {
   width: 100%;
-  background-color: #f44f55;
+  background-color: #ed7121;
   overflow: hidden;
   position: sticky;
 }
@@ -508,7 +508,7 @@ nav .gnb {
 #menu::before {
   content: "";
   position: absolute;
-  background-color: #f44f55;
+  background-color: #ed7121;
   z-index: 0;
   left: 50%;
   top: 60px;
@@ -711,7 +711,10 @@ nav .gnb {
   position: absolute;
   transform: scale(1.1);
   filter: brightness(0.7);
+  display: flex;
+  justify-content: center;
 }
+
 #event .inner div:hover {
   filter: brightness(1);
 }
