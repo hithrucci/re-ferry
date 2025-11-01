@@ -493,17 +493,43 @@ nav .gnb {
   overflow: hidden;
   position: sticky;
 }
+#menu::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-50%);
+  width: 1800px;
+  height: 3000px;
+  border: 10px dashed #fff;
+  border-radius: 80px;
+}
+#menu::before {
+  content: "";
+  position: absolute;
+  background-color: #f44f55;
+  z-index: 0;
+  left: 50%;
+  top: 60px;
+  transform: translateX(-51%);
+  width: 270px;
+  height: 50px;
+}
 #menu h2 {
   font-family: "YeogiOttaeJalnan";
   font-size: 48px;
-  line-height: 1;
+
   position: relative;
   text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
     3px 3px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   text-align: center;
   padding: 30px 0px;
+  z-index: 2;
 }
+/*menu bg*/
+
 /*menu inner*/
 
 #menu .inner {
@@ -514,6 +540,8 @@ nav .gnb {
   position: relative;
   margin: 0px auto;
   border-radius: 80px 80px 0px 0px;
+  box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+    3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 /*menu title*/
@@ -551,16 +579,22 @@ nav .gnb {
 #menu .inner .beverage .wrap {
   position: relative;
 }
-
+#menu .inner .wrap .menuWrap {
+  width: 960px;
+  overflow: hidden;
+}
 /*menu inner wrap menuList*/
 #menu .inner .wrap .menuList {
   display: flex;
   align-items: center;
-  overflow: hidden;
+
   gap: 60px;
-  width: 960px;
+  width: 100%;
   height: 450px;
   margin: 0px auto;
+}
+.menuViewport {
+  overflow: hidden;
 }
 #menu .inner .wrap .menuList li {
   cursor: pointer;
@@ -576,7 +610,7 @@ nav .gnb {
   justify-content: center;
   align-items: center;
   gap: 20px;
-  overflow: hidden;
+
   transition: 0.3s;
 }
 #menu .inner .wrap .menuList li:hover {
@@ -660,17 +694,19 @@ nav .gnb {
 #event {
   width: 100%;
   height: 100vh;
-  background-color: #fffae6;
+  background-color: #f44f55;
   position: sticky;
   overflow: hidden;
 }
 #event .inner {
   position: relative;
-  top: 40%;
-  padding: 0px;
-  width: 100%;
+  width: 1700px;
+  height: 500px;
+  margin: 0px auto;
+  background-color: #fffae6;
 }
 #event .inner div {
+  top: 60%;
   width: 100%;
   position: absolute;
   transform: scale(1.1);
