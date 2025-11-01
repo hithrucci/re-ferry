@@ -17,18 +17,27 @@
 
     
     <!-- 메인 비주얼 -->
-    <section id="visual">
-      <img src="img/event/EVENT 1.png" alt="Main Visual" />
-    </section>
+    <div id="visual">
+       <div class="poster p1">
+    <img src="img/event/visual1.jpg" alt="poster1" />
+  </div>
+  <div class="poster p2">
+    <img src="img/event/visual2.jpg" alt="poster2" />
+  </div>
+  <div class="poster p3">
+    <img src="img/event/visual3.jpg" alt="poster3" />
+  </div>
+    </div>
 
-    <section class="wrap">
+    <div class="wrap">
+
+      <ul class="event button">
+        <li><a href="#event-section">EVENT</a></li>
+        <li><a href="#popup-section">POP-UP</a></li>
+      </ul>
       <!-- 이벤트 섹션 -->
       <section id="event-section">
-        <ul class="tab-menu">
-          <li><p>EVENT</p></li>
-          <li><p>POP-UP</p></li>
-        </ul>
-        
+       
 
         <div class="event-gallery">
           <ul class="event-list">
@@ -269,15 +278,14 @@
           </div>
         </div>
       </section>
-
+      
       <!-- 팝업 섹션 -->
       <section id="popup-section">
-        <ul class="tab-menu">
-          <li><p>EVENT</p></li>
-          <li class="active"><p>POP-UP</p></li>
-        </ul>
-
-        <ul class="popup-list">
+          <ul class="event button">
+        <li><a href="#event-section">EVENT</a></li>
+        <li><a href="#popup-section">POP-UP</a></li>
+      </ul>
+            <ul class="popup-list">
           <li>
             <img src="img/event/EVENT16.png" alt="" />
             <div class="popup-info">
@@ -312,7 +320,7 @@
           </li>
         </ul>
       </section>
-    </section>
+    </div>
 
     <footer>
   
@@ -373,8 +381,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-</script>
 
-    </script>
-  </body>
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const allButtons = document.querySelectorAll(".button li");
+  const sections = document.querySelectorAll("#event-section, #popup-section");
+
+  allButtons.forEach(li => li.classList.remove("on"));
+
+  // 클릭 시 이동 + 모든 버튼 세트에 on 반영
+  allButtons.forEach(li => {
+    li.addEventListener("click", e => {
+      e.preventDefault();
+      const targetId = li.querySelector("a").getAttribute("href");
+      const target = document.querySelector(targetId);
+
+      window.scrollTo({
+        top: target.offsetTop - 100,
+        behavior: "smooth",
+      });
+
+      document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+      document.querySelectorAll(`.button li a[href="${targetId}"]`).forEach(link =>
+        link.parentElement.classList.add("on")
+      );
+    });
+  });
+
+  // 스크롤 시도 모든 버튼 세트에 동기화
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY + 200;
+    let activeFound = false;
+
+    sections.forEach(sec => {
+      const start = sec.offsetTop;
+      const end = start + sec.offsetHeight;
+
+      if (scrollY >= start && scrollY < end) {
+        document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+        document
+          .querySelectorAll(`.button li a[href="#${sec.id}"]`)
+          .forEach(link => link.parentElement.classList.add("on"));
+        activeFound = true;
+      }
+    });
+
+    if (!activeFound) document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+  });
+});
+
+
+</script>
+ </body>
 </html>

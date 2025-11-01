@@ -31,9 +31,6 @@ a {
 ul {
   list-style: none;
 }
-body {
-  height: 3000px;
-}
 
 header {
   display: flex;
@@ -48,7 +45,7 @@ header {
   position: fixed;
   left: 0px;
   top: 0px;
-  z-index: 10;
+  z-index: 100;
 }
 header:hover {
   background-color: #fff;
@@ -119,20 +116,94 @@ nav .menuBar > li:hover > .sub {
 
 /*visual*/
 #visual {
-  background-image: url(../img/visual.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #fcae18;
-  height: 400px;
-  width: 100%;
   position: relative;
+  width: 100%;
+  height: 415px;
+  overflow: hidden;
+  background-color: #fff;
 }
-#visual img {
+
+#visual::after {
+  /* 전체 어둡게 덮는 반투명 레이어 */
+  content: "";
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 270px;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10;
 }
+
+#visual .poster {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 1400px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 5;
+}
+
+#visual .poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+/* 등장 애니메이션 */
+@keyframes slideLeft {
+  0% {
+    transform: translate(-150%, -50%) rotate(-3deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translate(50%, -50%) rotate(3deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(3deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft2 {
+  0% {
+    transform: translate(-120%, -50%) rotate(0deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* 순차 등장 */
+.p1 {
+  animation: slideLeft 1.2s ease forwards;
+  animation-delay: 0.2s;
+  z-index: 3;
+}
+
+.p2 {
+  animation: slideRight 1.2s ease forwards;
+  animation-delay: 0.7s;
+  z-index: 2;
+}
+
+.p3 {
+  animation: slideLeft2 1.2s ease forwards;
+  animation-delay: 1.2s;
+  z-index: 1;
+}
+
 /*event-section*/
 .wrap {
   background-color: #fadce6;
@@ -152,39 +223,59 @@ nav .menuBar > li:hover > .sub {
     );
   position: relative;
 }
-.tab-menu {
+/*button*/
+.button {
   position: absolute;
+  top: -50px;
   left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0px auto;
+  transform: translateX(-50%);
+  width: 20%;
+  height: 100px;
+  background-color: #e5e0cc;
+  border-radius: 50px;
   display: flex;
-  line-height: 101px;
-  height: 101px;
-  background-color: #fffae6;
-  border-radius: 190px;
-  border: 1px solid #939393;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+  padding: 0px 15px;
+  box-sizing: border-box;
+  z-index: 50;
 }
 
-.tab-menu p {
-  color: #404040;
-  font-size: 40px;
+.button li {
   text-align: center;
-  background-color: #c5c0a9;
-  border-radius: 60px;
-  line-height: 83px;
-  width: 360px;
-  margin: 10px;
-  height: 83px;
-  border: 1px solid #939393;
+  width: calc(100% / 2);
+  color: #404040;
+  height: 80px;
+  border-radius: 50px;
+  font-size: 30px;
+  font-weight: bolder;
+  line-height: 80px;
+  font-family: "Special Gothic", sans-serif;
 }
 
+.button li.on a {
+  display: block;
+  background-color: #c5c0a9;
+  border-radius: 50px;
+  color: #404040;
+  box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+  font-family: "Special Gothic", sans-serif;
+}
+.button li:hover a {
+  display: block;
+  background-color: #c5c0a9;
+  border-radius: 50px;
+  color: #404040;
+  box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+  font-family: "Special Gothic", sans-serif;
+}
 #event-section .event-gallery {
-  padding-top: 250px;
+  padding-top: 300px;
   padding-bottom: 200px;
   position: relative;
-  z-index: 2;
 }
-
 #event-section .event-gallery .event-list {
   display: flex;
   flex-wrap: wrap; /* 줄바꿈 허용 */
@@ -192,34 +283,44 @@ nav .menuBar > li:hover > .sub {
   gap: 80px; /* 아이템 간 간격 */
   padding-bottom: 60px;
   max-width: 1900px;
-  justify-content: center;
   margin: 0 auto;
 }
 
+/* 카드 하나 */
 #event-section .event-gallery .event-list li {
   border: 7px solid #414141;
-  border-radius: 5px;
+  border-radius: 5px; /* 원래대로 */
   overflow: hidden;
-  transition: transform 0.3s ease;
+  background-color: #fff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* hover 시 입체감 + 그림자 강화 */
 #event-section .event-gallery .event-list li:hover {
   transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18), 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-.event-list li div {
+/* 이미지 컨테이너 */
+#event-section .event-gallery .event-list li div {
+  position: relative;
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 5/7; /* 대략 기존 비율 유지 */
+  aspect-ratio: 5/7;
+  overflow: hidden;
 }
 
+/* 이미지 */
 .event-list li img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 비율 깨짐 방지 */
+  object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
 }
 
+/**/
 #event-section .event-gallery .event-list li p {
   background-color: #ffffff;
   height: 60px;
@@ -269,7 +370,6 @@ nav .menuBar > li:hover > .sub {
   font-weight: bold;
   color: #333;
   cursor: pointer;
-  z-index: 10;
 }
 
 /* 큰 이미지 + 설명 */
@@ -397,54 +497,29 @@ nav .menuBar > li:hover > .sub {
   transform: translateX(-50%);
 }
 
-/*event-section*/
-
+/*popup-section*/
+#popup-section .button {
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 50px;
+  z-index: 50;
+}
 #popup-section .popup-list {
-  width: 60%;
-  padding-top: 250px;
+  padding: 150px 0px 100px 0px;
   margin: 0px auto;
-  padding-bottom: 100px;
-}
-
-/* --- 탭 메뉴 --- */
-#popup-section .tab-menu {
-  display: flex;
-  justify-content: center;
-  gap: 100px;
-  list-style: none;
-  margin-bottom: 80px;
-}
-
-#popup-section .tab-menu li p {
-  font-size: 28px;
-  font-weight: 700;
-  color: #aaa;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-#popup-section .tab-menu li.active p,
-#popup-section .tab-menu li:hover p {
-  color: #333;
-  border-bottom: 3px solid #333;
-  padding-bottom: 5px;
-}
-
-/* --- 팝업 리스트 --- */
-#popup-section .popup-list {
   width: 70%;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 40px;
 }
 
-/* 각 팝업 아이템 */
 #popup-section .popup-list li {
   display: flex;
   align-items: flex-start;
   background-color: #fffbe9;
-  padding: 40px 50px;
+  padding: 30px 40px;
   gap: 50px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -456,7 +531,6 @@ nav .menuBar > li:hover > .sub {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* 이미지 */
 #popup-section .popup-list li img {
   width: 400px;
   height: auto;
@@ -464,7 +538,6 @@ nav .menuBar > li:hover > .sub {
   object-fit: cover;
 }
 
-/* 텍스트 정보 */
 #popup-section .popup-list .popup-info {
   flex: 1;
 }
@@ -490,11 +563,12 @@ nav .menuBar > li:hover > .sub {
   line-height: 2;
 }
 
+/*footer*/
 footer {
   width: 100%;
   height: 740px;
   background-color: #f44f55;
-  position: sticky;
+  position: sticky; /*불필요?*/
 }
 footer .bg {
   width: 100%;
