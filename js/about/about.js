@@ -1,7 +1,9 @@
-$(function () {
-  $("header").load("../../header.html");
-  $("footer").load("../../footer.html");
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("../../header.html")
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("header").innerHTML = data));
 });
+
 gsap.registerPlugin(ScrollTrigger);
 
 /*page1 title 양측 자라나는 라인*/
