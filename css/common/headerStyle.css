@@ -82,6 +82,9 @@ nav .menuBar > li > a {
   padding: 8px 20px;
   font-size: 16px;
 }
+.sub li:hover {
+  background-color: #ccc;
+}
 nav .menuBar > li:hover > .sub {
   display: block;
 }

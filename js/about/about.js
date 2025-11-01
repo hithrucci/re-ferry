@@ -1,3 +1,4 @@
+/*header, footer 로드*/
 document.addEventListener("DOMContentLoaded", () => {
   const basePath =
     location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
@@ -8,6 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(`${basePath}/footer.html`)
     .then((res) => res.text())
     .then((data) => (document.querySelector("footer").innerHTML = data));
+});
+
+/*서브메뉴 scroll 이동*/
+document.addEventListener("DOMContentLoaded", () => {
+  const p = new URLSearchParams(location.search).get("scroll");
+  if (p) return scrollTo({ top: +p, behavior: "smooth" });
+
+  if (!location.hash) return;
+
+  const t = document.querySelector(location.hash);
+  if (t) {
+    const headerOffset = 100;
+    const y = t.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
 });
 
 gsap.registerPlugin(ScrollTrigger);
