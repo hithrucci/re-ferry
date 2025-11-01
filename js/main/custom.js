@@ -1,3 +1,6 @@
+$(function () {
+  $("footer").load("../../footer.html");
+});
 gsap.registerPlugin(ScrollTrigger);
 
 /*visual*/

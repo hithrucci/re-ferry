@@ -178,7 +178,6 @@ nav .gnb {
 #visual .bg {
   width: 100%;
   height: 100%;
-  backdrop-filter: blur(1.5px);
   opacity: 0.9;
   display: flex;
   justify-content: center;
@@ -188,7 +187,7 @@ nav .gnb {
   background-position: center;
   background-size: clamp(1100px, 63%, 1500px);
   position: relative;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(2px);
 }
 #visual .stickers {
   width: 100%;
@@ -352,19 +351,16 @@ nav .gnb {
   position: sticky;
   top: 0px;
 }
-.inner {
-  padding-left: 15%;
-}
+
 #about .inner {
   display: flex;
-  gap: 100px;
   align-items: center;
-  justify-content: center;
-  padding: 120px 100px;
-  padding-left: 15%;
+  justify-content: space-between;
   box-sizing: border-box;
-  width: 100%;
+  width: 1200px;
+  margin: 0px auto;
   height: 100%;
+  padding: 100px 0px;
 }
 #about .textBox {
   color: #fff;
@@ -373,8 +369,6 @@ nav .gnb {
   gap: 38px;
   width: 43%;
   word-break: keep-all;
-  padding-left: 120px;
-  padding-bottom: 50px;
   box-sizing: border-box;
 }
 #about .textBox h2 {
@@ -673,65 +667,4 @@ nav .gnb {
 }
 #event .inner .event3 {
   transform: rotate(-15deg) translate(290px, 400px);
-}
-/*footer*/
-footer {
-  width: 100%;
-  height: 500px;
-  background-color: #f44f55;
-  position: sticky;
-}
-footer .bg {
-  width: 100%;
-}
-footer .bg img {
-  width: 100%;
-}
-footer .logo {
-  width: 140px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 40%;
-  position: absolute;
-}
-footer .logo img {
-  width: 100%;
-}
-
-footer .info {
-  font-size: 22px;
-  color: #fff;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10%;
-}
-
-footer .info .add {
-  margin-bottom: 20px;
-  line-height: 22px;
-}
-footer .info .wrap {
-  display: flex;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-footer .contact {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-footer .copy {
-  background-color: #f2591e;
-  position: absolute;
-  left: 0px;
-  bottom: 0px;
-  width: 100%;
-  height: 60px;
-  color: #fff;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }

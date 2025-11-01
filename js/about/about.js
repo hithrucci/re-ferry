@@ -1,3 +1,7 @@
+$(function () {
+  $("header").load("../../header.html");
+  $("footer").load("../../footer.html");
+});
 gsap.registerPlugin(ScrollTrigger);
 
 /*page1 title 양측 자라나는 라인*/

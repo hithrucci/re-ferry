@@ -1,4 +1,11 @@
 $(function () {
+  $("header").load("../../header.html");
+});
+$(function () {
+  $("footer").load("../../footer.html");
+});
+
+$(function () {
   $(".donut ul li").on("click", function () {
     let index = $(this).index();
     $(".modalBox1").addClass("on");
