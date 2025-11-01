@@ -1,7 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("../../header.html")
+  const basePath =
+    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  fetch(`${basePath}/header.html`)
     .then((res) => res.text())
     .then((data) => (document.querySelector("header").innerHTML = data));
+
+  fetch(`${basePath}/footer.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("footer").innerHTML = data));
 });
 
 gsap.registerPlugin(ScrollTrigger);
