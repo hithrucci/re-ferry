@@ -14,7 +14,7 @@ header .inner {
   box-sizing: border-box;
   height: 100px;
   line-height: normal;
-  width: 1200px;
+  width: 1400px;
   text-align: center;
   z-index: 999;
   margin: 0px auto;
@@ -57,6 +57,10 @@ nav .menuBar > li > a {
   padding: 0 6px;
   white-space: nowrap;
 }
+nav .menuBar > li > a:hover {
+  color: #f2591e;
+  transition: 0.3s;
+}
 .sub {
   display: none;
   position: absolute;
@@ -75,16 +79,25 @@ nav .menuBar > li > a {
 }
 .sub li {
   white-space: nowrap;
+  transition: 0.3s;
 }
 .sub li a,
 .sub li {
   display: block;
   padding: 8px 20px;
   font-size: 16px;
+  color: #555;
+}
+.sub li i {
+  margin-left: 6px;
 }
 .sub li:hover {
-  background-color: #ccc;
+  background-color: #ddd;
+}
+.sub li:hover a {
+  color: #f2591e;
 }
 nav .menuBar > li:hover > .sub {
   display: block;
+  transition: 0.3s;
 }
