@@ -345,6 +345,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".btn");
   const eventList = document.querySelectorAll(".event-list li");
 
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const p = new URLSearchParams(location.search).get("scroll");
+  if (p) return scrollTo({ top: +p, behavior: "smooth" });
+
+  if (!location.hash) return; // ✅ 해시 없으면 바로 종료
+
+  const t = document.querySelector(location.hash);
+  if (t) {
+    const headerOffset = 100;
+    const y = t.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+});
   // 모달 열기 (이벤트 썸네일 클릭 시)
   eventList.forEach((item, i) => {
     item.addEventListener("click", (e) => {

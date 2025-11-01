@@ -35,6 +35,8 @@
   font-weight: 700;
   font-display: swap;
 }
+
+/**/
 body {
   position: relative;
 }
@@ -43,7 +45,7 @@ body.on::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(244, 79, 85, 0.3);
+  background-color: rgba(244, 79, 85, 0.5);
   left: 0px;
   top: 0px;
 }
@@ -59,7 +61,7 @@ ul {
   list-style: none;
 }
 
-/*header nav*/
+/*header*/
 
 header {
   position: fixed;
@@ -168,9 +170,9 @@ nav .gnb {
   width: 100%;
   height: 100vh;
   background-image: url(../../img/main/visual_bg.png);
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   z-index: 0;
   position: relative;
   overflow: hidden;
@@ -360,7 +362,7 @@ nav .gnb {
   width: 1200px;
   margin: 0px auto;
   height: 100%;
-  padding: 100px 0px;
+  padding: 150px 0px;
 }
 #about .textBox {
   color: #fff;
@@ -415,7 +417,6 @@ nav .gnb {
   background: rgba(0, 0, 0, 0.3);
   z-index: -1;
   transition: height 0.8s ease;
-
   clip-path: polygon(
     0 0,
     100% 0,
@@ -430,8 +431,8 @@ nav .gnb {
 }
 #about .content {
   position: relative;
-  height: 100%;
-  width: 48%;
+  height: 90%;
+  width: 50%;
 }
 #about .inner {
   position: relative;
@@ -444,13 +445,14 @@ nav .gnb {
 
 #about .content::after {
   content: "";
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   background-color: #eb8181;
   position: absolute;
-  bottom: -50px;
-  right: -50px;
+  bottom: -30px;
+  right: -60px;
   z-index: 0;
+  filter: blur(2px);
 }
 #about .images {
   height: 100%;
@@ -476,12 +478,12 @@ nav .gnb {
 }
 #about .content .more {
   position: absolute;
-  right: -90px;
-  bottom: -80px;
+  right: -200px;
+  bottom: -100px;
   z-index: 2;
 }
 #about .content .more img {
-  width: 400px;
+  width: 350px;
 }
 
 /*menu*/
@@ -491,46 +493,46 @@ nav .gnb {
   overflow: hidden;
   position: sticky;
 }
-#menu .walk {
+#menu h2 {
+  font-family: "YeogiOttaeJalnan";
+  font-size: 48px;
+  line-height: 1;
+  position: relative;
+  text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+    3px 3px 5px rgba(0, 0, 0, 0.5);
+  color: #fff;
+  text-align: center;
+  padding: 30px 0px;
 }
-#menu .walk img {
-  display: block;
-  width: 100px;
-}
-
-/*menu .inner*/
+/*menu inner*/
 
 #menu .inner {
+  padding: 80px 0px;
   box-sizing: border-box;
   background-color: #fffae6;
-  width: 100%;
+  width: 1700px;
   position: relative;
-}
-#menu .donuts .inner {
-  padding-top: 40px;
+  margin: 0px auto;
   border-radius: 80px 80px 0px 0px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
-/*menu inner title*/
+
+/*menu title*/
 #menu .inner .title {
   position: relative;
-}
-#menu .donuts .inner .title h3 {
-  margin: 60px 0px auto;
+  text-align: center;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 }
 #menu .inner .title h3 {
-  margin: 0px auto;
   font-family: "Lilita One", sans-serif;
   font-size: 40px;
   font-weight: 400;
-  font-style: normal;
-  margin-bottom: 60px;
-  text-align: center;
-  position: relative;
   color: #333;
 }
 #menu .inner .title span {
-  position: absolute;
   width: 300px;
   height: 1px;
   background-color: #333;
@@ -538,31 +540,31 @@ nav .gnb {
   top: 50%;
   transform: translateY(-50%);
 }
-#menu .inner .title span.leftLine {
-  left: 300px;
-}
-#menu .inner .title span.rightLine {
-  right: 300px;
-}
 
 /*menu inner wrap*/
-#menu .inner .warp {
-  overflow: hidden;
+#menu .inner .donuts {
+  margin-bottom: 100px;
+}
+#menu .inner .donuts .wrap {
   position: relative;
 }
-#menu .inner .donutMenu {
+#menu .inner .beverage .wrap {
+  position: relative;
+}
+
+/*menu inner wrap menuList*/
+#menu .inner .wrap .menuList {
   display: flex;
+  align-items: center;
   overflow: hidden;
   gap: 60px;
-  width: 1030px;
-  height: 500px;
-  margin: 60px auto;
-  margin-bottom: 0px;
+  width: 960px;
+  height: 450px;
+  margin: 0px auto;
 }
-#menu .beverage .inner {
-  padding-top: 80px;
-}
-#menu .inner .donutMenu li {
+#menu .inner .wrap .menuList li {
+  cursor: pointer;
+  margin-left: 20px;
   flex-shrink: 0;
   width: 250px;
   height: 300px;
@@ -571,64 +573,85 @@ nav .gnb {
   box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
+  overflow: hidden;
+  transition: 0.3s;
 }
-
-#menu .inner .donutMenu li img {
-  margin: 30px 0px 40px;
+#menu .inner .wrap .menuList li:hover {
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+#menu .inner .wrap .menuList li img {
   width: 70%;
 }
-#menu .inner .donutMenu li h4 {
+#menu .inner .wrap .menuList li h4 {
   font-family: "Pyeongchang";
   font-weight: 700px;
   font-size: 20px;
+  color: #333;
 }
-/*wrap chev*/
+
+/*menu wrap chev*/
 #menu .inner .wrap .chev {
-  width: 100%;
-  height: 28px;
+  width: 1150px;
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 200px 0px 470px;
-  box-sizing: border-box;
-}
-#menu .inner .wrap .chev li {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  border-radius: 20px;
-  text-align: center;
+
+  align-items: center;
   color: #fff;
 }
-#menu .donuts .inner .wrap .chev li {
+#menu .inner .donuts .wrap .chev li {
   background-color: #f44f55;
 }
-#menu .beverage .inner .wrap .chev li {
+#menu .inner .beverage .wrap .chev li {
   background-color: #78bbbf;
 }
 
-#menu .inner .wrap .more {
-  font-size: 24px;
-  font-weight: bold;
+#menu .inner .wrap .chev li {
   position: absolute;
-  left: 57%;
-  transform: translateX(-50%);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+}
+#menu .inner .wrap .chev li.rightChev {
+  right: 0px;
+}
+#menu .inner .wrap .chev li i {
+  height: 40px;
+  line-height: 40px;
+}
+
+/*more*/
+#menu .inner .wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#menu .inner > div {
+  position: relative;
+}
+#menu .inner .more {
+  font-size: 22px;
+  font-weight: bold;
   font-family: "PyeongchangPeace";
   color: #fff;
-  width: 210px;
-  height: 70px;
-  line-height: 70px;
+  width: 180px;
+  height: 50px;
+  line-height: 50px;
   border-radius: 70px;
   background-color: #000;
   border: 1px solid #000;
   text-align: center;
+  z-index: 3;
 }
-#menu .inner .wrap .more a {
+#menu .inner .more a {
   display: block;
   border-radius: 70px;
 }
