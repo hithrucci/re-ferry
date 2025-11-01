@@ -1,6 +1,14 @@
 $(function () {
   $("footer").load("../../footer.html");
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const basePath =
+    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  fetch(`${basePath}/footer.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("footer").innerHTML = data));
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 /*visual*/

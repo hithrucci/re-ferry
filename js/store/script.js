@@ -1,9 +1,13 @@
-$(function () {
-  $("header").load("../../header.html");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const basePath =
+    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  fetch(`${basePath}/header.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("header").innerHTML = data));
 
-$(function () {
-  $("footer").load("../../footer.html");
+  fetch(`${basePath}/footer.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("footer").innerHTML = data));
 });
 
 //visual 비주얼 화면 효과
