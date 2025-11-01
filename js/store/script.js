@@ -1,3 +1,11 @@
+$(function () {
+  $("header").load("../../header.html");
+});
+
+$(function () {
+  $("footer").load("../../footer.html");
+});
+
 //visual 비주얼 화면 효과
 
 gsap.registerPlugin(ScrollTrigger);
