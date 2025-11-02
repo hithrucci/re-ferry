@@ -84,6 +84,22 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
 );
 tl.add(() => t2.play(0));
 
+/*scroll시 h1:hover 변화*/
+window.addEventListener("scroll", () => {
+  const pink = document.querySelector("header .logo_pk");
+  const menu = document.querySelector("section#menu");
+  const event = document.querySelector("section#event");
+  const menuTop = menu.offsetTop;
+  const eventTop = event.offsetTop;
+  const scrollY = window.scrollY;
+
+  if (scrollY >= menuTop && scrollY <= eventTop) {
+    pink.style.opacity = "1";
+  } else {
+    pink.style.opacity = "0";
+  }
+});
+
 /*gnb .more*/
 let headMore = document.querySelector(".gnb li:nth-child(5)");
 let moreMenu = document.querySelector("header .moreMenu");
@@ -187,11 +203,36 @@ content.addEventListener("mouseleave", () => {
 });
 
 /*menu*/
+const secTitle = document.querySelector(".sectionTitle");
+const hdTitle = document.querySelector(".sectionTitle .hiddenTitle");
+const title = document.querySelector(".sectionTitle .basicTitle");
+secTitle.addEventListener("mouseenter", () => {
+  gsap.to(hdTitle, {
+    opacity: 1,
+    y: -60,
+    duration: 0.3,
+  });
+  gsap.to(title, {
+    y: -60,
+    duration: 0.3,
+  });
+});
+secTitle.addEventListener("mouseleave", () => {
+  gsap.to(hdTitle, {
+    opacity: 0,
+    y: 30,
+    duration: 0.3,
+  });
+  gsap.to(title, {
+    y: 0,
+    duration: 0.3,
+  });
+});
 gsap
   .timeline({
-    scrollTrigger: { trigger: "#menu", start: "top 50%" },
+    scrollTrigger: { trigger: secTitle, start: "top 50%" },
   })
-  .from("#menu h2", { y: 100, opacity: 0 })
+  .from(secTitle, { y: 100, opacity: 0 })
   .from("#menu .donuts h3", { y: 100 }, 0.3)
   .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
   .from("#menu .donuts .title span", { width: 0 }, 0.7);
@@ -312,3 +353,50 @@ function initFlipCarousel(list, { interval = 2500, duration = 0.6 } = {}) {
     });
   });
 }
+$(function () {
+  $(".donuts .menuList li").on("click", function () {
+    let index = $(this).index();
+    $(".modalBox1").addClass("on");
+    $(".modalBox1 .modalImg li").removeClass("on");
+    $(".modalBox1 .modalImg li").eq(index).addClass("on");
+  });
+
+  $("#btn").on("click", function () {
+    $(".modalBox1").removeClass("on");
+  });
+
+  $(".beverage .menuList li").on("click", function () {
+    let index = $(this).index();
+    $(".modalBox2").addClass("on");
+
+    $(".modalBox2 .modalImg li").removeClass("on");
+    $(".modalBox2 .modalImg li").eq(index).addClass("on");
+  });
+
+  $("#btn2").on("click", function () {
+    $(".modalBox2").removeClass("on");
+  });
+
+  $(".menu li a").on("click", function (e) {
+    e.preventDefault();
+
+    let target = $(this).attr("href");
+
+    if (target.startsWith("#")) {
+      let targetPosition = $(target).offset().top - 150;
+
+      $("html, body").animate(
+        {
+          scrollTop: targetPosition,
+        },
+        500
+      );
+
+      $(".menu li").removeClass("on");
+
+      $('.menu a[href="' + target + '"]')
+        .parent()
+        .addClass("on");
+    }
+  });
+});
