@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const p = new URLSearchParams(location.search).get("scroll");
   if (p) return scrollTo({ top: +p, behavior: "smooth" });
 
-  if (!location.hash) return; // ✅ 해시 없으면 바로 종료
+  if (!location.hash) return;
 
   const t = document.querySelector(location.hash);
   if (t) {
