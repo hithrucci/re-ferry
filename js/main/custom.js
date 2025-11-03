@@ -86,19 +86,46 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
 );
 tl.add(() => t2.play(0));
 
+/*visual video*/
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#visual",
+      pin: true,
+      pinSpacing: false,
+      start: "top top",
+      scrub: 5,
+    },
+  })
+  .to("#visual .stickers", {
+    scale: 0,
+    duration: 3,
+  })
+  .to("#visual .bg", {
+    backgroundSize: "0",
+    duration: 1,
+  })
+  .to("header", { opacity: 0, duration: 1 }, 0)
+  .to(".videoBox", {
+    width: "100%",
+    height: "100%",
+    duration: 3,
+    backgroundColor: "#000",
+    borderRadius: "0",
+    zIndex: 10,
+  })
+  .to("header", { opacity: 1, duration: 3, delay: 3 });
+
 /*scroll시 h1:hover 변화*/
 window.addEventListener("scroll", () => {
   const pink = document.querySelector("header .logo_pk");
-  const menu = document.querySelector("section#menu");
-  const event = document.querySelector("section#event");
-  const menuTop = menu.offsetTop;
-  const eventTop = event.offsetTop;
   const scrollY = window.scrollY;
-
-  if (scrollY >= menuTop && scrollY <= eventTop) {
-    pink.style.opacity = "1";
+  if (scrollY >= 2700 && scrollY <= 4300) {
+    pink.style.opacity = 1;
+  } else if (scrollY >= 0) {
+    pink.style.opacity = 0;
   } else {
-    pink.style.opacity = "0";
+    pink.style.opacity = 0;
   }
 });
 
@@ -232,7 +259,7 @@ secTitle.addEventListener("mouseleave", () => {
 });
 gsap
   .timeline({
-    scrollTrigger: { trigger: secTitle, start: "top 85%", markers: true },
+    scrollTrigger: { trigger: secTitle, start: "top 85%" },
   })
   .from(secTitle, { y: 100, opacity: 0 })
   .from("#menu .donuts h3", { y: 100 }, 0.3)
