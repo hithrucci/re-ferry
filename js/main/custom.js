@@ -21,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 });
+/*visual*/
+gsap.to("", {});
+
 /*visual sticker*/
 gsap.registerPlugin(ScrollTrigger);
 
@@ -230,12 +233,13 @@ secTitle.addEventListener("mouseleave", () => {
 });
 gsap
   .timeline({
-    scrollTrigger: { trigger: secTitle, start: "top 50%" },
+    scrollTrigger: { trigger: secTitle, start: "top 85%", markers: true },
   })
   .from(secTitle, { y: 100, opacity: 0 })
   .from("#menu .donuts h3", { y: 100 }, 0.3)
   .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
-  .from("#menu .donuts .title span", { width: 0 }, 0.7);
+  .from("#menu .donuts .title span", { width: 0 }, 0.7)
+  .to("#menu", { className: "on" }, 0);
 
 gsap
   .timeline({

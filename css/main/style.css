@@ -504,7 +504,7 @@ nav .gnb {
   position: sticky;
   z-index: 1;
 }
-#menu::after {
+#menu.on::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -513,8 +513,9 @@ nav .gnb {
   transform: translateX(-50%);
   width: 1800px;
   height: 3000px;
-  border: 10px dashed #fff;
+  border: 9px dashed #fffae6;
   border-radius: 80px;
+  transition: border 1s;
 }
 
 #menu::before {
