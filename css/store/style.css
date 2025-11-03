@@ -244,8 +244,11 @@ ul {
   height: 353px;
   border-radius: 49px;
   margin-bottom: 20px;
+  display: block;
+  position: relative;
+  z-index: 5;
+  opacity: 1;
 }
-
 .store-photo h3 {
   font-size: 24px;
   margin-bottom: 10px;
@@ -254,6 +257,10 @@ ul {
 .store-photo p {
   font-size: 16px;
   color: #555;
+}
+
+.store-bg {
+  pointer-events: none;
 }
 
 /* 화살표 버튼 */
