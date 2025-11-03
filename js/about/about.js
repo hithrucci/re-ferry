@@ -31,8 +31,8 @@ gsap.registerPlugin(ScrollTrigger);
 /*page1 title 양측 자라나는 라인*/
 gsap
   .timeline()
-  .to(".line_left", { width: "40%", duration: 3, ease: "power2.out" }, 0)
-  .to(".line_right", { width: "40%", duration: 3, ease: "power2.out" }, 0)
+  .to(".line_left", { width: "30%", duration: 3, ease: "power2.out" }, 0)
+  .to(".line_right", { width: "30%", duration: 3, ease: "power2.out" }, 0)
   .to(".page1 .title h2", { opacity: 1, duration: 1 }, 0);
 
 /*page1 title 곰 & 프랜차이즈*/
@@ -87,13 +87,13 @@ gsap
   .fromTo(
     ".story .brandImg",
     { x: 0, opacity: 0 },
-    { x: -200, opacity: 1, duration: 1 },
+    { x: -90, opacity: 1, duration: 1 },
     0
   ) // 왼쪽으로
   .fromTo(
     ".story .text",
     { x: 0, opacity: 0 },
-    { x: 200, opacity: 1, duration: 1 },
+    { x: 70, opacity: 1, duration: 1 },
     0
   ); // 오른쪽으로
 
@@ -111,32 +111,22 @@ gsap
   .fromTo(
     ".dessert .brandImg",
     { x: 0, opacity: 0 },
-    { x: 45, opacity: 1, duration: 1 },
+    { x: 90, opacity: 1, duration: 1 },
     0
   ) // 오른쪽으로
   .fromTo(
     ".dessert .text",
     { x: 0, opacity: 0 },
-    { x: -45, opacity: 1, duration: 1 },
+    { x: -70, opacity: 1, duration: 1 },
     0
   ); // 왼쪽으로
-
-//flavor섹션(이미지 회전)
-// gsap.to(".flavorImg img", {
-//   duration: 3 /* 애니메이션 지속 시간 (초 단위) */,
-//   rotationY: 360 /* Y축으로 360도 회전 */,
-//   ease: "power2.inOut" /* 애니메이션 속도 곡선 (선택 사항) */,
-//   repeat: -1 /* 무한 반복 */,
-//   repeatDelay: 2, // 한 바퀴 끝나고 2초 쉬었다가 다시 회전
-//   yoyo: false /* 왕복 여부 (false면 한 방향으로만 계속 회전) */,
-// });
 
 gsap.to(".flavorImg img", {
   duration: 3 /* 애니메이션 지속 시간 (초 단위) */,
   rotationY: 360 /* Y축으로 360도 회전 */,
-  ease: "power2.inOut" /* 애니메이션 속도 곡선 (선택 사항) */,
-  repeat: -1 /* 무한 반복 */,
-  repeatDelay: 2, // 한 바퀴 끝나고 2초 쉬었다가 다시 회전
+  ease: "power2.inOut",
+  once: true /*무한 반복 repeat: -1*/,
+  // repeatDelay: 2, // 한 바퀴 끝나고 2초 쉬었다가 다시 회전
   yoyo: false /* 왕복 여부 (false면 한 방향으로만 계속 회전) */,
 });
 
