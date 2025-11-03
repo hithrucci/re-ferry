@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
 footer {
   width: 100%;
   background-color: #f44f55;
