@@ -5,63 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="css/event/stylel.css" />
+    <link rel="stylesheet" href="css/common/headerStyle.css">
+        <link rel="stylesheet" href="css/common/footerStyle.css">
     <script src="js/event/jquery-3.7.1.min.js"></script>
   </head>
   <body>
 
         <header>
-      <h1>
-        <a href="#"><img src="img/event/logo_bk.png" alt="" /></a>
-      </h1>
-      <nav>
-        <ul class="menuBar">
-          <li>
-            <a href="#">ABOUT</a>
-            <ul class="about sub">
-              <li>HISTORY</li>
-              <li>BRAND</li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">MENU</a>
-            <ul class="menu sub">
-              <li>DONUT</li>
-              <li>BAVERAGE</li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">EVENT</a>
-            <ul class="event sub">
-              <li>EVENT</li>
-              <li>POP-UP</li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">STORE</a>
-            <ul class="store sub">
-              <li>STORE</li>
-              <li>ONLINE SHOP</li>
-              <li>CATERING</li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      
     </header>
 
     
     <!-- 메인 비주얼 -->
-    <section id="visual">
-      <img src="img/event/EVENT 1.png" alt="Main Visual" />
-    </section>
+    <div id="visual">
+       <div class="poster p1">
+    <img src="img/event/visual1.jpg" alt="poster1" />
+  </div>
+  <div class="poster p2">
+    <img src="img/event/visual2.jpg" alt="poster2" />
+  </div>
+  <div class="poster p3">
+    <img src="img/event/visual3.jpg" alt="poster3" />
+  </div>
+    </div>
 
-    <section class="wrap">
+    <div class="wrap">
+
+      <ul class="event button">
+        <li><a href="#event-section">EVENT</a></li>
+        <li><a href="#popup-section">POP-UP</a></li>
+      </ul>
       <!-- 이벤트 섹션 -->
       <section id="event-section">
-        <ul class="tab-menu">
-          <li><p>EVENT</p></li>
-          <li><p>POP-UP</p></li>
-        </ul>
-        
+       
 
         <div class="event-gallery">
           <ul class="event-list">
@@ -302,15 +278,14 @@
           </div>
         </div>
       </section>
-
+      
       <!-- 팝업 섹션 -->
       <section id="popup-section">
-        <ul class="tab-menu">
-          <li><p>EVENT</p></li>
-          <li class="active"><p>POP-UP</p></li>
-        </ul>
-
-        <ul class="popup-list">
+          <ul class="event button">
+        <li><a href="#event-section">EVENT</a></li>
+        <li><a href="#popup-section">POP-UP</a></li>
+      </ul>
+            <ul class="popup-list">
           <li>
             <img src="img/event/EVENT16.png" alt="" />
             <div class="popup-info">
@@ -345,41 +320,24 @@
           </li>
         </ul>
       </section>
-    </section>
+    </div>
 
     <footer>
-      <div class="bg"><img src="img/event/bg_cream.png" /></div>
-      <div class="logo"><img src="img/event/logo_bk.png" /></div>
-      <div class="info">
-        <div class="add">
-          <div class="add_kor">서울특별시 강남구 압구정로10길 13</div>
-
-          <div class="add_eng">
-            13, Apgujeong-ro 10-gil, Gangnam-gu, Seoul, Republic of Korea
-          </div>
-        </div>
-        <div class="wrap">
-          <div class="tel">Tel.070-4904-9081</div>
-          <div class="ceo">대표이사. 김상선</div>
-        </div>
-        <ul class="contact">
-          <li>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          </li>
-        </ul>
-      </div>
-      <div class="copy">
-        COPYRIGHT © 2025 OLD FERRY DONUT. ALL RIGHT RESERVED
-      </div>
+  
     </footer>
 
     <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const basePath =
+    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  fetch(`${basePath}/header.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("header").innerHTML = data));
+
+  fetch(`${basePath}/footer.html`)
+    .then((res) => res.text())
+    .then((data) => (document.querySelector("footer").innerHTML = data));
+});
 document.addEventListener("DOMContentLoaded", () => {
   const modalBox = document.querySelector(".modalBox");
   const modalItems = document.querySelectorAll(".modal-item");
@@ -387,6 +345,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.querySelector(".btn");
   const eventList = document.querySelectorAll(".event-list li");
 
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const p = new URLSearchParams(location.search).get("scroll");
+  if (p) return scrollTo({ top: +p, behavior: "smooth" });
+
+  if (!location.hash) return; // ✅ 해시 없으면 바로 종료
+
+  const t = document.querySelector(location.hash);
+  if (t) {
+    const headerOffset = 100;
+    const y = t.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+});
   // 모달 열기 (이벤트 썸네일 클릭 시)
   eventList.forEach((item, i) => {
     item.addEventListener("click", (e) => {
@@ -428,8 +400,59 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
-</script>
 
-    </script>
-  </body>
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const allButtons = document.querySelectorAll(".button li");
+  const sections = document.querySelectorAll("#event-section, #popup-section");
+
+  allButtons.forEach(li => li.classList.remove("on"));
+
+  // 클릭 시 이동 + 모든 버튼 세트에 on 반영
+  allButtons.forEach(li => {
+    li.addEventListener("click", e => {
+      e.preventDefault();
+      const targetId = li.querySelector("a").getAttribute("href");
+      const target = document.querySelector(targetId);
+
+      window.scrollTo({
+        top: target.offsetTop - 100,
+        behavior: "smooth",
+      });
+
+      document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+      document.querySelectorAll(`.button li a[href="${targetId}"]`).forEach(link =>
+        link.parentElement.classList.add("on")
+      );
+    });
+  });
+
+  // 스크롤 시도 모든 버튼 세트에 동기화
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY + 200;
+    let activeFound = false;
+
+    sections.forEach(sec => {
+      const start = sec.offsetTop;
+      const end = start + sec.offsetHeight;
+
+      if (scrollY >= start && scrollY < end) {
+        document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+        document
+          .querySelectorAll(`.button li a[href="#${sec.id}"]`)
+          .forEach(link => link.parentElement.classList.add("on"));
+        activeFound = true;
+      }
+    });
+
+    if (!activeFound) document.querySelectorAll(".button li").forEach(btn => btn.classList.remove("on"));
+  });
+});
+
+
+</script>
+ </body>
 </html>
