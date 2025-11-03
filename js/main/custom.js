@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 /*visual*/
-gsap.to("", {});
 
 /*visual sticker*/
 gsap.registerPlugin(ScrollTrigger);
