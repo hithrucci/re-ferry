@@ -294,6 +294,9 @@ gsap
   .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
   .from("#menu .beverage .title span", { width: 0 }, 0.7);
 
+/*menu more btn*/
+
+/*event*/
 gsap
   .timeline({
     scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
