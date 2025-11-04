@@ -5,7 +5,7 @@ header {
   left: 0px;
   top: 0px;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 header .inner {
   display: flex;
