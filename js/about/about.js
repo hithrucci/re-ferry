@@ -26,6 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/*about 서브페이지*/
+gsap.from("#visual img", {
+  xPercent: -150,
+  scale: 0.1,
+  duration: 2,
+  ease: "power1.out",
+  rotation: -5,
+  delay: 0.5,
+});
+
 gsap.registerPlugin(ScrollTrigger);
 
 /*page1 title 양측 자라나는 라인*/
@@ -58,7 +68,7 @@ gsap.from(".franchise", {
   },
 });
 
-/*page2*/
+/*page2 타이틀*/
 gsap
   .timeline({
     scrollTrigger: {
@@ -73,7 +83,7 @@ gsap
   .to(".frame_right", { translateX: 0, duration: 2 }, 0)
   .to(".title h2", { opacity: 1 });
 
-// story 섹션
+/*story 섹션*/
 gsap
   .timeline({
     scrollTrigger: {
@@ -81,6 +91,7 @@ gsap
       start: "top 90%",
       end: "top 30%",
       scrub: true,
+      // once: true,
       // markers: true,
     },
   })
@@ -95,23 +106,33 @@ gsap
     { x: 0, opacity: 0 },
     { x: 70, opacity: 1, duration: 1 },
     0
-  ); // 오른쪽으로
+  ) // 오른쪽으로
+
+  //.origin 애니메이션: 화면 밖에서 최종 위치로 이동
+  .fromTo(
+    ".story .text .origin",
+    { x: "-100vw", opacity: 0 },
+    { x: "-18vw", opacity: 1 },
+    // 메인 애니메이션이 끝나는 시점 이후 (스크롤 위치 '1' 이후)
+    1.5
+  );
 
 // dessert 섹션
 gsap
   .timeline({
     scrollTrigger: {
-      trigger: ".dessert",
-      start: "top 80%",
+      trigger: ".story",
+      start: "top 90%",
       end: "top 30%",
       scrub: true,
+      // once: true,
       // markers: true,
     },
   })
   .fromTo(
     ".dessert .brandImg",
     { x: 0, opacity: 0 },
-    { x: 90, opacity: 1, duration: 1 },
+    { x: 230, opacity: 1, duration: 1 },
     0
   ) // 오른쪽으로
   .fromTo(
