@@ -48,6 +48,7 @@ body.on::after {
   background-color: rgba(244, 79, 85, 0.5);
   left: 0px;
   top: 0px;
+  z-index: 900;
 }
 * {
   margin: 0;
@@ -76,7 +77,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 5;
+  z-index: 1001;
 }
 header h1 {
   position: absolute;
@@ -84,6 +85,11 @@ header h1 {
   left: 0px;
   z-index: 1;
   width: 160px;
+  height: 100px;
+}
+header h1 a {
+  height: 100%;
+  width: 100%;
 }
 header h1 a.logo_pk {
   opacity: 0;
@@ -119,7 +125,7 @@ header h1 img {
 }
 
 /*gnb*/
-nav .gnb {
+#basic .gnb {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -128,7 +134,7 @@ nav .gnb {
   text-align: center;
   align-items: center;
 }
-.gnb li {
+#basic .gnb li {
   width: 142px;
   height: 56px;
   line-height: 56px;
@@ -136,31 +142,31 @@ nav .gnb {
   border-radius: 100px;
   color: #333;
 }
-.gnb li:hover {
+#basic .gnb li:hover {
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid #ed7121;
   color: #ed7121;
   transition: 0.3s;
 }
-.gnb li:nth-child(1) {
+#basic .gnb li:nth-child(1) {
   transform: rotate(-15deg);
 }
-.gnb li:nth-child(2) {
+#basic .gnb li:nth-child(2) {
   transform: rotate(10deg);
 }
-.gnb li:nth-child(3) {
+#basic .gnb li:nth-child(3) {
   transform: rotate(-15deg);
 }
-.gnb li:nth-child(4) {
+#basic .gnb li:nth-child(4) {
   transform: rotate(8deg);
 }
-.gnb li:nth-child(5) {
+#basic .gnb li:nth-child(5) {
   width: 104px;
   height: 104px;
   line-height: 104px;
   cursor: pointer;
 }
-.gnb li a {
+#basic .gnb li a {
   display: block;
   border-radius: 52px;
 }
@@ -168,12 +174,93 @@ nav .gnb {
 /*moreMenu*/
 .moreMenu {
   position: absolute;
-  left: -60px;
+  left: -660px;
   top: 0px;
-  width: 0px;
-  height: 100%;
+  width: 600px;
+  height: 100vh;
   background-color: #fff;
-  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 120px;
+  padding: 60px;
+  box-sizing: border-box;
+}
+.moreMenu h1 {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 200px;
+  height: 120px;
+}
+.moreMenu h1 a {
+  width: 100%;
+  height: 100%;
+  position: static;
+  display: block;
+}
+.moreMenu h1 img {
+  display: block;
+  width: 100%;
+}
+.moreMenu .gnb {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.moreMenu .gnb > li {
+  font-size: 24px;
+  font-family: "YeogiOttaeJalnan";
+  color: #222;
+  position: relative;
+}
+.moreMenu .gnb .title {
+  display: flex;
+  align-items: center;
+}
+.moreMenu .gnb > li.on {
+  color: #f2591e;
+}
+.moreMenu .gnb > li .title .arr {
+  margin-left: 20px;
+  font-size: 20px;
+  opacity: 0;
+  color: #aaa;
+}
+.moreMenu .gnb li.on .title .arr {
+  opacity: 1;
+}
+.moreMenu .gnb li.on .title .arr:hover {
+  color: #f2591e;
+}
+.moreMenu .close {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fff;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.moreMenu .gnb .sub {
+  font-size: 16px;
+  color: #555;
+  display: none;
+  padding-left: 12px;
+}
+.moreMenu .gnb .sub li {
+  margin: 8px;
+}
+
+.moreMenu .gnb li.on ul.sub {
+  display: block;
+}
+.moreMenu .sub li:hover {
+  color: #f2591e;
 }
 /*visual*/
 #visual {
@@ -781,7 +868,7 @@ nav .gnb {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 50;
 }
 .modalBox2 {
   position: fixed;
@@ -793,7 +880,7 @@ nav .gnb {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 50;
 }
 .modalBox1.on {
   display: flex;
@@ -812,7 +899,7 @@ nav .gnb {
   padding: 30px;
   box-sizing: border-box;
   position: relative; /* z-index가 작동하도록 보장 */
-  z-index: 10000;
+  z-index: 60;
 }
 #btn {
   position: absolute;
