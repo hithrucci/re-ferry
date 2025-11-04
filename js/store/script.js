@@ -246,3 +246,199 @@ window.addEventListener("DOMContentLoaded", () => {
     delay: 0.2,
   });
 });
+
+//catering02 모션효과
+
+//catering02-01 시계 효과
+gsap.fromTo(
+  ".tv1",
+  { opacity: 0, rotation: 0, y: -30 },
+  {
+    opacity: 1,
+    rotation: 0,
+    y: 0,
+    duration: 1.2,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".tv1",
+      start: "top 90%",
+      once: true,
+      onEnter: () => {
+        gsap.to(".tv1", {
+          rotation: 10,
+          duration: 0.15,
+          yoyo: true,
+          repeat: 10,
+          ease: "sine.inOut",
+          onComplete: () => gsap.set(".tv1", { clearProps: "transform" }), //
+        });
+      },
+    },
+  }
+);
+
+//catering02-02 하트 효과
+gsap.registerPlugin(ScrollTrigger);
+
+/* ❤️ 순차 등장 */
+gsap.registerPlugin(ScrollTrigger);
+
+/* ❤️ 순차 등장 */
+const heartOrder = [
+  [".l5"],
+  [".l4", ".l6"],
+  [".l3", ".l7"],
+  [".l2", ".l8"],
+  [".l1", ".l9"],
+];
+
+heartOrder.forEach((group, i) => {
+  gsap.fromTo(
+    group,
+    { opacity: 0, scale: 0.3, y: 30 },
+    {
+      opacity: 1,
+      scale: 1,
+      y: -10,
+      duration: 0.6,
+      ease: "back.out(2)",
+      delay: i * 0.25,
+      scrollTrigger: {
+        trigger: ".gomlove",
+        start: "top 80%",
+        once: true,
+      },
+      stagger: 0.1,
+      onComplete: () => {
+        gsap.to(group, {
+          y: 0,
+          duration: 0.4,
+          ease: "power2.out",
+        });
+      },
+    }
+  );
+});
+
+/* 하트에만 hover 애니메이션 적용 */
+document.querySelectorAll(".gomlove img").forEach((img) => {
+  if (!img.classList.contains("love")) {
+    img.addEventListener("mouseenter", () => {
+      gsap.to(img, {
+        y: -8,
+        scale: 1.2,
+        duration: 0.25,
+        ease: "power1.out",
+      });
+    });
+
+    img.addEventListener("mouseleave", () => {
+      gsap.to(img, {
+        y: 0,
+        scale: 1,
+        duration: 0.25,
+        ease: "power1.inOut",
+      });
+    });
+  }
+});
+
+//catering03
+//곰돌이도넛
+
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo(
+  ".dn1",
+  { opacity: 0, scale: 0.8, y: 30 },
+  {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".donut",
+      start: "top 80%",
+      once: true,
+    },
+  }
+);
+
+document.querySelectorAll(".dn1").forEach((donut) => {
+  donut.addEventListener("mouseenter", () => {
+    gsap.to(donut, {
+      y: -8,
+      rotation: gsap.utils.random(-6, 6),
+      duration: 0.4,
+      ease: "power1.out",
+    });
+  });
+
+  donut.addEventListener("mouseleave", () => {
+    gsap.to(donut, {
+      y: 0,
+      rotation: 0,
+      duration: 0.4,
+      ease: "power1.inOut",
+    });
+  });
+});
+
+// catering01,02,03 이미지 효과
+gsap.registerPlugin(ScrollTrigger);
+
+/* 🎬 공통 등장 애니메이션 (cater01~03 전부 동일 효과) */
+[".tv", ".love", ".dn2"].forEach((selector) => {
+  gsap.from(selector, {
+    scrollTrigger: {
+      trigger: selector,
+      start: "top 85%",
+      once: true,
+    },
+    opacity: 0,
+    y: 50,
+    rotation: 3, // 살짝 흔들리는 듯한 느낌
+    scale: 0.95,
+    duration: 1.2,
+    ease: "power2.out",
+  });
+});
+
+/* 🍩 dn1 등장 + hover (기존 유지) */
+gsap.fromTo(
+  ".dn1",
+  { opacity: 0, scale: 0.8, y: 30 },
+  {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".donut",
+      start: "top 80%",
+      once: true,
+    },
+  }
+);
+
+document.querySelectorAll(".dn1").forEach((donut) => {
+  donut.addEventListener("mouseenter", () => {
+    gsap.to(donut, {
+      y: -8,
+      rotation: gsap.utils.random(-6, 6),
+      duration: 0.4,
+      ease: "power1.out",
+    });
+  });
+
+  donut.addEventListener("mouseleave", () => {
+    gsap.to(donut, {
+      y: 0,
+      rotation: 0,
+      duration: 0.4,
+      ease: "power1.inOut",
+    });
+  });
+});
