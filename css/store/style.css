@@ -179,6 +179,7 @@ ul {
   margin-bottom: 0px;
   top: -20px;
 }
+
 .store-bg img {
   width: 100%;
   position: relative;
@@ -213,10 +214,10 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
+  width: 1400px;
   height: 100%;
   margin: 0 auto;
-  gap: 80px;
+
   z-index: 1;
   padding-top: 20px;
 }
@@ -233,6 +234,7 @@ ul {
   justify-content: center;
   align-items: center;
   border: 2px solid #efdea9;
+  margin-left: 100px;
 }
 
 .store-photo {
@@ -301,6 +303,7 @@ ul {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: solid 1px #efdea9;
   position: relative;
+  margin-right: 100px;
 }
 
 .store-list {
@@ -437,6 +440,8 @@ ul {
   display: flex;
   justify-content: center;
   gap: 100px;
+  width: 1400px;
+  margin: 0px auto;
 }
 .cater01-left h2 {
   color: #f44f55;
@@ -447,8 +452,11 @@ ul {
 .cater01-left p {
   font-size: 26px;
 }
-.cater01-right img {
+.tv01 {
   margin-top: 227px;
+}
+.cater01-right {
+  margin-top: 200px;
 }
 
 /* catering 02 */
@@ -462,13 +470,16 @@ ul {
   display: flex;
   justify-content: center;
   gap: 150px;
+  width: 1400px;
+  margin: 0px auto;
 }
 .cater02 h3 {
   color: #f2591e;
-  font-size: 26px;
+  font-size: 24px;
   margin-top: 65px;
   margin-bottom: 32px;
 }
+
 .cater02 p {
   font-size: 20px;
 }
@@ -478,7 +489,134 @@ ul {
 .cater02-01 h3 {
   margin-top: 61.5px;
 }
-/* catering03 */
+/* cater02-01 */
+.ring01 {
+  position: relative;
+  display: inline-block;
+}
+.ring01 .tv1 {
+  position: absolute;
+  top: -170px;
+  left: -150px;
+  height: auto;
+  z-index: 2;
+}
+.tv1:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+
+/* cater02-02 */
+.gomlove {
+  position: relative;
+  display: inline-block;
+}
+
+.gomlove img {
+  position: absolute;
+  transition: all 0.3s ease;
+}
+
+/* 곰 */
+.gomlove .love {
+  position: relative;
+
+  z-index: 1;
+}
+
+/* 하트 배치 */
+.gomlove .l1 {
+  top: 10px;
+  left: 60px;
+  z-index: 1;
+}
+.gomlove .l2 {
+  top: 70px;
+  left: 20px;
+  z-index: 1;
+}
+.gomlove .l3 {
+  top: 130px;
+  left: 20px;
+  z-index: 1;
+}
+.gomlove .l4 {
+  top: 180px;
+  left: 60px;
+  z-index: 1;
+}
+.gomlove .l5 {
+  top: 200px;
+  left: 180px;
+  z-index: 1;
+}
+.gomlove .l6 {
+  top: 180px;
+  left: 270px;
+  z-index: 1;
+}
+.gomlove .l7 {
+  top: 160px;
+  left: 340px;
+  z-index: 1;
+}
+.gomlove .l8 {
+  top: 80px;
+  left: 360px;
+  z-index: 1;
+}
+.gomlove .l9 {
+  top: 20px;
+  left: 310px;
+  z-index: 1;
+}
+
+.l1:hover,
+.l2:hover,
+.l3:hover,
+.l4:hover,
+.l5:hover,
+.l6:hover,
+.l7:hover,
+.l8:hover,
+.l9:hover {
+  transform: translateY(-5px) scale(1.1);
+}
+/* catering02-03 */
+
+.cater02-03 {
+  position: relative;
+  text-align: center;
+}
+
+.cater02-03 .donut {
+  position: relative;
+  display: inline-block;
+}
+
+.cater02-03 .donut img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+.cater02-03 .donut img:nth-child(1) {
+  position: relative;
+  top: -20px;
+  left: 25px;
+  z-index: 2;
+}
+
+.cater02-03 .donut img:nth-child(2) {
+  z-index: 1;
+}
+
+/* hover 시 부드럽게 올라오는 효과 */
+.cater02-03 .donut:hover img.dn1 {
+  transform: translateY(-5px) scale(1.1);
+}
+
 #cater03 {
   width: 100%;
 
