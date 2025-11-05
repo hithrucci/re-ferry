@@ -21,10 +21,10 @@ footer .bg img {
   width: 100%;
 }
 footer .logo {
-  width: 140px;
+  width: 130px;
   left: 50%;
   transform: translate(-50%, -50%);
-  top: 40%;
+  top: 33%;
   position: absolute;
 }
 footer .logo img {
@@ -39,6 +39,7 @@ footer .info {
   left: 50%;
   transform: translateX(-50%);
   bottom: 10%;
+  padding: 20px 0px;
 }
 
 footer .info .add {
@@ -69,4 +70,7 @@ footer .copy {
   align-items: center;
   font-size: 14px;
   font-weight: bold;
+}
+i:hover {
+  color: #ccc;
 }

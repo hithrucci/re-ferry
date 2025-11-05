@@ -21,9 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 });
+
+/* ====== 메뉴 썸네일 원본 인덱스 박제 (캐러셀 DOM 재배치 무시) ====== */
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".donuts .menuList li").forEach((li, i) => {
+    li.dataset.idx = i; // 도넛 썸네일 원본 인덱스
+  });
+  document.querySelectorAll(".beverage .menuList li").forEach((li, i) => {
+    li.dataset.idx = i; // 음료 썸네일 원본 인덱스
+  });
+});
+
 /*visual*/
 
-/*visual sticker*/
 gsap.registerPlugin(ScrollTrigger);
 
 const visualBg = document.querySelector("#visual .bg");
@@ -146,6 +156,7 @@ close.addEventListener("click", () => {
     left: -660,
   });
 });
+
 /*gnb .more sub*/
 const subMenus = document.querySelectorAll(".moreMenu .gnb > li");
 const subArr = document.querySelector(".moreMenu .gnb li .title .arr");
@@ -294,22 +305,40 @@ gsap
   .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
   .from("#menu .beverage .title span", { width: 0 }, 0.7);
 
-/*menu more btn*/
-
 /*event*/
 gsap
   .timeline({
     scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
   })
-  .from("#event .inner div:nth-child(3)", { opacity: 0, x: 1000, y: -200 }, 0)
-  .from(
-    "#event .inner div:nth-child(2)",
-    { opacity: 0, x: -1000, y: -200 },
-    0.2
+  .fromTo(
+    "#event .event3",
+    { rotation: "-12", x: 2000, y: -500 },
+    { x: 900, y: -200, duration: 1 },
+    0
+  )
+  .fromTo(
+    "#event .event2",
+    { rotation: "5", x: -2000, y: -500 },
+    { x: 0, y: -200, duration: 1 },
+    0.3
+  )
+  .fromTo(
+    "#event .event1",
+    { rotation: "-3", x: 2000, y: -500 },
+    {
+      x: 0,
+      y: -220,
+      duration: 1,
+    },
+    0.6
   )
   .from(
-    "#event .inner div:nth-child(1)",
-    { opacity: 0, x: 1000, y: -300 },
+    "#event h2",
+    {
+      opacity: 0,
+      y: 80,
+      duration: 0.5,
+    },
     0.3
   );
 
@@ -405,50 +434,28 @@ function initFlipCarousel(list, { interval = 2500, duration = 0.6 } = {}) {
     });
   });
 }
+
+/* ====== 메뉴 리스트 모달 (data-idx 사용) ====== */
 $(function () {
+  // 도넛
   $(".donuts .menuList li").on("click", function () {
-    let index = $(this).index();
+    const i = +this.dataset.idx; // 원본 인덱스
     $(".modalBox1").addClass("on");
-    $(".modalBox1 .modalImg li").removeClass("on");
-    $(".modalBox1 .modalImg li").eq(index).addClass("on");
+    $(".modalBox1 .modalImg > li").removeClass("on").eq(i).addClass("on");
   });
 
   $("#btn").on("click", function () {
     $(".modalBox1").removeClass("on");
   });
 
+  // 음료
   $(".beverage .menuList li").on("click", function () {
-    let index = $(this).index();
+    const i = +this.dataset.idx; // 원본 인덱스
     $(".modalBox2").addClass("on");
-
-    $(".modalBox2 .modalImg li").removeClass("on");
-    $(".modalBox2 .modalImg li").eq(index).addClass("on");
+    $(".modalBox2 .modalImg > li").removeClass("on").eq(i).addClass("on");
   });
 
   $("#btn2").on("click", function () {
     $(".modalBox2").removeClass("on");
-  });
-
-  $(".menu li a").on("click", function (e) {
-    e.preventDefault();
-
-    let target = $(this).attr("href");
-
-    if (target.startsWith("#")) {
-      let targetPosition = $(target).offset().top - 150;
-
-      $("html, body").animate(
-        {
-          scrollTop: targetPosition,
-        },
-        500
-      );
-
-      $(".menu li").removeClass("on");
-
-      $('.menu a[href="' + target + '"]')
-        .parent()
-        .addClass("on");
-    }
   });
 });

@@ -12,7 +12,7 @@ header .inner {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
-  height: 90px;
+  height: 100%;
   line-height: normal;
   width: 1400px;
   text-align: center;
@@ -62,7 +62,7 @@ nav .menuBar {
   font-size: clamp(14px, 1vw, 18px);
   gap: 100px;
   text-align: center;
-  height: 100px;
+  height: 100%;
 }
 nav .menuBar > li {
   position: relative;
@@ -70,7 +70,7 @@ nav .menuBar > li {
 nav .menuBar > li > a {
   display: flex;
   align-items: center;
-  height: 100px;
+  height: 90px;
   padding: 0 6px;
   white-space: nowrap;
 }
@@ -88,7 +88,7 @@ nav .menuBar > li > a:hover {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 4px;
-  padding: 10px 0;
+  padding: 8px 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   z-index: 1000;
   height: auto;
