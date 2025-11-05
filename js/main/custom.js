@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: y, behavior: "smooth" });
   }
 });
+/*visual*/
+
 /*visual sticker*/
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,13 +86,75 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
 );
 tl.add(() => t2.play(0));
 
+/*visual video*/
+gsap
+  .timeline({
+    scrollTrigger: {
+      trigger: "#visual",
+      pin: true,
+      pinSpacing: false,
+      start: "top top",
+      scrub: 2,
+    },
+  })
+  .to("#visual .stickers", {
+    scale: 0,
+    duration: 3,
+  })
+  .to("#visual .bg", {
+    backgroundSize: "0",
+    duration: 1,
+  })
+  .to("header", { left: -200, opacity: 0, duration: 1 }, 0)
+  .to(".videoBox", {
+    width: "100%",
+    height: "100%",
+    duration: 3,
+    backgroundColor: "#000",
+    borderRadius: "0",
+    zIndex: 10,
+  })
+  .to("header", { left: 60, opacity: 1, duration: 3, delay: 3 });
+
+/*scroll시 h1:hover 변화*/
+window.addEventListener("scroll", () => {
+  const pink = document.querySelector("header .logo_pk");
+  const scrollY = window.scrollY;
+  if (scrollY >= 2700 && scrollY <= 4300) {
+    pink.style.opacity = 1;
+  } else if (scrollY >= 0) {
+    pink.style.opacity = 0;
+  } else {
+    pink.style.opacity = 0;
+  }
+});
+
 /*gnb .more*/
 let headMore = document.querySelector(".gnb li:nth-child(5)");
 let moreMenu = document.querySelector("header .moreMenu");
 let body = document.querySelector("body");
+let close = document.querySelector("button.close");
 headMore.addEventListener("click", () => {
   body.classList.add("on");
-  gsap.to(moreMenu, { duration: 1, zIndex: 20, width: 600 });
+  gsap.to(moreMenu, { duration: 1, zIndex: 1001, left: -60 });
+});
+close.addEventListener("click", () => {
+  body.classList.remove("on");
+  gsap.to(moreMenu, {
+    duration: 1,
+    zIndex: 0,
+    left: -660,
+  });
+});
+/*gnb .more sub*/
+const subMenus = document.querySelectorAll(".moreMenu .gnb > li");
+const subArr = document.querySelector(".moreMenu .gnb li .title .arr");
+subMenus.forEach((li) => {
+  li.addEventListener("click", () => {
+    const wasActive = li.classList.contains("on");
+    subMenus.forEach((el) => el.classList.remove("on"));
+    if (!wasActive) li.classList.add("on");
+  });
 });
 
 /*about*/
@@ -187,14 +251,40 @@ content.addEventListener("mouseleave", () => {
 });
 
 /*menu*/
+const secTitle = document.querySelector(".sectionTitle");
+const hdTitle = document.querySelector(".sectionTitle .hiddenTitle");
+const title = document.querySelector(".sectionTitle .basicTitle");
+secTitle.addEventListener("mouseenter", () => {
+  gsap.to(hdTitle, {
+    opacity: 1,
+    y: -60,
+    duration: 0.3,
+  });
+  gsap.to(title, {
+    y: -60,
+    duration: 0.3,
+  });
+});
+secTitle.addEventListener("mouseleave", () => {
+  gsap.to(hdTitle, {
+    opacity: 0,
+    y: 30,
+    duration: 0.3,
+  });
+  gsap.to(title, {
+    y: 0,
+    duration: 0.3,
+  });
+});
 gsap
   .timeline({
-    scrollTrigger: { trigger: "#menu", start: "top 50%" },
+    scrollTrigger: { trigger: secTitle, start: "top 85%" },
   })
-  .from("#menu h2", { y: 100, opacity: 0 })
+  .from(secTitle, { y: 100, opacity: 0 })
   .from("#menu .donuts h3", { y: 100 }, 0.3)
   .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
-  .from("#menu .donuts .title span", { width: 0 }, 0.7);
+  .from("#menu .donuts .title span", { width: 0 }, 0.7)
+  .to("#menu", { className: "on" }, 0);
 
 gsap
   .timeline({
@@ -204,6 +294,9 @@ gsap
   .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
   .from("#menu .beverage .title span", { width: 0 }, 0.7);
 
+/*menu more btn*/
+
+/*event*/
 gsap
   .timeline({
     scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
@@ -312,3 +405,50 @@ function initFlipCarousel(list, { interval = 2500, duration = 0.6 } = {}) {
     });
   });
 }
+$(function () {
+  $(".donuts .menuList li").on("click", function () {
+    let index = $(this).index();
+    $(".modalBox1").addClass("on");
+    $(".modalBox1 .modalImg li").removeClass("on");
+    $(".modalBox1 .modalImg li").eq(index).addClass("on");
+  });
+
+  $("#btn").on("click", function () {
+    $(".modalBox1").removeClass("on");
+  });
+
+  $(".beverage .menuList li").on("click", function () {
+    let index = $(this).index();
+    $(".modalBox2").addClass("on");
+
+    $(".modalBox2 .modalImg li").removeClass("on");
+    $(".modalBox2 .modalImg li").eq(index).addClass("on");
+  });
+
+  $("#btn2").on("click", function () {
+    $(".modalBox2").removeClass("on");
+  });
+
+  $(".menu li a").on("click", function (e) {
+    e.preventDefault();
+
+    let target = $(this).attr("href");
+
+    if (target.startsWith("#")) {
+      let targetPosition = $(target).offset().top - 150;
+
+      $("html, body").animate(
+        {
+          scrollTop: targetPosition,
+        },
+        500
+      );
+
+      $(".menu li").removeClass("on");
+
+      $('.menu a[href="' + target + '"]')
+        .parent()
+        .addClass("on");
+    }
+  });
+});

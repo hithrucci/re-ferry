@@ -14,7 +14,7 @@
     />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main/jquery-3.7.1.min.js"></script>
   </head>
@@ -45,6 +45,7 @@
     <!-- 스토어 화면 -->
 
     <section id="store">
+      <div class="store-width"></div>
       <div class="store-container">
         <div class="store-bg">
           <img class="store-bg02" src="img/store/스토어배경테두리.png" alt="" />
@@ -115,7 +116,10 @@
     <section id="catering02">
       <div class="cater02">
         <div class="cater02-01">
-          <img src="img/store/Group 198.png" />
+          <div class="ring01">
+            <img class="tv1" src="img/store/catering-tv1.png" />
+            <img class="tv" src="img/store/catering-tv.png" />
+          </div>
           <h3>지친 오후, 팀을 위한 간식이 필요할 때</h3>
           <p>
             당 충전이 필요할 때, 올드페리의 도넛과<br />
@@ -123,7 +127,18 @@
           </p>
         </div>
         <div class="cater02-02">
-          <img src="img/store/Group 199.png" />
+          <div class="gomlove">
+            <img class="love" src="img/store/love.png" />
+            <img class="l1" src="img/store/하트1-1.png" />
+            <img class="l2" src="img/store/하트2-1.png" />
+            <img class="l3" src="img/store/하트3-1.png" />
+            <img class="l4" src="img/store/하트4-1.png" />
+            <img class="l5" src="img/store/하트5-1.png" />
+            <img class="l6" src="img/store/하트6-1.png" />
+            <img class="l7" src="img/store/하트7-1.png" />
+            <img class="l8" src="img/store/하트8-1.png" />
+            <img class="l9" src="img/store/하트9-1.png" />
+          </div>
           <h3>감사의 마음을 전하고 싶을 때</h3>
           <p>
             따뜻한 오렌지색 도넛 박스로 <br />
@@ -131,7 +146,10 @@
           </p>
         </div>
         <div class="cater02-03">
-          <img src="img/store/Group 200.png" />
+          <div class="donut">
+            <img class="dn1" src="img/store/도넛.png" />
+            <img class="dn2" src="img/store/곰돌이도넛.png" />
+          </div>
           <h3>단체모임이나 행사 간식이 필요할 때</h3>
           <p>어디서든 간편하게 즐길 수 있어요.</p>
         </div>
@@ -140,31 +158,38 @@
 
     <!--catering 03-->
     <section id="cater03">
-      <h2>HOW to ORDER</h2>
-      <div class="order">
-        <div class="order-line">
-          <p class="p1">업체명 및 주소를 입력해주세요.</p>
-          <input type="text" class="input-box" />
-          <p>케이터링 목적을 입력해주세요.</p>
-          <input type="text" class="input-box" />
-          <p>성함과 연락처를 입력해주세요.</p>
-          <input type="text" class="input-box" />
-          <p>희망하시는 날짜 및 시간을 입력해주세요.</p>
-          <input type="text" class="input-box" />
-          <p>품목 및 수량 구성을 입력해주세요.</p>
-          <input type="text" class="input-box" />
-          <p>결제방법을 선택해주세요.</p>
-          <div class="how">
-            <label><input type="radio" name="pay" /> 계좌이체</label>
-            <label><input type="radio" name="pay" /> 온라인 카드결제</label>
-            <label><input type="radio" name="pay" /> 현장결제</label>
-            <label><input type="radio" name="pay" /> 기타</label>
+      <div class="ct-order">
+        <h2>HOW to ORDER</h2>
+        <div class="cater03-left">
+          <img class="cloud" src="img/store/구름.png" />
+          <img class="bike" src="img/store/곰오토바이.png" />
+        </div>
+        <div class="order">
+          <div class="order-line">
+            <p class="p1">업체명 및 주소를 입력해주세요.</p>
+            <input type="text" class="input-box" />
+            <p>케이터링 목적을 입력해주세요.</p>
+            <input type="text" class="input-box" />
+            <p>성함과 연락처를 입력해주세요.</p>
+            <input type="text" class="input-box" />
+            <p>희망하시는 날짜 및 시간을 입력해주세요.</p>
+            <input type="text" class="input-box" />
+            <p>품목 및 수량 구성을 입력해주세요.</p>
+            <input type="text" class="input-box" />
+            <p>결제방법을 선택해주세요.</p>
+            <div class="how">
+              <label><input type="radio" name="pay" /> 계좌이체</label>
+              <label><input type="radio" name="pay" /> 온라인 카드결제</label>
+              <label><input type="radio" name="pay" /> 현장결제</label>
+              <label><input type="radio" name="pay" /> 기타</label>
+            </div>
+            <button>작성</button>
           </div>
-          <button>작성</button>
         </div>
       </div>
     </section>
     <footer></footer>
+
     <script src="js/store/script.js"></script>
   </body>
 </html>

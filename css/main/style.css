@@ -48,6 +48,7 @@ body.on::after {
   background-color: rgba(244, 79, 85, 0.5);
   left: 0px;
   top: 0px;
+  z-index: 900;
 }
 * {
   margin: 0;
@@ -76,7 +77,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 1;
+  z-index: 1001;
 }
 header h1 {
   position: absolute;
@@ -84,6 +85,14 @@ header h1 {
   left: 0px;
   z-index: 1;
   width: 160px;
+  height: 100px;
+}
+header h1 a {
+  height: 100%;
+  width: 100%;
+}
+header h1 a.logo_pk {
+  opacity: 0;
 }
 header h1 a.logo_or {
   opacity: 0;
@@ -91,10 +100,17 @@ header h1 a.logo_or {
 header h1:hover a.logo_bk {
   opacity: 0;
   transition: 0.3s;
+  z-index: 1;
 }
 header h1:hover a.logo_or {
   opacity: 1;
   transition: 0.3s;
+  z-index: 0;
+}
+header h1:hover a.logo_pk {
+  opacity: 1;
+  transition: 0.3s;
+  z-index: 0;
 }
 
 header h1 a {
@@ -109,7 +125,7 @@ header h1 img {
 }
 
 /*gnb*/
-nav .gnb {
+#basic .gnb {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -118,7 +134,7 @@ nav .gnb {
   text-align: center;
   align-items: center;
 }
-.gnb li {
+#basic .gnb li {
   width: 142px;
   height: 56px;
   line-height: 56px;
@@ -126,31 +142,32 @@ nav .gnb {
   border-radius: 100px;
   color: #333;
 }
-.gnb li:hover {
+
+#basic .gnb li:hover {
   background-color: rgba(255, 255, 255, 0.3);
   border: 1px solid #ed7121;
   color: #ed7121;
   transition: 0.3s;
 }
-.gnb li:nth-child(1) {
+#basic .gnb li:nth-child(1) {
   transform: rotate(-15deg);
 }
-.gnb li:nth-child(2) {
+#basic .gnb li:nth-child(2) {
   transform: rotate(10deg);
 }
-.gnb li:nth-child(3) {
+#basic .gnb li:nth-child(3) {
   transform: rotate(-15deg);
 }
-.gnb li:nth-child(4) {
+#basic .gnb li:nth-child(4) {
   transform: rotate(8deg);
 }
-.gnb li:nth-child(5) {
+#basic .gnb li:nth-child(5) {
   width: 104px;
   height: 104px;
   line-height: 104px;
   cursor: pointer;
 }
-.gnb li a {
+#basic .gnb li a {
   display: block;
   border-radius: 52px;
 }
@@ -158,12 +175,96 @@ nav .gnb {
 /*moreMenu*/
 .moreMenu {
   position: absolute;
-  left: -60px;
+  left: -660px;
   top: 0px;
-  width: 0px;
-  height: 100%;
+  width: 600px;
+  height: 100vh;
   background-color: #fff;
-  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 120px;
+  padding: 60px;
+  box-sizing: border-box;
+}
+.moreMenu h1 {
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  width: 200px;
+  height: 120px;
+}
+.moreMenu h1 a {
+  width: 100%;
+  height: 100%;
+  position: static;
+  display: block;
+}
+.moreMenu h1 img {
+  display: block;
+  width: 100%;
+}
+.moreMenu .gnb {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.moreMenu .gnb > li {
+  font-size: 24px;
+  font-family: "YeogiOttaeJalnan";
+  color: #222;
+  position: relative;
+}
+.moreMenu .gnb > li:hover {
+  color: #ff986f;
+}
+.moreMenu .gnb .title {
+  display: flex;
+  align-items: center;
+}
+.moreMenu .gnb > li.on {
+  color: #f2591e;
+}
+.moreMenu .gnb > li .title .arr {
+  margin-left: 20px;
+  font-size: 20px;
+  opacity: 0;
+  color: #aaa;
+}
+.moreMenu .gnb li.on .title .arr {
+  opacity: 1;
+}
+.moreMenu .gnb li.on .title .arr:hover {
+  color: #f2591e;
+}
+.moreMenu .close {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #fff;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.moreMenu .gnb .sub {
+  font-size: 16px;
+  color: #555;
+  display: none;
+  padding-left: 12px;
+}
+.moreMenu .gnb .sub li {
+  margin: 8px;
+}
+
+.moreMenu .gnb li.on ul.sub {
+  display: block;
+}
+.moreMenu .sub li:hover {
+  color: #f2591e;
 }
 /*visual*/
 #visual {
@@ -174,9 +275,12 @@ nav .gnb {
   background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
-  position: relative;
+  position: sticky;
+  top: 0px;
   overflow: hidden;
+  /* overflow: hidden; */
 }
+
 #visual .bg {
   width: 100%;
   height: 100%;
@@ -239,6 +343,40 @@ nav .gnb {
 .stickers li:nth-child(7) {
   top: 44%;
   left: 24%;
+}
+.pin-spacer {
+  height: 2000px;
+}
+/*videoBox*/
+.videoBox {
+  background-color: rgba(0, 0, 0, 0);
+  width: 0%;
+  height: 0%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  border-radius: 80px;
+}
+.videoWrap {
+  position: absolute;
+  width: 80%;
+  height: 90%;
+  margin: 0px auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  border-radius: 80px;
+  overflow: hidden;
+  transform-origin: center;
+}
+.videoBox video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /*loop*/
 .loop {
@@ -343,6 +481,13 @@ nav .gnb {
 /*section*/
 
 /*about*/
+#aboutTop {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+  z-index: -1;
+}
 #about {
   width: 100%;
   height: 100vh;
@@ -352,6 +497,7 @@ nav .gnb {
   background-size: 68%;
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
 
 #about .inner {
@@ -486,14 +632,21 @@ nav .gnb {
   width: 350px;
 }
 
+/*sectionWrap*/
+#sectionWrap {
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
 /*menu*/
 #menu {
   width: 100%;
   background-color: #ed7121;
   overflow: hidden;
-  position: sticky;
+  z-index: 1;
+  position: relative;
 }
-#menu::after {
+#menu.on::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -502,9 +655,11 @@ nav .gnb {
   transform: translateX(-50%);
   width: 1800px;
   height: 3000px;
-  border: 10px dashed #fff;
+  border: 9px dashed #fffae6;
   border-radius: 80px;
+  transition: border 1s;
 }
+
 #menu::before {
   content: "";
   position: absolute;
@@ -516,18 +671,36 @@ nav .gnb {
   width: 270px;
   height: 50px;
 }
-#menu h2 {
+#menu .sectionTitle {
+  position: relative;
+  z-index: 3;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-bottom: 30px;
+  width: 190px;
+  margin: 0px auto;
+  margin-top: 30px;
+}
+#menu .sectionTitle h2 {
   font-family: "YeogiOttaeJalnan";
   font-size: 48px;
-
-  position: relative;
+  width: 180px;
+  margin: 0px auto;
+  height: 60px;
+  line-height: 60px;
   text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
     3px 3px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
-  text-align: center;
-  padding: 30px 0px;
+  z-index: 0;
+}
+#menu .hiddenTitle {
+  opacity: 0;
   z-index: 2;
 }
+
 /*menu bg*/
 
 /*menu inner*/
@@ -681,13 +854,163 @@ nav .gnb {
   line-height: 50px;
   border-radius: 70px;
   background-color: #000;
-  border: 1px solid #000;
   text-align: center;
   z-index: 3;
+  position: relative;
+  overflow: hidden;
 }
 #menu .inner .more a {
   display: block;
   border-radius: 70px;
+  position: relative;
+  z-index: 3;
+}
+#menu .inner .more .btnFill {
+  z-index: 2;
+  position: absolute;
+  background-color: #f44f55;
+  width: 180px;
+  height: 50px;
+  margin-left: -180px;
+}
+/*modal*/
+.modalBox1 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.modalBox2 {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  left: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+.modalBox1.on {
+  display: flex;
+}
+.modalBox2.on {
+  display: flex;
+}
+
+.modal {
+  font-family: "Noto Sans", sans-serif;
+  border-radius: 20px;
+  width: 400px;
+  height: 600px;
+  background-color: white;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative; /* z-index가 작동하도록 보장 */
+  z-index: 60;
+}
+#btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border: none;
+  font-size: 15px;
+
+  background: #fff;
+  border-radius: 50px;
+  color: #999;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  cursor: pointer;
+  z-index: 100; /* 이미지보다 위 */
+}
+#btn2 {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  border: none;
+  font-size: 15px;
+  background: #fff;
+  border-radius: 50px;
+  color: #999;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  padding: 8px 8px;
+  cursor: pointer;
+  z-index: 100; /* 이미지보다 위 */
+}
+.modalBox1 .modalImg p {
+  font-size: 11px;
+  line-height: 15px;
+}
+.modalBox1 .modalImg h5 {
+  font-size: 13px;
+}
+.modalImg {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  color: gray;
+}
+.modalImg h2 {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: #555;
+  margin-top: 10px;
+}
+.modalImg h6 {
+  color: gray;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.modalImg h4 {
+  color: #555;
+  font-size: 18px;
+  margin-top: 30px;
+  text-align: center;
+  word-break: keep-all;
+}
+.modalImg h5 {
+  margin-top: auto;
+  font-size: 15px;
+}
+.modalImg p {
+  font-size: 14px;
+  margin-top: 10px;
+  line-height: 22px;
+}
+.modalImg li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  left: 0;
+  top: 0;
+  /* Flex 컨테이너로 설정 */
+  flex-direction: column; /* 내용을 세로로 정렬 */
+  justify-content: flex-start; /* 내용을 상단부터 배치 */
+}
+.modalImg li span {
+  font-size: 12px;
+}
+.modalImg li.on {
+  display: flex;
+}
+
+.modal img {
+  width: 60%;
+  display: block;
+  margin: 0px auto;
 }
 
 /*event*/
@@ -695,7 +1018,6 @@ nav .gnb {
   width: 100%;
   height: 100vh;
   background-color: #f44f55;
-  position: sticky;
   overflow: hidden;
 }
 #event .inner {

@@ -19,6 +19,12 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <script src="js/main/jquery-3.7.1.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"
@@ -29,7 +35,6 @@
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"
       integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg=="
-      99999
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
@@ -37,21 +42,86 @@
   <body>
     <header>
       <h1>
+        <a class="logo_or" href="index.html"
+          ><img src="img/main/logo.png" alt=""
+        /></a>
+        <a class="logo_pk" href="index.html"
+          ><img src="img/main/logo_pk.png" alt=""
+        /></a>
         <a class="logo_bk" href="index.html"
           ><img src="img/main/logo_bk.png" alt=""
         /></a>
-        <a class="logo_or" href="index.html"><img src="img/main/logo.png" /></a>
       </h1>
-      <nav>
+      <nav id="basic">
         <ul class="gnb">
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="menu.html">MENU</a></li>
-          <li><a href="event.html">EVENT</a></li>
           <li><a href="store.html">STORE</a></li>
+          <li><a href="event.html">EVENT</a></li>
+
           <li>MORE</li>
         </ul>
       </nav>
-      <div class="moreMenu"></div>
+      <div class="moreMenu">
+        <h1>
+          <a href="index.html"><img src="img/main/logo.png" /></a>
+        </h1>
+        <nav>
+          <ul class="gnb">
+            <li>
+              <div class="title">
+                ABOUT<a href="about.html"
+                  ><i class="arr fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <ul class="about sub">
+                <li><a href="about.html#container">-HISTORY</a></li>
+                <li><a href="about.html#brand">-BRAND</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="title">
+                MENU<a href="menu.html"
+                  ><i class="arr fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <ul class="menu sub">
+                <li><a href="menu.html#best">-BEST</a></li>
+                <li><a href="menu.html#donut">-DONUT</a></li>
+                <li><a href="menu.html#beverage">-BEVERAGE</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="title">
+                STORE<a href="store.html"
+                  ><i class="arr fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <ul class="store sub">
+                <li><a href="store.html#store">-STORE</a></li>
+                <li>
+                  <a href="https://brand.naver.com/oldferrydonut"
+                    >-ONLINE SHOP</a
+                  >
+                </li>
+                <li><a href="store.html#catering01">-CATERING</a></li>
+              </ul>
+            </li>
+            <li>
+              <div class="title">
+                EVENT<a href="event.html"
+                  ><i class="arr fa-solid fa-up-right-from-square"></i
+                ></a>
+              </div>
+              <ul class="event sub">
+                <li><a href="event.html#event-section">-EVENT</a></li>
+                <li><a href="event.html#popup-section">-POP-UP</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <button class="close"><i class="fa-solid fa-xmark"></i></button>
+      </div>
     </header>
     <div id="visual">
       <div class="bg">
@@ -64,6 +134,12 @@
           <li><img src="img/main/visual_sticker_5.png" alt="" /></li>
           <li><img src="img/main/visual_sticker_6.png" alt="" /></li>
         </ul>
+      </div>
+
+      <div class="videoBox">
+        <div class="videoWrap">
+          <video src="img/main/video.mp4" autoplay muted loop></video>
+        </div>
       </div>
       <div class="visualLoop loop">
         <ul class="loopText">
@@ -79,7 +155,9 @@
         </ul>
       </div>
     </div>
+
     <main>
+      <section id="aboutTop"></section>
       <section id="about">
         <div class="inner">
           <div class="textBox">
@@ -108,142 +186,488 @@
               <li><img src="img/main/about7.png" alt="매장" /></li>
             </ul>
             <div class="more">
-              <a href="about.html"><img src="img/main/about_more.png" /></a>
+              <a href="about.html"
+                ><img src="img/main/about_more.png" alt=""
+              /></a>
             </div>
           </div>
         </div>
       </section>
-      <section id="menu">
-        <h2>MENU</h2>
-        <div class="inner">
-          <div class="donuts">
-            <div class="title">
-              <span class="leftLine"></span>
-              <h3>OLD FERRY DONUT</h3>
-              <span class="rightLine"></span>
-            </div>
-            <div class="wrap">
-              <div class="menuWrap">
-                <ul class="menuList">
-                  <li>
-                    <img src="img/main/donutMenu_1.png" />
-                    <h4>크런치 스트로베리</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/donutMenu_2.png" />
-                    <h4>스프링클</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/donutMenu_3.png" />
-                    <h4>보스턴 크림</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/donutMenu_4.png" />
-                    <h4>버터 피스타치오</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/donutMenu_5.png" />
-                    <h4>피넛 버터</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/donutMenu_6.png" />
-                    <h4>크림브륄레</h4>
-                  </li>
-                </ul>
-                <ul class="chev">
-                  <li class="leftChev">
-                    <i class="fa-solid fa-chevron-left"></i>
-                  </li>
-                  <li class="rightChev">
-                    <i class="fa-solid fa-chevron-right"></i>
-                  </li>
-                </ul>
+      <div id="sectionWrap">
+        <section id="menu">
+          <div class="sectionTitle">
+            <h2 class="basicTitle"><a href="menu.html">MENU</a></h2>
+            <h2 class="hiddenTitle"><a href="menu.html">MENU</a></h2>
+          </div>
+          <div class="inner">
+            <div class="donuts">
+              <div class="title">
+                <span class="leftLine"></span>
+                <h3>OLD FERRY DONUT</h3>
+                <span class="rightLine"></span>
               </div>
-              <div class="more"><a href="menu.html#donut">MORE</a></div>
+              <div class="wrap">
+                <div class="menuWrap">
+                  <ul class="menuList">
+                    <li>
+                      <img src="img/main/donutMenu_1.png" alt="" />
+                      <h4>크런치 스트로베리</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/donutMenu_2.png" alt="" />
+                      <h4>스프링클</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/donutMenu_3.png" alt="" />
+                      <h4>보스턴 크림</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/donutMenu_4.png" alt="" />
+                      <h4>버터 피스타치오</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/donutMenu_5.png" alt="" />
+                      <h4>피넛 버터</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/donutMenu_6.png" alt="" />
+                      <h4>크림브륄레</h4>
+                    </li>
+                  </ul>
+                  <ul class="chev">
+                    <li class="leftChev">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <li class="rightChev">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                  </ul>
+                </div>
+                <div class="more">
+                  <div class="btnFill"></div>
+                  <a href="menu.html#donut">MORE</a>
+                </div>
+              </div>
+            </div>
+            <div class="beverage">
+              <div class="title">
+                <span class="leftLine"></span>
+                <h3>OLD FERRY BEVERAGE</h3>
+                <span class="rightLine"></span>
+              </div>
+              <div class="wrap">
+                <div class="menuWrap">
+                  <ul class="menuList">
+                    <li>
+                      <img src="img/main/bev1.png" alt="" />
+                      <h4>아이스 아메리카노</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/bev2.png" alt="" />
+                      <h4>아이스 말차라떼</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/bev3.png" alt="" />
+                      <h4>카페라떼</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/bev4.png" alt="" />
+                      <h4>버터 피스타치오</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/bev5.png" alt="" />
+                      <h4>피넛 버터</h4>
+                    </li>
+                    <li>
+                      <img src="img/main/bev6.png" alt="" />
+                      <h4>크림브륄레</h4>
+                    </li>
+                  </ul>
+                  <ul class="chev">
+                    <li class="leftChev">
+                      <i class="fa-solid fa-chevron-left"></i>
+                    </li>
+                    <li class="rightChev">
+                      <i class="fa-solid fa-chevron-right"></i>
+                    </li>
+                  </ul>
+                </div>
+                <div class="more"><a href="menu.html#beverage">MORE</a></div>
+              </div>
             </div>
           </div>
-          <div class="beverage">
-            <div class="title">
-              <span class="leftLine"></span>
-              <h3>OLD FERRY BEVERAGE</h3>
-              <span class="rightLine"></span>
-            </div>
-            <div class="wrap">
-              <div class="menuWrap">
-                <ul class="menuList">
-                  <li>
-                    <img src="img/main/bev1.png" />
-                    <h4>아이스 아메리카노</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/bev2.png" />
-                    <h4>아이스 말차라떼</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/bev3.png" />
-                    <h4>카페라떼</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/bev4.png" />
-                    <h4>버터 피스타치오</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/bev5.png" />
-                    <h4>피넛 버터</h4>
-                  </li>
-                  <li>
-                    <img src="img/main/bev6.png" />
-                    <h4>크림브륄레</h4>
-                  </li>
-                </ul>
-                <ul class="chev">
-                  <li class="leftChev">
-                    <i class="fa-solid fa-chevron-left"></i>
-                  </li>
-                  <li class="rightChev">
-                    <i class="fa-solid fa-chevron-right"></i>
-                  </li>
-                </ul>
-              </div>
-              <div class="more"><a href="menu.html#beverage">MORE</a></div>
+          <div class="modalBox1">
+            <div class="modal">
+              <button id="btn"><i class="fa-solid fa-xmark"></i></button>
+              <ul class="modalImg">
+                <li>
+                  <h2>코코넛도넛</h2>
+                  <h6>COCONUT</h6>
+                  <img src="img/menu_img/1코코넛도넛.png" alt="" />
+                  <h4>
+                    코코넛 과육과 코코넛 크림이 들어가 은은하게 달콤한 도넛
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    가공유크림(영국산)[유크림(우유),카라기난],
+                    기타가공품[정제수,밀가루(미국,캐나다산),설탕,정제소금(국산)],
+                    과채가공품[천연코코넛 과육, 덱스트린(태국산)],
+                    건조코코넛슬라이스(필리핀산), 코코넛오일(스리랑카산)
+                  </p>
+                </li>
+                <li>
+                  <h2>보스턴크림도넛</h2>
+                  <h6>BOSTON CREAM</h6>
+                  <img src="img/menu_img/2보스턴크림도넛.png" alt="" />
+                  <h4>
+                    초콜릿 글레이즈에 커스터드 크림이 들어간 클래식 도넛의
+                    대명사
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    기타가공품[카놀라유(외국산),유청분말(외국산:미국,체코,라트비아등),전분(외국산:러시아,헝가리,세르비아등),난백액(국산),탈지분유],
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    준초콜릿(프랑스산)[설탕, 식물성유지, 코코아분말, 유당,
+                    레시틴, 합성착향료]
+                  </p>
+                </li>
+                <li>
+                  <h2>우유크림</h2>
+                  <h6>MILK CREAM</h6>
+                  <img src="img/menu_img/3우유크림.png" alt="" />
+                  <h4>우유의 고소함을 가득 품은 담백한 도넛</h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    가공유크림(영국산)[유크림(우유),카라기난],
+                    당류가공품[버터(북아일랜드산),전지분유(국산),변성전분,정제소금(국산),합성향료(밀크향)],
+                    기타가공품[정제수,밀가루(미국,캐나다산),설탕,정제소금(국산)],
+                    버터(뉴질랜드산)
+                  </p>
+                </li>
+                <li>
+                  <h2>버터피스타치오</h2>
+                  <h6>BUTTER PISTACHIO</h6>
+                  <img src="img/menu_img/4버터피스타치오.png" alt="" />
+                  <h4>피스타치오 크림이 가득 찬 버터스카치 글레이즈 도넛</h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    가공유크림(영국산)[유크림(우유),카라기난], 버터(뉴질랜드산),
+                    피스타치오분태(미국산), 피스타치오페이스트(이탈리아산)
+                  </p>
+                </li>
+                <li>
+                  <h2>메이플피칸</h2>
+                  <h6>MAPLE PECAN</h6>
+                  <img src="img/menu_img/5메이플피칸.png" alt="" />
+                  <h4>
+                    풍미 가득한 마스카포네 크림과 달콤한 메이플 글레이즈 위에
+                    바삭한 쿠키크럼블과 피칸이 듬뿍 올라간 도넛
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    가공유크림(영국산)[유크림(우유),카라기난],
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    자연치즈(이탈리아산)[유크림(우유),젖산], 피칸견과(미국산),
+                    단풍당시럽(캐나다산)
+                  </p>
+                </li>
+                <li>
+                  <h2>버터넛</h2>
+                  <h6>BUTTERNUT</h6>
+                  <img src="img/menu_img/6크림소보루.png" alt="" />
+                  <h4>
+                    버터스카치의 풍미에 글레이즈만으로 빵의 조화를 살린
+                    논필링도넛
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    버터(뉴질랜드산), 우유(국산)
+                  </p>
+                </li>
+                <li>
+                  <h2>라즈베리</h2>
+                  <h6>RASPBERRYM</h6>
+                  <img src="img/menu_img/7라즈베리.png" alt="" />
+                  <h4>새콤한 맛의 톡톡 씹히는 라즈베리잼이 들어간 도넛</h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    기타잼[라즈베리(칠레산),라즈베리농축액(대만산),라즈베리농축퓨레(독일산),구연산,아미드펙틴],곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    기타가공품[정제수,밀가루(미국,캐나다산),설탕,정제소금(국산)]
+                  </p>
+                </li>
+                <li>
+                  <h2>티라미수</h2>
+                  <h6>TIRAMISU</h6>
+                  <img src="img/menu_img/8티라미수.png" alt="" />
+                  <h4>
+                    진한 에스프레소 글레이즈와 부드러운 마스카포네 필링이
+                    어우러진 티라미수 풍미가 가득한 도넛
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    곡류가공품[밀가루(밀:미국,캐나다산),백설탕,탈지분유(미국산),난황분(미국산),혼합제제{밀가루,탄산칼슘,혼합제제1(유화제,탄산칼슘),혼합제제2(밀가루,비타민C,α-아밀라아제,자일라나아제)}],
+                    가공유크림(영국산)[유크림(우유),카라기난],
+                    자연치즈(이탈리아산)[유크림(우유),젖산]
+                  </p>
+                </li>
+              </ul>
             </div>
           </div>
+          <div class="modalBox2">
+            <div class="modal">
+              <button id="btn2"><i class="fa-solid fa-xmark"></i></button>
+              <ul class="modalImg">
+                <li>
+                  <h2>과일담은 살구복숭아주스</h2>
+                  <h6>BLENDED APRICOT PEACH JUICE</h6>
+                  <img
+                    src="img/menu_img/01과일담은 살구복숭아주스.png"
+                    alt=""
+                  />
+                  <h4>
+                    살구의 산뜻함과 복숭아의 부드러운 단맛이 입안을 촉촉하게
+                    감싸는 은은한 과일 향을 담은 주스
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    과채가공품[살구(중국산),살구베이스{살구퓨레(터키산),복숭아농축액(이스라엘산)},복숭아(중국산)]
+                  </p>
+                </li>
+                <li>
+                  <h2>마롱크림라떼</h2>
+                  <h6>MARRON CREAM OAT LATTE</h6>
+                  <img src="img/menu_img/02마롱크림라떼.png" alt="" />
+                  <h4>
+                    달콤한 공주밤 베이스와 부드러운 밤 크림을 더한 가을 한정
+                    라떼
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    혼합음료(인도네시아산), 커피[커피원두추출액(원두:과테말라산,
+                    브라질산, 에티오피아산, 케냐산)], 가공유크림(독일산),
+                    리얼공주밤베이스[밤페이스트{당침밤(밤:국산/공주산)}]
+                  </p>
+                </li>
+                <li>
+                  <h2>치즈폼라떼</h2>
+                  <h6>CHEESE FOAM LATTE</h6>
+                  <img src="img/menu_img/03치즈폼라떼.png" alt="" />
+                  <h4>
+                    라떼 위에 부드러운 치즈크림을 올려 완성한 고소하고
+                    달콤짭짤한 크림감이 더해진 특별한 커피
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    우유(원유:국산), 커피(커피원두 : 브라질산45%, 에티오피아산
+                    35%, 인도네시아산 20%), 가공유크림(독일산),
+                    끼리소프트크림치즈(폴란드산)
+                  </p>
+                </li>
+                <li>
+                  <h2>제주말차유자에이드</h2>
+                  <h6>JEJU MATCHA YUZA ADE</h6>
+                  <img src="img/menu_img/04제주말차유자에이드.png" alt="" />
+                  <h4>
+                    진한 제주 말차샷에 상큼한 유자가 어우러진 스파클링 에이드
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    음료베이스[유자과즙(국산)],
+                    고형차[유기농말차(국내산:제주산)]
+                  </p>
+                </li>
+                <li>
+                  <h2>설향딸기라떼</h2>
+                  <h6>SEOLHYANG STRAWBERRY LATTE</h6>
+                  <img src="img/menu_img/05설향딸기라떼.png" alt="" />
+                  <h4>
+                    달콤한 설향 딸기 과육과 부드러운 우유가 어우러진 딸기 라떼
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    우유(원유:국산), 과채가공품[딸기(국산),석류농축액(터키산)]
+                  </p>
+                </li>
+                <li>
+                  <h2>타로클라우드</h2>
+                  <h6>TARO CLOUD</h6>
+                  <img src="img/menu_img/06타로클라우드.png" alt="" />
+                  <h4>
+                    달콤한 브륄레 크림과 고소한 타로가 부드럽게 어우러진 크림
+                    프라페
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    우유(원유:국산), 가공유크림(독일산), 마스카포네(이탈리아산)
+                  </p>
+                </li>
+                <li>
+                  <h2>아이스카페라떼</h2>
+                  <h6>CAFÉ LATTE</h6>
+                  <img src="img/menu_img/07아이스카페라떼.png" alt="" />
+                  <h4>
+                    진한 에스프레소와 부드러운 우유가 어우러진 고소한 라떼
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    우유(원유:국산), 커피(커피원두 : 브라질산70%, 콜롬비아산30%)
+                  </p>
+                </li>
+                <li>
+                  <h2>제로슈가아샷추</h2>
+                  <h6>ZERO SUGAR PEACH ICED TEA WITH ESPRESSO</h6>
+                  <img src="img/menu_img/08제로슈가아샷추.png" alt="" />
+                  <h4>
+                    상큼달콤한 제로슈가 복숭아 아이스티에 풍미 깊은 노티드
+                    에스프레소를 더한 음료<br /><span
+                      >*과다 섭취 시 복통 및 설사를 유발할 수 있으니 주의
+                      부탁드립니다.</span
+                    >
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    고형차[홍차추출분말(독일산),복숭아과즙분말{복숭아과즙농축액(복숭아:국산)}],
+                    커피(커피원두:브라질산, 에피오피아산)
+                  </p>
+                </li>
+                <li>
+                  <h2>아이스얼그레이밀크티</h2>
+                  <h6>EARL GREY MILK TEA</h6>
+                  <img src="img/menu_img/09아이스얼그레이밀크티.png" alt="" />
+                  <h4>
+                    향긋한 얼그레이 홍차와 부드러운 우유가 만나 풍성하게 퍼지는
+                    아이스 얼그레이 밀크티
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>우유(원유:국산), 액상차(얼 그레이 추출물:스리랑카산)</p>
+                </li>
+                <li>
+                  <h2>밀크클라우드</h2>
+                  <h6>MILK CLOUD</h6>
+                  <img src="img/menu_img/10밀크클라우드.png" alt="" />
+                  <h4>
+                    달콤한 브륄레 크림과 밀크쉐이크가 조화로운 크림 프라페
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    우유(원유:국산), 가공유크림(독일산),
+                    연유[원유(국산),유당(미국산)]
+                  </p>
+                </li>
+                <li>
+                  <h2>페퍼민트</h2>
+                  <h6>PEPPERMINT</h6>
+                  <img src="img/menu_img/11페퍼민트.png" alt="" />
+                  <h4>
+                    멘톨의 시원하고 상쾌한 향이 입 안을 개운하게 해주는 허브 티
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>페퍼민트(독일산)</p>
+                </li>
+                <li>
+                  <h2>치즈폼아메리카노</h2>
+                  <h6>CHEESE FOAM AMERICANO</h6>
+                  <img src="img/menu_img/12치즈폼아메리카노.png" alt="" />
+                  <h4>
+                    아메리카노 위에 부드러운 치즈크림을 얹어 치즈의 짭짤한
+                    풍미와 커피의 쌉쌀한 여운이 어우러지는 매력적인 커피
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    커피(커피원두 : 브라질산45%, 에티오피아산 35%, 인도네시아산
+                    20%), 가공유크림(독일산), 끼리소프트크림치즈(폴란드산)
+                  </p>
+                </li>
+                <li>
+                  <h2>애플캐모마일티</h2>
+                  <h6>APPLE CHAMOMILE TEA</h6>
+                  <img src="img/menu_img/13애플캐모마일티.png" alt="" />
+                  <h4>
+                    사과의 산뜻함과 캐모마일의 여운이 어우러진 리프레싱 티
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    음료베이스[청사과농축액(칠레산),캐모마일추출액{캐모마일(크로아티아산)}],
+                    침출차(캐모마일:크로아티아산)
+                  </p>
+                </li>
+                <li>
+                  <h2>아이스아메리카노</h2>
+                  <h6>AMERICANO</h6>
+                  <img src="img/menu_img/14아이스아메리카노.png" alt="" />
+                  <h4>
+                    달콤한 도넛과 잘 어울리는 노티드만의 풍부하고 고소한 맛과
+                    향을 담은 커피
+                  </h4>
+                  <h5>원산지 정보</h5>
+                  <p>커피(커피원두 : 브라질산70%, 콜롬비아산30%)</p>
+                </li>
+                <li>
+                  <h2>초콜릿라떼</h2>
+                  <h6>CHOCOLATE LATTE</h6>
+                  <img src="img/menu_img/15초콜릿라떼.png" alt="" />
+                  <h4>깊고 진한 초콜릿의 달콤함을 느낄 수 있는 초콜릿 라떼</h4>
+                  <h5>원산지 정보</h5>
+                  <p>우유(원유:국산), 기타코코아가공품(뉴질랜드산)</p>
+                </li>
+                <li>
+                  <h2>레몬에이드</h2>
+                  <h6>LEMONADE</h6>
+                  <img src="img/menu_img/16레몬에이드.png" alt="" />
+                  <h4>생 레몬을 담아 시원하고 청량한 스파클링 에이드</h4>
+                  <h5>원산지 정보</h5>
+                  <p>
+                    음료베이스[레몬펄프셀(아르헨티나산),
+                    레몬과즙농축액(이스라엘산), 레몬농축액(스페인산)],
+                    레몬(외국산:칠레, 미국, 호주산)
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="loopArea">
+          <div class="eventLoop loop">
+            <ul class="loopText">
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+              <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
+            </ul>
+          </div>
         </div>
-      </section>
-      <div class="loopArea">
-        <div class="eventLoop loop">
-          <ul class="loopText">
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-            <li>DONUT WORRY<img src="img/main/star.png" alt="" />BE HAPPY</li>
-          </ul>
-        </div>
+        <section id="event">
+          <div class="inner">
+            <div class="event1">
+              <img src="img/main/event1.jpg" alt="" /><img
+                src="img/main/event1.jpg"
+                alt=""
+              /><img src="img/main/event1.jpg" alt="" />
+            </div>
+            <div class="event2">
+              <img src="img/main/event2.jpg" alt="" /><img
+                src="img/main/event2.jpg"
+                alt=""
+              /><img src="img/main/event2.jpg" alt="" />
+            </div>
+            <div class="event3">
+              <img src="img/main/event3.jpg" alt="" /><img
+                src="img/main/event3.jpg"
+                alt=""
+              /><img src="img/main/event3.jpg" alt="" />
+            </div>
+          </div>
+        </section>
       </div>
-      <section id="event">
-        <div class="inner">
-          <div class="event1">
-            <img src="img/main/event1.jpg" /><img
-              src="img/main/event1.jpg"
-            /><img src="img/main/event1.jpg" />
-          </div>
-          <div class="event2">
-            <img src="img/main/event2.jpg" /><img
-              src="img/main/event2.jpg"
-            /><img src="img/main/event2.jpg" />
-          </div>
-          <div class="event3">
-            <img src="img/main/event3.jpg" /><img
-              src="img/main/event3.jpg"
-            /><img src="img/main/event3.jpg" />
-          </div>
-        </div>
-      </section>
     </main>
     <footer></footer>
     <script src="js/main/custom.js"></script>
