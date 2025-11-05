@@ -33,6 +33,7 @@ ul {
 }
 
 /*visual*/
+/* visual */
 #visual {
   position: relative;
   width: 100%;
@@ -42,7 +43,6 @@ ul {
 }
 
 #visual::after {
-  /* 전체 어둡게 덮는 반투명 레이어 */
   content: "";
   position: absolute;
   inset: 0;
@@ -54,8 +54,8 @@ ul {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 90%;
-  max-width: 1400px;
+  width: 100%;
+  max-width: none;
   transform: translate(-50%, -50%);
   opacity: 0;
   z-index: 5;
@@ -63,62 +63,69 @@ ul {
 
 #visual .poster img {
   width: 100%;
+  height: 100%;
   height: auto;
+  object-fit: cover;
+  object-position: center top;
   display: block;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 6px;
 }
 
-/* 등장 애니메이션 */
-@keyframes slideLeft {
+/* 🎞️ 애니메이션 정의 */
+@keyframes slideFromLeft {
   0% {
-    transform: translate(-150%, -50%) rotate(-3deg);
+    transform: translate(-150%, -50%) rotate(-5deg);
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) rotate(-3deg);
+    transform: translate(-50%, -50%) rotate(-5deg);
     opacity: 1;
   }
 }
 
-@keyframes slideRight {
+@keyframes slideFromRight {
   0% {
-    transform: translate(50%, -50%) rotate(3deg);
+    transform: translate(150%, -50%) rotate(5deg);
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) rotate(3deg);
+    transform: translate(-50%, -50%) rotate(5deg);
     opacity: 1;
   }
 }
 
-@keyframes slideLeft2 {
+@keyframes slideFromLeft2 {
   0% {
-    transform: translate(-120%, -50%) rotate(0deg);
+    transform: translate(-120%, -50%) rotate(-10deg);
     opacity: 0;
   }
   100% {
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(-10deg);
     opacity: 1;
   }
 }
 
-/* 순차 등장 */
+/* 🩵 순서: 왼쪽 → 오른쪽 → 왼쪽 */
 .p1 {
-  animation: slideLeft 1.2s ease forwards;
-  animation-delay: 0.2s;
+  animation: slideFromLeft 1.2s ease forwards;
+  animation-delay: 0.9s;
   z-index: 3;
+  height: 590px; /* 살짝 낮게 */
+  top: 45%;
 }
 
 .p2 {
-  animation: slideRight 1.2s ease forwards;
-  animation-delay: 0.7s;
+  height: 200px; /* 좀 더 크게 */
+  top: 50%; /* 가운데 위치 */
+  animation: slideFromRight 1.2s ease forwards;
+  animation-delay: 0.5s;
   z-index: 2;
 }
 
 .p3 {
-  animation: slideLeft2 1.2s ease forwards;
-  animation-delay: 1.2s;
+  height: 50px; /* 좀 더 낮게 */
+  top: 55%; /* 아래쪽으로 살짝 */
+  animation: slideFromLeft2 1.2s ease forwards;
+  animation-delay: 0.2s;
   z-index: 1;
 }
 
@@ -127,19 +134,25 @@ ul {
   background-color: #fadce6;
   background-image: repeating-linear-gradient(
       to right,
-      #999 0,
-      #999 1px,
+      rgba(153, 153, 153, 1) 0,
+      rgba(153, 153, 153, 1) 1px,
       transparent 1px,
       transparent 100px
     ),
     repeating-linear-gradient(
       to bottom,
-      #999 0,
-      #999 1px,
+      rgba(153, 153, 153, 1) 0,
+      rgba(153, 153, 153, 1) 1px,
       transparent 1px,
       transparent 100px
     );
   position: relative;
+  background-attachment: scroll;
+}
+#event-section {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
 }
 /*button*/
 .button {
@@ -193,12 +206,14 @@ ul {
   padding-top: 300px;
   padding-bottom: 200px;
   position: relative;
+  z-index: 5;
 }
 #event-section .event-gallery .event-list {
+  width: 1400px;
   display: flex;
   flex-wrap: wrap; /* 줄바꿈 허용 */
-  justify-content: center;
-  gap: 80px; /* 아이템 간 간격 */
+  justify-content: space-between;
+  row-gap: 60px; /* 아이템 간 간격 */
   padding-bottom: 60px;
   max-width: 1900px;
   margin: 0 auto;
@@ -212,6 +227,7 @@ ul {
   background-color: #fff;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  width: calc((1400px - (80px * 2)) / 3);
 }
 
 /* hover 시 입체감 + 그림자 강화 */
@@ -224,9 +240,9 @@ ul {
 #event-section .event-gallery .event-list li div {
   position: relative;
   width: 100%;
-  max-width: 500px;
   aspect-ratio: 5/7;
   overflow: hidden;
+  max-width: none;
 }
 
 /* 이미지 */
@@ -376,22 +392,29 @@ ul {
 }
 
 /* 공통 배경 스타일 */
+#event-section .bg-images {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
 .bg-item {
   position: absolute;
-  z-index: -1;
-  pointer-events: none; /* 클릭 방해 방지 */
 }
-
-.bg-item img {
-  display: block;
-  width: 100%;
+.bg-itemes img {
+  position: absolute;
+  z-index: 1;
   height: auto;
 }
 
 /* 각 위치별 개별 설정 */
 .bg1 {
   top: 50px;
-  left: 600px;
+  left: 200px;
 }
 
 .bg2 {
@@ -400,19 +423,18 @@ ul {
 }
 
 .bg3 {
-  top: 700px;
-  right: 10px;
+  top: 500px;
+  right: 100px;
 }
 
 .bg4 {
-  bottom: 700px;
+  bottom: -100px;
   left: 0;
 }
 
 .bg5 {
-  top: 1100px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 1000px;
+  left: 50px;
 }
 
 /*popup-section*/
@@ -425,9 +447,9 @@ ul {
   z-index: 50;
 }
 #popup-section .popup-list {
+  width: 1400px;
   padding: 150px 0px 100px 0px;
   margin: 0px auto;
-  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 40px;
