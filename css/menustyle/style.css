@@ -166,15 +166,15 @@ a {
     top: 350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
@@ -184,29 +184,29 @@ a {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   .button li:hover a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
 
   /*section best */
@@ -333,39 +333,40 @@ a {
     top: 1350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button2 li {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button2 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   /* section donut */
   .donut {
@@ -562,40 +563,41 @@ a {
     top: 2400px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button3 li {
+    letter-spacing: 1px;
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button3 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
   }
   .beverage {
     padding-top: 150px;
@@ -843,20 +845,21 @@ a {
   }
 
   /*best버튼*/
+
   .button {
     position: absolute;
     top: 350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 80%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
@@ -866,29 +869,29 @@ a {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   .button li:hover a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
 
   /*section best */
@@ -1015,39 +1018,40 @@ a {
     top: 1350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button2 li {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button2 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   /* section donut */
   .donut {
@@ -1244,40 +1248,41 @@ a {
     top: 2400px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button3 li {
+    letter-spacing: 1px;
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button3 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
   }
   .beverage {
     padding-top: 150px;
@@ -1550,15 +1555,15 @@ a {
     top: 350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
@@ -1568,36 +1573,36 @@ a {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   .button li:hover a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
 
   /*section best */
   .best {
     width: 100%;
     background-color: #fff8e2;
-    height: 1000px;
+
     position: relative;
     margin: 0;
 
@@ -1622,12 +1627,9 @@ a {
   }
   .best .best_wrap ul {
     margin: 0px auto;
-    width: 98%;
+    width: 100%;
     box-sizing: border-box;
     padding-top: 200px;
-    box-sizing: border-box;
-    display: flex;
-    gap: 20px;
   }
 
   .best li:hover {
@@ -1635,9 +1637,10 @@ a {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
   }
   .best ul li {
+    margin: 0px auto;
     background: #fff;
-    width: calc(100% / 3);
-    border-radius: 10px;
+    width: 60%;
+
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
@@ -1717,39 +1720,40 @@ a {
     top: 1350px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button2 li {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
+    letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button2 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   /* section donut */
   .donut {
@@ -1946,40 +1950,41 @@ a {
     top: 2400px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
-    height: 100px;
-    background-color: #e5e0cc;
+    width: 50%;
+    height: 85px;
+    background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
-    gap: 30px;
+    gap: 20px;
     justify-content: center;
     align-items: center;
-    box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
     padding: 0px 15px;
     box-sizing: border-box;
     z-index: 1;
-    border: 3px solid #9d9c97;
+    border: 1px solid #d1cbb9;
   }
 
   .button3 li {
+    letter-spacing: 1px;
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 80px;
+    height: 65px;
     border-radius: 50px;
-    font-size: 30px;
+    font-size: 21px;
     font-weight: bolder;
-    line-height: 80px;
-    font-family: "Special Gothic", sans-serif;
+    line-height: 65px;
+    font-family: "YeogiOttaeJalnan";
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
 
   .button3 li.on a {
     display: block;
-    background-color: #c5c0a9;
+    background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
     box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-    font-family: "Special Gothic", sans-serif;
   }
   .beverage {
     padding-top: 150px;
