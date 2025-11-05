@@ -78,13 +78,18 @@ header {
   justify-content: center;
   align-items: center;
   z-index: 1001;
+  max-width: 160px;
+  width: 10rem;
 }
 header h1 {
   position: absolute;
   top: 50px;
-  left: 0px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
-  width: 160px;
+  max-width: 100%;
+  min-width: 120px;
+  width: 8vw;
   height: 100px;
 }
 header h1 a {
@@ -123,19 +128,25 @@ header h1 img {
   width: 100%;
   display: block;
 }
-
+nav {
+  width: 100%;
+}
 /*gnb*/
 #basic .gnb {
+  max-width: 100%;
+  width: 8vw;
+  min-width: 100px;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  font-size: 24px;
+  gap: clamp(20px, 2.5vw, 50px);
+  font-size: clamp(16px, 1.5vw, 24px);
   font-family: "YeogiOttaeJalnan";
   text-align: center;
   align-items: center;
+  margin: 0px auto;
 }
 #basic .gnb li {
-  width: 142px;
+  width: 100%;
   height: 56px;
   line-height: 56px;
   border: 1px solid #333;
@@ -162,9 +173,9 @@ header h1 img {
   transform: rotate(8deg);
 }
 #basic .gnb li:nth-child(5) {
-  width: 104px;
-  height: 104px;
-  line-height: 104px;
+  width: clamp(60px, 8vw, 104px);
+  height: clamp(60px, 8vw, 104px);
+  line-height: clamp(60px, 8vw, 104px);
   cursor: pointer;
 }
 #basic .gnb li a {
@@ -504,20 +515,21 @@ header h1 img {
 #about .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   box-sizing: border-box;
   max-width: 1200px;
   width: 100%;
   margin: 0px auto;
+  justify-content: center;
   height: 100%;
   padding: 150px 0px;
+  gap: 80px;
 }
 #about .textBox {
   color: #fff;
   display: flex;
   flex-direction: column;
   gap: 38px;
-  width: 43%;
+  width: 390px;
   word-break: keep-all;
   box-sizing: border-box;
 }
