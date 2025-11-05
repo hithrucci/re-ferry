@@ -585,7 +585,6 @@ ul {
 
 .cater02-03 {
   position: relative;
-  text-align: center;
 }
 
 .cater02-03 .donut {
@@ -617,9 +616,10 @@ ul {
   transform: translateY(-5px) scale(1.1);
 }
 
+/* cater03 오더 */
 #cater03 {
   width: 100%;
-
+  height: 1075px;
   display: flex;
   justify-content: center;
 
@@ -629,12 +629,20 @@ ul {
   background-position: center bottom;
   background-size: cover;
 }
+.ct-order {
+  width: 1400px;
+  position: relative;
+}
 #cater03 h2 {
   color: #f44f55;
   font-size: 44px;
-  margin-top: 140px;
-  margin-left: 135px;
-  transform: translate(-300px, -70px);
+  position: relative;
+  z-index: 5;
+  margin-top: 250px;
+  margin-left: 450px;
+  top: -70px;
+  left: -300px;
+  transform: none;
 }
 /* 오더메뉴판 */
 .order {
@@ -642,9 +650,9 @@ ul {
   height: 727px;
   background-color: #edd6ab;
   border-radius: 35px;
-  margin-top: 155px;
-  margin-left: 160px;
-  transform: translate(200px, -70px);
+  position: absolute;
+  left: 800px;
+  top: 200px;
 }
 .order-line {
   position: relative;
@@ -696,4 +704,24 @@ ul {
   margin: 40px auto 0;
   display: block;
   cursor: pointer;
+}
+.bike {
+  width: 500px;
+  left: 70px;
+  top: 50px;
+}
+
+.cloud {
+  left: -360px;
+  top: -230px;
+  transform: translate(0, 0);
+  z-index: 1;
+  position: absolute;
+}
+.cater03-left {
+  position: relative;
+}
+.cater03-left img {
+  position: absolute;
+  z-index: 0;
 }

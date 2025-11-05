@@ -35,12 +35,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("load", () => {
     gsap.from(".visual .store", {
-      y: 150,
-      opacity: 0,
+      y: 100, // 아래에서 올라옴
+      rotation: 180, // 반 바퀴 회전
+      transformOrigin: "right bottom top", // 회전 중심
+      opacity: 0, // 처음엔 안 보임
       duration: 1.8,
-      ease: "power3.out",
+      ease: "back.out(1.7)", // 부드럽게 튀어나오는 듯한 모션
     });
 
+    // belt (띠)는 기존과 동일하게 옆에서 등장
     gsap.from(".visual .belt", {
       x: "100vw",
       opacity: 0,
@@ -441,4 +444,68 @@ document.querySelectorAll(".dn1").forEach((donut) => {
       ease: "power1.inOut",
     });
   });
+});
+
+// catering03 - 구름, 주문판, 오토바이
+
+gsap.registerPlugin(ScrollTrigger);
+
+const cater03Timeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#cater03",
+    start: "top 80%",
+    once: true,
+  },
+});
+
+cater03Timeline.from(
+  ".cloud",
+  {
+    x: 400,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.inut",
+  },
+  0
+);
+
+cater03Timeline.from(
+  ".order",
+  {
+    y: 80,
+    opacity: 0,
+    duration: 1.1,
+    ease: "back.out(1.6)",
+  },
+  0
+);
+
+cater03Timeline.from(
+  ".bike",
+  {
+    x: -500,
+    opacity: 0.9,
+    duration: 1.8,
+    ease: "power2.inOut",
+  },
+  0
+);
+
+gsap.to(".cloud", {
+  x: "+=10",
+  y: "+=5",
+  rotation: 1,
+  yoyo: true,
+  repeat: -1,
+  duration: 3,
+  ease: "sine.inOut",
+});
+
+gsap.to(".bike", {
+  y: "+=3",
+  rotation: 0.6,
+  yoyo: true,
+  repeat: -1,
+  duration: 1.5,
+  ease: "sine.inOut",
 });
