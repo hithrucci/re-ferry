@@ -1597,7 +1597,7 @@ a {
   .best {
     width: 100%;
     background-color: #fff8e2;
-    height: 1000px;
+
     position: relative;
     margin: 0;
 
@@ -1622,12 +1622,9 @@ a {
   }
   .best .best_wrap ul {
     margin: 0px auto;
-    width: 98%;
+    width: 100%;
     box-sizing: border-box;
     padding-top: 200px;
-    box-sizing: border-box;
-    display: flex;
-    gap: 20px;
   }
 
   .best li:hover {
@@ -1635,9 +1632,10 @@ a {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
   }
   .best ul li {
+    margin: 0px auto;
     background: #fff;
-    width: calc(100% / 3);
-    border-radius: 10px;
+    width: 60%;
+
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
