@@ -728,7 +728,7 @@ header h1 img {
 }
 #menu .inner .title h3 {
   font-family: "Lilita One", sans-serif;
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 400;
   color: #333;
 }
@@ -843,7 +843,7 @@ header h1 img {
   position: relative;
 }
 #menu .inner .more {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: bold;
   font-family: "PyeongchangPeace";
   color: #fff;
@@ -936,14 +936,13 @@ header h1 img {
   right: -10px;
   border: none;
   font-size: 15px;
-
   background: #fff;
   border-radius: 50px;
   color: #999;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   padding: 8px 8px;
   cursor: pointer;
-  z-index: 100; /* 이미지보다 위 */
+  z-index: 100;
 }
 #btn2 {
   position: absolute;
@@ -957,7 +956,7 @@ header h1 img {
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
   padding: 8px 8px;
   cursor: pointer;
-  z-index: 100; /* 이미지보다 위 */
+  z-index: 100;
 }
 .modalBox1 .modalImg p {
   font-size: 11px;
@@ -1009,9 +1008,8 @@ header h1 img {
   display: none;
   left: 0;
   top: 0;
-  /* Flex 컨테이너로 설정 */
-  flex-direction: column; /* 내용을 세로로 정렬 */
-  justify-content: flex-start; /* 내용을 상단부터 배치 */
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .modalImg li span {
   font-size: 12px;
@@ -1063,6 +1061,7 @@ header h1 img {
   display: flex;
   justify-content: center;
   transform: scale(0.7);
+  cursor: pointer;
 }
 #event .inner div img {
   width: 100%;

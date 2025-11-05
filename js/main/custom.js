@@ -311,19 +311,19 @@ gsap
     scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
   })
   .fromTo(
-    "#event .inner div:nth-child(3)",
+    "#event .event3",
     { rotation: "-12", x: 2000, y: -500 },
     { x: 900, y: -200, duration: 1 },
     0
   )
   .fromTo(
-    "#event .inner div:nth-child(2)",
+    "#event .event2",
     { rotation: "5", x: -2000, y: -500 },
     { x: 0, y: -200, duration: 1 },
     0.3
   )
   .fromTo(
-    "#event .inner div:nth-child(1)",
+    "#event .event1",
     { rotation: "-3", x: 2000, y: -500 },
     {
       x: 0,
@@ -331,6 +331,15 @@ gsap
       duration: 1,
     },
     0.6
+  )
+  .from(
+    "#event h2",
+    {
+      opacity: 0,
+      y: 80,
+      duration: 0.5,
+    },
+    0.3
   );
 
 document.addEventListener("DOMContentLoaded", () => {
