@@ -24,10 +24,10 @@
   margin: 0;
   padding: 0;
 }
-a {
+/*a {
   color: inherit;
   text-decoration: inherit;
-}
+}*/
 ul {
   list-style: none;
 }
@@ -46,7 +46,7 @@ ul {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.45);
-  z-index: 10;
+  z-index: 2;
 }
 
 #visual .poster {
@@ -147,78 +147,88 @@ ul {
     );
   position: relative;
   background-attachment: scroll;
+  z-index: 5;
 }
 #event-section {
   position: relative;
-  z-index: 1;
+  z-index: 20;
   overflow: visible;
 }
 /*button*/
 .button {
-  position: absolute;
+  position: relative;
   top: -50px;
   left: 50%;
   transform: translateX(-50%);
   width: 20%;
-  height: 100px;
-  background-color: #e5e0cc;
+  height: 85px;
+  background-color: #fff8e2;
   border-radius: 50px;
   display: flex;
   gap: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
   padding: 0px 15px;
   box-sizing: border-box;
-  z-index: 50;
+  z-index: 2;
+  border: 1px solid #d1cbb9;
 }
 
 .button li {
   text-align: center;
   width: calc(100% / 2);
   color: #404040;
-  height: 80px;
+  height: 65px;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 21px;
   font-weight: bolder;
-  line-height: 80px;
-  font-family: "Special Gothic", sans-serif;
+  line-height: 65px;
+  font-family: "YeogiOttaeJalnan";
 }
 
 .button li.on a {
   display: block;
-  background-color: #c5c0a9;
+  background-color: #f1ead2;
   border-radius: 50px;
   color: #404040;
   box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-  font-family: "Special Gothic", sans-serif;
 }
 .button li:hover a {
   display: block;
-  background-color: #c5c0a9;
+  background-color: #f1ead2;
   border-radius: 50px;
   color: #404040;
-  box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-  font-family: "Special Gothic", sans-serif;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
+}
+.evnet-tab {
+  position: absolute;
+  top: -50px; /* 기존 버튼 위치 유지 */
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(260px, 40vw, 420px); /* ✅ 반응형 가로폭 */
+  z-index: 40;
 }
 .event-sign {
-  width: 430px;
+  width: 400px;
   height: auto;
   position: absolute;
-  z-index: 10;
+  z-index: 1;
   top: -290px; /* 버튼 위로 띄우기 */
   left: 50%;
-  transform: translateX(-50%) rotate(0deg);
+  transform: translateX(-42%) rotate(0deg);
   pointer-events: none;
-  transform-origin: bottom center; /* 회전 중심: 아래쪽 중앙 */
+  transform-origin: bottom center; /* 회전 중심: 아래쪽 중앙
+   */
+  width: clamp(240px, 35vw, 380px);
 }
-#event-section .event-gallery {
-  padding-top: 300px;
+ .event-gallery {
+  padding-top: 160px;
   padding-bottom: 200px;
   position: relative;
   z-index: 5;
 }
-#event-section .event-gallery .event-list {
+.event-list {
   width: 1400px;
   display: flex;
   flex-wrap: wrap; /* 줄바꿈 허용 */
@@ -230,7 +240,7 @@ ul {
 }
 
 /* 카드 하나 */
-#event-section .event-gallery .event-list li {
+.event-list li {
   border: 7px solid #414141;
   border-radius: 5px; /* 원래대로 */
   overflow: hidden;
@@ -240,14 +250,13 @@ ul {
   width: calc((1400px - (80px * 2)) / 3);
 }
 
-/* hover 시 입체감 + 그림자 강화 */
-#event-section .event-gallery .event-list li:hover {
+.event-list li:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18), 0 6px 12px rgba(0, 0, 0, 0.12);
 }
 
 /* 이미지 컨테이너 */
-#event-section .event-gallery .event-list li div {
+.event-list li div {
   position: relative;
   width: 100%;
   aspect-ratio: 5/7;
