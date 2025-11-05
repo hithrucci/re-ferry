@@ -306,34 +306,40 @@ gsap
   .from("#menu .beverage .title span", { width: 0 }, 0.7);
 
 /*event*/
+const event1 = document.querySelector("#event .event1");
+const event2 = document.querySelector("#event .event2");
+const event3 = document.querySelector("#event .event3");
+const eventTitle = document.querySelector("#event h2");
+
+/*event 진입*/
 gsap
   .timeline({
     scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
   })
   .fromTo(
-    "#event .event3",
-    { rotation: "-12", x: 2000, y: -500 },
-    { x: 900, y: -200, duration: 1 },
+    event3,
+    { rotation: "-12", x: 1500, y: -500 },
+    { x: 500, y: -200, duration: 1 },
     0
   )
   .fromTo(
-    "#event .event2",
+    event2,
     { rotation: "5", x: -2000, y: -500 },
     { x: 0, y: -200, duration: 1 },
-    0.3
+    0.2
   )
   .fromTo(
-    "#event .event1",
+    event1,
     { rotation: "-3", x: 2000, y: -500 },
     {
       x: 0,
       y: -220,
       duration: 1,
     },
-    0.6
+    0.5
   )
   .from(
-    "#event h2",
+    eventTitle,
     {
       opacity: 0,
       y: 80,
@@ -341,6 +347,25 @@ gsap
     },
     0.3
   );
+/*event click*/
+const eventAll = document.querySelectorAll("#event .inner>div");
+eventAll.forEach((event) => {
+  event.addEventListener("click", () => {
+    event.classList.toggle("on");
+    gsap.to(event, {
+      rotation: 0,
+      width: "70%",
+    });
+    if (!event.classList.contains("on")) {
+      gsap.to(event, {
+        width: "100%",
+      });
+      gsap.to(event3, { rotation: "-12" });
+      gsap.to(event2, { rotation: "5" });
+      gsap.to(event1, { rotation: "-3" });
+    }
+  });
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("#menu .menuWrap .menuList").forEach((list) => {
