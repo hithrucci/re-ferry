@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <link rel="stylesheet" href="css/common/headerStyle.css" />
     <link rel="stylesheet" href="css/common/footerStyle.css" />
     <link rel="stylesheet" href="css/menustyle/style.css" />
@@ -24,6 +25,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="js/oldperry_menu/menu.js"></script>
     <script src="js/oldperry_menu/jquery-3.7.1.min.js"></script>
   </head>
   <body>
@@ -43,11 +45,13 @@
           </div>
         </div>
       </div>
+
       <ul class="menu button">
         <li class="on"><a href="#best">BEST</a></li>
         <li><a href="#donut">DONUT</a></li>
         <li><a href="#beverage">BEVERAGE</a></li>
       </ul>
+
       <section class="best" id="best">
         <div class="best_wrap">
           <ul>
@@ -145,7 +149,7 @@
       </ul>
       <section class="donut" id="donut">
         <div class="donut_wrap">
-          <ul>
+          <ul class="donutmenu">
             <li>
               <img src="img/menu_img/1코코넛도넛.png" alt="" />
               <h3>코코넛도넛</h3>
@@ -180,6 +184,14 @@
             </li>
           </ul>
         </div>
+        <ul class="chev">
+          <li class="leftChev">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </li>
+          <li class="rightChev">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </li>
+        </ul>
       </section>
 
       <div class="modalBox1">
@@ -313,7 +325,7 @@
       </ul>
       <section class="beverage" id="beverage">
         <div class="beverage_wrap">
-          <ul>
+          <ul class="beveragemenu">
             <li>
               <img src="img/menu_img/01과일담은 살구복숭아주스.png" alt="" />
               <h3>과일담은 살구복숭아주스</h3>
@@ -381,6 +393,14 @@
             </li>
           </ul>
         </div>
+        <ul class="chev2">
+          <li class="leftChev2">
+            <i class="fa-solid fa-circle-chevron-left"></i>
+          </li>
+          <li class="rightChev2">
+            <i class="fa-solid fa-circle-chevron-right"></i>
+          </li>
+        </ul>
       </section>
       <div class="modalBox2">
         <div class="modal">
@@ -576,6 +596,7 @@
         </div>
       </div>
     </div>
+
     <footer></footer>
     <script src="js/oldperry_menu/menu.js"></script>
   </body>
