@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+//반응형 변수
+const pc = window.matchMedia("(min-width:1700px)");
+const pcMid = window.matchMedia("(min-width:1520px) and (max-width:1699px)");
+const pcSmall = window.matchMedia("(min-width:1220px) and (max-width:1519px)");
+const tab = window.matchMedia("(min-width:720px) and (max-width:1219px)");
+const mobile = window.matchMedia("(max-width:719px)");
+
 /* ====== 메뉴 썸네일 원본 인덱스 박제 (캐러셀 DOM 재배치 무시) ====== */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".donuts .menuList li").forEach((li, i) => {
@@ -97,34 +104,93 @@ const t2 = gsap.timeline({ paused: true }).fromTo(
 tl.add(() => t2.play(0));
 
 /*visual video*/
-gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: "#visual",
-      pin: true,
-      pinSpacing: false,
-      start: "top top",
-      scrub: 2,
-    },
-  })
-  .to("#visual .stickers", {
-    scale: 0,
-    duration: 3,
-  })
-  .to("#visual .bg", {
-    backgroundSize: "0",
-    duration: 1,
-  })
-  .to("header", { left: -200, opacity: 0, duration: 1 }, 0)
-  .to(".videoBox", {
-    width: "100%",
-    height: "100%",
-    duration: 3,
-    backgroundColor: "#000",
-    borderRadius: "0",
-    zIndex: 10,
-  })
-  .to("header", { left: 60, opacity: 1, duration: 3, delay: 3 });
+if (pcMid.matches || pc.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#visual",
+        pin: true,
+        pinSpacing: false,
+        start: "top top",
+        scrub: 2,
+      },
+    })
+    .to("#visual .stickers", {
+      scale: 0,
+      duration: 3,
+    })
+    .to("#visual .bg", {
+      backgroundSize: "0",
+      duration: 1,
+    })
+    .to("header", { left: -200, opacity: 0, duration: 1 }, 0)
+    .to(".videoBox", {
+      width: "100%",
+      height: "100%",
+      duration: 3,
+      backgroundColor: "#000",
+      borderRadius: "0",
+      zIndex: 10,
+    })
+    .to("header", { left: 60, opacity: 1, duration: 3, delay: 3 });
+} else if (pcSmall.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#visual",
+        pin: true,
+        pinSpacing: false,
+        start: "top top",
+        scrub: 2,
+      },
+    })
+    .to("#visual .stickers", {
+      scale: 0,
+      duration: 3,
+    })
+    .to("#visual .bg", {
+      backgroundSize: "0",
+      duration: 1,
+    })
+    .to("header", { left: -200, opacity: 0, duration: 1 }, 0)
+    .to(".videoBox", {
+      width: "100%",
+      height: "100%",
+      duration: 3,
+      backgroundColor: "#000",
+      borderRadius: "0",
+      zIndex: 10,
+    })
+    .to("header", { left: 20, opacity: 1, duration: 3, delay: 3 });
+} else if (tab.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#visual",
+        pin: true,
+        pinSpacing: false,
+        start: "top top",
+        scrub: 2,
+      },
+    })
+    .to("#visual .stickers", {
+      scale: 0,
+      duration: 3,
+    })
+    .to("#visual .bg", {
+      backgroundSize: "0",
+      duration: 1,
+    })
+    .to("header", { left: -200, opacity: 0, duration: 1 }, 0)
+    .to(".videoBox", {
+      width: "100%",
+      height: "100%",
+      duration: 3,
+      backgroundColor: "#000",
+      zIndex: 10,
+    })
+    .to("header", { left: 20, opacity: 1, duration: 3, delay: 3 });
+}
 
 /*scroll시 h1:hover 변화*/
 window.addEventListener("scroll", () => {
@@ -287,24 +353,44 @@ secTitle.addEventListener("mouseleave", () => {
     duration: 0.3,
   });
 });
-gsap
-  .timeline({
-    scrollTrigger: { trigger: secTitle, start: "top 85%" },
-  })
-  .from(secTitle, { y: 100, opacity: 0 })
-  .from("#menu .donuts h3", { y: 100 }, 0.3)
-  .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
-  .from("#menu .donuts .title span", { width: 0 }, 0.7)
-  .to("#menu", { className: "on" }, 0);
 
-gsap
-  .timeline({
-    scrollTrigger: { trigger: "#menu .beverage", start: "top 80%" },
-  })
-  .from("#menu .beverage h3", { opacity: 0, y: 100 }, 0.3)
-  .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
-  .from("#menu .beverage .title span", { width: 0 }, 0.7);
+if (pc.matches || pcMid.matches || pcSmall.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: { trigger: secTitle, start: "top 85%" },
+    })
+    .from(secTitle, { y: 100, opacity: 0 })
+    .from("#menu .donuts h3", { y: 100 }, 0.3)
+    .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
+    .from("#menu .donuts .title span", { width: 0 }, 0.7)
+    .to("#menu", { className: "on" }, 0);
 
+  gsap
+    .timeline({
+      scrollTrigger: { trigger: "#menu .beverage", start: "top 80%" },
+    })
+    .from("#menu .beverage h3", { opacity: 0, y: 100 }, 0.3)
+    .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
+    .from("#menu .beverage .title span", { width: 0 }, 0.7);
+} else if (tab.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: { trigger: secTitle, start: "top 85%" },
+    })
+    .from(secTitle, { y: 100, opacity: 0 })
+    .from("#menu .donuts h3", { y: 100 }, 0.3)
+    .from("#menu .donuts .title", { opacity: 0, y: 100 }, 0.5)
+    .fromTo("#menu .donuts .title span", { width: 0 }, { width: "200" }, 0.7)
+    .to("#menu", { className: "on" }, 0);
+
+  gsap
+    .timeline({
+      scrollTrigger: { trigger: "#menu .beverage", start: "top 80%" },
+    })
+    .from("#menu .beverage h3", { opacity: 0, y: 100 }, 0.3)
+    .from("#menu .beverage .title", { opacity: 0, y: 100 }, 0.3)
+    .fromTo("#menu .beverage .title span", { width: 0 }, { width: "200" }, 0.7);
+}
 /*event*/
 const event1 = document.querySelector("#event .event1");
 const event2 = document.querySelector("#event .event2");
@@ -312,41 +398,87 @@ const event3 = document.querySelector("#event .event3");
 const eventTitle = document.querySelector("#event h2");
 
 /*event 진입*/
-gsap
-  .timeline({
-    scrollTrigger: { trigger: "#event", start: "20% 70%", end: "bottom 20%" },
-  })
-  .fromTo(
-    event3,
-    { rotation: "-12", x: 1500, y: -500 },
-    { x: 500, y: -200, duration: 1 },
-    0
-  )
-  .fromTo(
-    event2,
-    { rotation: "5", x: -2000, y: -500 },
-    { x: 0, y: -200, duration: 1 },
-    0.2
-  )
-  .fromTo(
-    event1,
-    { rotation: "-3", x: 2000, y: -500 },
-    {
-      x: 0,
-      y: -220,
-      duration: 1,
-    },
-    0.5
-  )
-  .from(
-    eventTitle,
-    {
-      opacity: 0,
-      y: 80,
-      duration: 0.5,
-    },
-    0.3
-  );
+if (pc.matches || pcMid.matches || pcSmall.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#event",
+        start: "20% 70%",
+        end: "bottom 20%",
+      },
+    })
+    .fromTo(
+      event3,
+      { rotation: "-12", x: 1500, y: -500 },
+      { x: 500, y: -200, duration: 1 },
+      0
+    )
+    .fromTo(
+      event2,
+      { rotation: "5", x: -2000, y: -500 },
+      { x: 0, y: -200, duration: 1 },
+      0.2
+    )
+    .fromTo(
+      event1,
+      { rotation: "-3", x: 2000, y: -500 },
+      {
+        x: 0,
+        y: -220,
+        duration: 1,
+      },
+      0.5
+    )
+    .from(
+      eventTitle,
+      {
+        opacity: 0,
+        y: 80,
+        duration: 0.5,
+      },
+      0.3
+    );
+} else if (tab.matches) {
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#event",
+        start: "20% 70%",
+        end: "bottom 20%",
+      },
+    })
+    .fromTo(
+      event3,
+      { rotation: "-12", x: 1500, y: -500 },
+      { x: 0, y: -200, duration: 1 },
+      0
+    )
+    .fromTo(
+      event2,
+      { rotation: "5", x: -2000, y: -500 },
+      { x: 0, y: -200, duration: 1 },
+      0.2
+    )
+    .fromTo(
+      event1,
+      { rotation: "-3", x: 2000, y: -500 },
+      {
+        x: 0,
+        y: -220,
+        duration: 1,
+      },
+      0.5
+    )
+    .from(
+      eventTitle,
+      {
+        opacity: 0,
+        y: 80,
+        duration: 0.5,
+      },
+      0.3
+    );
+}
 /*event click*/
 const eventAll = document.querySelectorAll("#event .inner>div");
 eventAll.forEach((event) => {
@@ -490,8 +622,9 @@ gsap.from("#store h2", {
   opacity: 0,
   scrollTrigger: {
     trigger: "#store",
-    start: "top top",
+    start: "top 60%",
     end: "bottom bottom",
+    // markers: true,
   },
 });
 // #store 스토어 화면
