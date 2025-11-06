@@ -491,7 +491,7 @@ nav {
 
 /*section*/
 
-/*about*/
+/*aboutTop*/
 #aboutTop {
   width: 100%;
   height: 100vh;
@@ -499,13 +499,16 @@ nav {
   top: 0px;
   z-index: -1;
 }
+
+/*#about*/
 #about {
   width: 100%;
   height: 100vh;
   background-color: #f44f55;
   background-image: url(../../img/main/about_bg.png);
   background-repeat: no-repeat;
-  background-size: 68%;
+  background-size: clamp(68%, 68%, 72%);
+  background-position: 10% 0%;
   position: sticky;
   top: 0px;
   z-index: 1;
@@ -522,7 +525,7 @@ nav {
   justify-content: center;
   height: 100%;
   padding: 150px 0px;
-  gap: 80px;
+  gap: 6%;
 }
 #about .textBox {
   color: #fff;
@@ -622,6 +625,7 @@ nav {
   height: 100%;
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
 #about .images li {
   width: 100%;
@@ -715,6 +719,7 @@ nav {
     3px 3px 5px rgba(0, 0, 0, 0.5);
   color: #fff;
   z-index: 0;
+  text-align: center;
 }
 #menu .hiddenTitle {
   opacity: 0;
@@ -1311,4 +1316,347 @@ nav {
 
 .store-right::-webkit-scrollbar-thumb:hover {
   background: #e15c67; /* hover 시 색 강조 */
+}
+
+@media (min-width: 1520px) and (max-width: 1699px) {
+  section#menu.on::after {
+    border: 9px dashed #efdea9;
+    border-left: none;
+    border-right: none;
+  }
+}
+@media (min-width: 1220px) and (max-width: 1519px) {
+  section#menu.on::after {
+    border: 9px dashed #efdea9;
+    border-left: none;
+    border-right: none;
+  }
+  /*header*/
+
+  header {
+    position: fixed;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100vh;
+    /* border: 1px solid red; */
+    padding: 20px 0px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    max-width: 160px;
+    width: 10rem;
+  }
+  header h1 {
+    top: 150px;
+  }
+  /*#about*/
+  #about {
+    width: 100%;
+    height: 100vh;
+    background-color: #f44f55;
+    background-image: url(../../img/main/about_bg.png);
+    background-repeat: no-repeat;
+    background-size: clamp(68%, 68%, 72%);
+    background-position: 10% 0%;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  #about .inner {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0px auto;
+    justify-content: center;
+    height: 100%;
+    padding: 150px 0px;
+    gap: 6%;
+  }
+  #about .textBox {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    width: 300px;
+    word-break: keep-all;
+    box-sizing: border-box;
+  }
+  #about .textBox h2 {
+    font-family: "YeogiOttaeJalnan";
+    font-size: 48px;
+    line-height: 1;
+    position: relative;
+    text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  #about .textBox h2::after {
+    content: "";
+    width: 0%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #fff;
+    position: absolute;
+    bottom: -22px;
+    left: 0px;
+    transition: width 1.2s;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+  #about .textBox h2.on::after {
+    width: 300px;
+  }
+  #about .textBox strong {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 4px;
+  }
+  #about .textBox p {
+    font-size: 18px;
+    opacity: 0;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #about .inner .textBox p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24vw;
+    max-width: 320px;
+    height: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+    transition: height 0.8s ease;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - 40px),
+      calc(100% - 40px) 100%,
+      0 100%
+    );
+  }
+
+  #about .inner .textBox p.on::after {
+    height: 260px;
+  }
+  #about .content {
+    position: relative;
+    height: 80%;
+    width: 35vw;
+    max-width: 40%;
+  }
+  /*menu*/
+  #menu {
+    width: 100%;
+    background-color: #ed7121;
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+  }
+  #menu.on::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-50%);
+    max-width: 1800px;
+    width: 100%;
+    height: 3000px;
+    border: 9px dashed #fffae6;
+    border-radius: 80px;
+    transition: border 1s;
+    box-sizing: border-box;
+  }
+
+  #menu::before {
+    content: "";
+    position: absolute;
+    background-color: #ed7121;
+    z-index: 0;
+    left: 50%;
+    top: 60px;
+    transform: translateX(-51%);
+    width: 270px;
+    height: 50px;
+  }
+  #menu .sectionTitle {
+    position: relative;
+    z-index: 3;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: 30px;
+    width: 190px;
+    margin: 0px auto;
+    margin-top: 30px;
+  }
+  #menu .sectionTitle h2 {
+    font-family: "YeogiOttaeJalnan";
+    font-size: 48px;
+    width: 180px;
+    margin: 0px auto;
+    height: 60px;
+    line-height: 60px;
+    text-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    z-index: 0;
+    text-align: center;
+  }
+  #menu .hiddenTitle {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  /*menu bg*/
+
+  /*menu inner*/
+
+  #menu .inner {
+    padding: 80px 0px;
+    padding-bottom: 200px;
+    box-sizing: border-box;
+    background-color: #fffae6;
+    min-width: 1200px;
+    width: 100%;
+    position: relative;
+    margin: 0px auto;
+    border-radius: 80px 80px 0px 0px;
+    box-shadow: -3px -3px 5px rgba(255, 255, 255, 0.5),
+      3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  /*menu title*/
+  #menu .inner .title {
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+  #menu .inner .title h3 {
+    font-family: "Lilita One", sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #333;
+  }
+  #menu .inner .title span {
+    width: 300px;
+    height: 1px;
+    background-color: #333;
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  /*menu inner wrap*/
+  #menu .inner .donuts {
+    margin-bottom: 100px;
+  }
+  #menu .inner .donuts .wrap {
+    position: relative;
+  }
+  #menu .inner .beverage .wrap {
+    position: relative;
+  }
+  #menu .inner .wrap .menuWrap {
+    width: 1130px;
+    overflow: hidden;
+  }
+  /*menu inner wrap menuList*/
+  #menu .inner .wrap .menuList {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    height: 450px;
+    margin: 0px auto;
+  }
+  .menuViewport {
+    overflow: hidden;
+  }
+  #menu .inner .wrap .menuList li {
+    cursor: pointer;
+    margin-left: 20px;
+    flex-shrink: 0;
+    width: 250px;
+    height: 300px;
+    background-color: #fff;
+    border-radius: 26px;
+    box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    transition: 0.3s;
+  }
+  #menu .inner .wrap .menuList li:hover {
+    margin-bottom: 20px;
+    transition: 0.3s;
+  }
+  #menu .inner .wrap .menuList li img {
+    width: 70%;
+  }
+  #menu .inner .wrap .menuList li h4 {
+    font-family: "Pyeongchang";
+    font-weight: 700px;
+    font-size: 20px;
+    color: #333;
+  }
+
+  /*menu wrap chev*/
+  #menu .inner .wrap .chev {
+    width: 1150px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    align-items: center;
+    color: #fff;
+  }
+  #menu .inner .donuts .wrap .chev li {
+    background-color: #f44f55;
+  }
+  #menu .inner .beverage .wrap .chev li {
+    background-color: #78bbbf;
+  }
+
+  #menu .inner .wrap .chev li {
+    position: absolute;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  #menu .inner .wrap .chev li.rightChev {
+    right: 0px;
+  }
+  #menu .inner .wrap .chev li i {
+    height: 40px;
+    line-height: 40px;
+  }
+}
+@media (min-width: 720px) and(max-width:1219px) {
+}
+@media (max-width: 719px) {
 }
