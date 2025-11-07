@@ -33,6 +33,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const p = new URLSearchParams(location.search).get("scroll");
   if (p) return scrollTo({ top: +p, behavior: "smooth" });
 
+  if (!location.hash) return;
+
+  const t = document.querySelector(location.hash);
+  if (t) {
+    const headerOffset = 100;
+    const y = t.getBoundingClientRect().top + window.scrollY - headerOffset;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+});
+
+$(function () {
+  /* -------------------------------
+    모달 관련 이벤트
+  ------------------------------- */
+
   // 도넛 메뉴에 data-index 추가
   $(".donutmenu li").each(function (i) {
     $(this).attr("data-index", i);
