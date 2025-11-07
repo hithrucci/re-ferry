@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 /*header, footer 로드*/
 document.addEventListener("DOMContentLoaded", () => {
   const basePath =
@@ -45,7 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
->>>>>>> develop
 $(function () {
   /* -------------------------------
     모달 관련 이벤트
