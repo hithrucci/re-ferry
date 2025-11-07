@@ -31,6 +31,30 @@ ul {
   font-weight: 700;
   font-display: swap;
 }
+@font-face {
+  font-family: "Pyeongchang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Pyeongchang";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ChangwonDangamAsac";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/CWDangamAsac-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /*visual*/
 
@@ -60,7 +84,7 @@ ul {
 }
 
 .visual .bg {
-  top: 0;
+  top: -80px;
   left: 0;
   width: 100%;
   height: auto;
@@ -123,15 +147,15 @@ ul {
   top: 350px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
-  height: 100px;
-  background-color: #e5e0cc;
+  width: 50%;
+  height: 85px;
+  background-color: #fff8e2;
   border-radius: 50px;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
   padding: 0px 15px;
   box-sizing: border-box;
   z-index: 4;
@@ -141,33 +165,30 @@ ul {
   text-align: center;
   width: calc(100% / 3);
   color: #404040;
-  height: 80px;
+  height: 65px;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 21px;
+  letter-spacing: 1px;
   font-weight: bolder;
-  line-height: 80px;
-  font-family: "Special Gothic", sans-serif;
+  line-height: 65px;
+  font-family: "YeogiOttaeJalnan";
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .button li.on a {
   display: block;
-  background-color: #c5c0a9;
+  background-color: #f1ead2;
   border-radius: 50px;
   color: #404040;
-  box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-  font-family: "Special Gothic", sans-serif;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 /* 마우스 오버 시 */
-.tab01 button:hover {
-  background-color: #c5c0a9;
-  color: #000;
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.tab01 button.active {
-  background-color: #fffae6;
-  border: 3px solid #404040;
-  color: #000;
+.button li:hover a {
+  display: block;
+  background-color: #f1ead2;
+  border-radius: 50px;
+  color: #404040;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* 스토어 화면 */
@@ -254,11 +275,15 @@ ul {
 .store-photo h3 {
   font-size: 24px;
   margin-bottom: 10px;
+  font-family: "Pyeongchang";
+  font-weight: 700;
 }
 
 .store-photo p {
   font-size: 16px;
   color: #555;
+  font-family: "Pyeongchang";
+  font-weight: 300;
 }
 
 .store-bg {
@@ -273,7 +298,7 @@ ul {
   background: #c8353f;
   border: none;
   color: #fff8f8;
-  font-size: 20px;
+  font-size: 25px;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -322,6 +347,8 @@ ul {
   width: 291px;
   margin: 30px auto;
   font-size: 16px;
+  font-family: "Pyeongchang";
+  font-weight: 700;
 }
 
 .store-list li:hover {
@@ -381,52 +408,48 @@ ul {
   top: 1280px;
   left: 50%;
   transform: translateX(-50%);
-  width: 60%;
-  height: 100px;
-  background-color: #e5e0cc;
+  width: 50%;
+  height: 85px;
+  background-color: #fff8e2;
   border-radius: 50px;
   display: flex;
-  gap: 30px;
+  gap: 20px;
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 5px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 4px 2px rgba(0, 0, 0, 0.3);
   padding: 0px 15px;
   box-sizing: border-box;
-  border: 3px solid #9d9c97;
-  z-index: 4;
+  z-index: 1;
 }
 
 .button02 li {
   text-align: center;
   width: calc(100% / 3);
   color: #404040;
-  height: 80px;
+  height: 65px;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 21px;
+  letter-spacing: 1px;
   font-weight: bolder;
-  line-height: 80px;
-  font-family: "Special Gothic", sans-serif;
+  line-height: 65px;
+  font-family: "YeogiOttaeJalnan";
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .button02 li.on a {
   display: block;
-  background-color: #c5c0a9;
+  background-color: #f1ead2;
   border-radius: 50px;
   color: #404040;
-  box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
-  font-family: "Special Gothic", sans-serif;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 /* 마우스 오버 시 */
-.tab02 button:hover {
-  background-color: #c5c0a9;
-  color: #000;
-  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.4);
-}
-
-.tab02 button.active {
-  background-color: #fffae6;
-  border: 3px solid #404040;
-  color: #000;
+.button02 li:hover a {
+  display: block;
+  background-color: #f1ead2;
+  border-radius: 50px;
+  color: #404040;
+  box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
 /* catering 01  */
@@ -448,9 +471,12 @@ ul {
   font-size: 44px;
   margin-top: 321px;
   margin-bottom: 64px;
+  font-family: "ChangwonDangamAsac", sans-serif;
 }
 .cater01-left p {
   font-size: 26px;
+  font-family: "Pyeongchang";
+  font-weight: 300;
 }
 .tv01 {
   margin-top: 227px;
@@ -478,10 +504,13 @@ ul {
   font-size: 24px;
   margin-top: 65px;
   margin-bottom: 32px;
+  font-family: "YeogiOttaeJalnan", sans-serif;
 }
 
 .cater02 p {
   font-size: 20px;
+  font-family: "Pyeongchang";
+  font-weight: 700;
 }
 .cater02 img {
   margin-top: 65px;
@@ -643,6 +672,7 @@ ul {
   top: -70px;
   left: -300px;
   transform: none;
+  font-family: "ChangwonDangamAsac", sans-serif;
 }
 /* 오더메뉴판 */
 .order {
@@ -675,6 +705,8 @@ ul {
   font-size: 16px;
   font-weight: bold;
   margin: 20px 0px 8px 31px;
+  font-family: "Pyeongchang";
+  font-weight: 700;
 }
 
 .how {
@@ -691,6 +723,8 @@ ul {
 .how label {
   cursor: pointer;
   font-size: 12px;
+  font-family: "Pyeongchang";
+  font-weight: 300;
 }
 /* 작성 버튼 */
 .order button {
@@ -704,7 +738,10 @@ ul {
   margin: 40px auto 0;
   display: block;
   cursor: pointer;
+  font-family: "Pyeongchang";
+  font-weight: 700;
 }
+
 .bike {
   width: 500px;
   left: 70px;
@@ -724,4 +761,272 @@ ul {
 .cater03-left img {
   position: absolute;
   z-index: 0;
+}
+
+/* 모달창 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background: #edd6ab;
+  color: #333;
+  font-family: "PyeongchangPeace", sans-serif;
+  border-radius: 20px;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  margin: 15% auto;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3);
+  margin-top: 200px;
+}
+
+.modal-content p {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+#closeModal {
+  background: #000000;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#closeModal:hover {
+  background: #f44f55;
+}
+
+/* 
+    태블릿 (max-width:1024px)
+   */
+@media screen and (max-width: 1024px) {
+  /* visual */
+  #visual {
+    height: 220px;
+  }
+
+  .visual .store {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .button {
+    width: 80%;
+    height: 80px;
+    top: 280px;
+  }
+
+  .button li {
+    font-size: 22px;
+    line-height: 70px;
+  }
+
+  /* store */
+  .store-container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .store-left,
+  .store-right {
+    width: 100%;
+    height: auto;
+    margin: 0 0 20px 0;
+  }
+
+  .store-photo img {
+    width: 100%;
+    height: auto;
+  }
+
+  .store-list li {
+    width: 80%;
+  }
+
+  /* catering01 */
+  .cater01 {
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+  }
+
+  .cater01-left h2 {
+    font-size: 2rem;
+    margin-top: 150px;
+  }
+
+  .cater01-left p {
+    font-size: 1.2rem;
+  }
+
+  .cater01-right img {
+    width: 80%;
+    margin-top: 80px;
+  }
+
+  /* catering02 */
+  .cater02 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 100px;
+    width: 90%;
+  }
+
+  .cater02 h3 {
+    font-size: 1.5rem;
+  }
+
+  .cater02 p {
+    font-size: 1.1rem;
+  }
+
+  .gomlove img {
+    width: 80%;
+  }
+
+  /* catering03 */
+  #cater03 {
+    height: auto;
+    padding: 100px 0;
+  }
+
+  .ct-order {
+    width: 90%;
+  }
+
+  .order {
+    position: static;
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  .bike,
+  .cloud {
+    display: none;
+  }
+
+  .button02 {
+    position: static;
+    width: 80%;
+    margin: 80px auto 0;
+    height: 80px;
+  }
+
+  .button02 li {
+    font-size: 22px;
+    line-height: 70px;
+  }
+}
+
+/* 
+    모바일 (max-width:768px)
+  */
+@media screen and (max-width: 768px) {
+  /* visual */
+  #visual {
+    height: 240px;
+  }
+
+  .visual .store {
+    width: 90%;
+  }
+
+  .button,
+  .button02 {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    padding: 15px 0;
+    gap: 10px;
+  }
+
+  .button li,
+  .button02 li {
+    font-size: 18px;
+    height: auto;
+    line-height: 1.5;
+  }
+
+  /* store */
+  .store-container {
+    width: 95%;
+  }
+
+  .store-left,
+  .store-right {
+    width: 100%;
+    border-radius: 25px;
+  }
+
+  .store-photo h3 {
+    font-size: 20px;
+  }
+
+  .store-photo p {
+    font-size: 14px;
+  }
+
+  .store-list li {
+    font-size: 14px;
+    width: 90%;
+  }
+
+  /* catering */
+  .cater01-left h2 {
+    font-size: 1.8rem;
+    margin-top: 100px;
+  }
+
+  .cater01-left p {
+    font-size: 1rem;
+  }
+
+  .cater02 h3 {
+    font-size: 1.2rem;
+  }
+
+  .cater02 p {
+    font-size: 0.95rem;
+  }
+
+  .gomlove img {
+    width: 90%;
+  }
+
+  /* cater03 */
+  .order {
+    width: 100%;
+    border-radius: 20px;
+    padding: 20px 10px;
+  }
+
+  .input-box,
+  .how {
+    width: 90%;
+  }
+
+  .order button {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  .modal-content {
+    width: 85%;
+    padding: 25px;
+  }
 }
