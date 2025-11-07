@@ -671,6 +671,9 @@ a {
     letter-spacing: 1px;
     font-size: 17px;
   }
+  .chev2 {
+    display: none;
+  }
   .circle-text {
     position: relative;
     position: absolute;

@@ -2,13 +2,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   const basePath =
     location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
-  fetch(`${basePath}/header.html`)
-    .then((res) => res.text())
-    .then((data) => (document.querySelector("header").innerHTML = data));
 
-  fetch(`${basePath}/footer.html`)
-    .then((res) => res.text())
-    .then((data) => (document.querySelector("footer").innerHTML = data));
+  // 공통: html 조각 삽입 함수
+  const insert = (selector, url) =>
+    fetch(url)
+      .then((res) => res.text())
+      .then((html) => {
+        document.querySelector(selector).innerHTML = html;
+      });
+
+  // 1) 헤더 넣기
+  const headerPromise = insert("header", `${basePath}/header.html`);
+
+  // 2) 풋터 넣기 (헤더와 병렬로 해도 됨)
+  insert("footer", `${basePath}/footer.html`);
+
+  // 3) 헤더가 DOM에 들어간 뒤 header.js 로드
+  headerPromise.then(() => {
+    // 중복 로드 방지 (옵션)
+    if (!document.querySelector("script[data-header-js]")) {
+      const s = document.createElement("script");
+      s.src = `${basePath}/js/header.js`; // 경로는 프로젝트에 맞게
+      s.defer = true; // DOM 파싱 후 실행 (안 줘도 무방)
+      s.setAttribute("data-header-js", ""); // 중복방지 마커
+      document.body.appendChild(s);
+    }
+  });
 });
 
 /*서브메뉴 scroll 이동*/
@@ -35,15 +54,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("load", () => {
     gsap.from(".visual .store", {
-      y: 100, // 아래에서 올라옴
-      rotation: 180, // 반 바퀴 회전
-      transformOrigin: "right bottom top", // 회전 중심
-      opacity: 0, // 처음엔 안 보임
-      duration: 1.8,
-      ease: "back.out(1.7)", // 부드럽게 튀어나오는 듯한 모션
+      y: 100,
+      rotation: -180,
+      transformOrigin: "right bottom ",
+      opacity: 0,
+      duration: 1,
+      ease: "back.out(1.7)",
     });
 
-    // belt (띠)는 기존과 동일하게 옆에서 등장
     gsap.from(".visual .belt", {
       x: "100vw",
       opacity: 0,
@@ -408,7 +426,6 @@ gsap.registerPlugin(ScrollTrigger);
   });
 });
 
-/* 🍩 dn1 등장 + hover (기존 유지) */
 gsap.fromTo(
   ".dn1",
   { opacity: 0, scale: 0.8, y: 30 },
@@ -508,4 +525,59 @@ gsap.to(".bike", {
   repeat: -1,
   duration: 1.5,
   ease: "sine.inOut",
+});
+
+// 모달창
+document.addEventListener("DOMContentLoaded", function () {
+  const orderBtn = document.querySelector(".order button");
+  const modal = document.getElementById("ordermodal"); //
+  const modalContent = document.querySelector(".modal-content");
+  const closeModal = document.getElementById("closeModal");
+
+  if (!orderBtn || !modal || !closeModal) {
+    console.warn("모달 관련 요소를 찾을 수 없습니다.");
+    return;
+  }
+
+  orderBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    modal.style.display = "block";
+
+    gsap.fromTo(
+      modalContent,
+      { opacity: 0, scale: 0.6 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: "back.out(1.7)",
+      }
+    );
+  });
+
+  closeModal.addEventListener("click", function () {
+    gsap.to(modalContent, {
+      opacity: 0,
+      scale: 0.6,
+      duration: 0.3,
+      ease: "back.in(1.7)",
+      onComplete: () => {
+        modal.style.display = "none";
+      },
+    });
+  });
+
+  window.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      gsap.to(modalContent, {
+        opacity: 0,
+        scale: 0.6,
+        duration: 0.3,
+        ease: "back.in(1.7)",
+        onComplete: () => {
+          modal.style.display = "none";
+        },
+      });
+    }
+  });
 });
