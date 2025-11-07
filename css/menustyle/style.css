@@ -40,7 +40,7 @@ a {
 }
 
 /*pc형*/
-@media (min-width: 1024px) {
+@media (min-width: 1220px) {
   #wrap {
     position: relative;
     overflow-x: hidden;
@@ -213,7 +213,7 @@ a {
   .best {
     width: 100%;
     background-color: #fff8e2;
-    height: 1000px;
+    height: 900px;
     position: relative;
     margin: 0;
 
@@ -330,7 +330,7 @@ a {
   /* button2 */
   .button2 {
     position: absolute;
-    top: 1350px;
+    top: 1250px;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
@@ -372,14 +372,14 @@ a {
   .donut {
     background-color: rgb(250, 95, 95);
     width: 100%;
-    height: 900px;
+    height: 950px;
     padding-top: 150px;
   }
   .donut .donut_wrap {
     margin: 0px auto;
     width: 1400px;
   }
-  .donut_wrap ul {
+  .donut_wrap .donutmenu {
     margin: 0px auto;
     width: 80%;
     display: flex;
@@ -392,7 +392,7 @@ a {
     box-sizing: border-box;
   }
 
-  .donut ul li {
+  .donut .donutmenu li {
     width: calc(100% / 4 - 2.25%);
     height: 330px;
     background-color: white;
@@ -404,19 +404,22 @@ a {
     margin-top: 30px;
     z-index: 10;
   }
-  .donut li:hover {
+  .donut .donutmenu li:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
-  .donut ul li img {
-    width: 50%;
+  .donut .donutmenu li img {
+    width: 60%;
   }
-  .donut ul li h3 {
+  .donut .donutmenu li h3 {
     font-family: "Pyeongchang";
-
+    font-size: 17px;
     margin-top: 60px;
     color: #444;
+  }
+  .chev {
+    display: none;
   }
   .modalBox1 {
     position: fixed;
@@ -560,7 +563,7 @@ a {
   /* button3 */
   .button3 {
     position: absolute;
-    top: 2400px;
+    top: 2350px;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
@@ -628,7 +631,7 @@ a {
     margin: 0px auto;
     width: 1400px;
   }
-  .beverage ul {
+  .beverage .beveragemenu {
     width: 80%;
     margin: 0px auto;
     display: flex;
@@ -640,7 +643,7 @@ a {
 
     box-sizing: border-box;
   }
-  .beverage ul li {
+  .beverage .beveragemenu li {
     width: calc(100% / 4 - 2.25%);
     height: 350px;
     background-color: white;
@@ -653,19 +656,20 @@ a {
     z-index: 10;
     position: relative;
   }
-  .beverage li:hover {
+  .beverage .beveragemenu li:hover {
     cursor: pointer;
     transform: translateY(-4px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
   }
-  .beverage ul li img {
-    width: 75%;
+  .beverage .beveragemenu li img {
+    width: 80%;
   }
-  .beverage ul li h3 {
+  .beverage .beveragemenu li h3 {
     font-family: "Pyeongchang";
     margin-top: 50px;
     color: #444;
     letter-spacing: 1px;
+    font-size: 17px;
   }
   .circle-text {
     position: relative;
@@ -723,7 +727,7 @@ a {
 /**/
 /**/
 /*태블릿형*/
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 720px) and (max-width: 1220px) {
   #wrap {
     border: 1px solid red;
     position: relative;
@@ -733,7 +737,7 @@ a {
   /*visual*/
   .visual {
     width: 100%;
-    height: 400px;
+    height: 300px;
     background-color: #f2591e;
     position: relative;
   }
@@ -871,7 +875,7 @@ a {
     color: #404040;
     height: 65px;
     border-radius: 50px;
-    font-size: 21px;
+    font-size: 19px;
     letter-spacing: 1px;
     font-weight: bolder;
     line-height: 65px;
@@ -898,7 +902,7 @@ a {
   .best {
     width: 100%;
     background-color: #fff8e2;
-    height: 1000px;
+    height: 900px;
     position: relative;
     margin: 0;
 
@@ -1015,7 +1019,7 @@ a {
   /* button2 */
   .button2 {
     position: absolute;
-    top: 1350px;
+    top: 1250px;
     left: 50%;
     transform: translateX(-50%);
     width: 50%;
@@ -1038,7 +1042,7 @@ a {
     color: #404040;
     height: 65px;
     border-radius: 50px;
-    font-size: 21px;
+    font-size: 19px;
     letter-spacing: 1px;
     font-weight: bolder;
     line-height: 65px;
@@ -1064,7 +1068,7 @@ a {
     margin: 0px auto;
     width: 100%;
   }
-  .donut_wrap ul {
+  .donut_wrap .donutmenu {
     margin: 0px auto;
     width: 95%;
     display: flex;
@@ -1077,7 +1081,7 @@ a {
     box-sizing: border-box;
   }
 
-  .donut ul li {
+  .donut .donutmenu li {
     width: calc(100% / 4 - 2.25%);
     height: 330px;
     background-color: white;
@@ -1089,19 +1093,22 @@ a {
     margin-top: 30px;
     z-index: 10;
   }
-  .donut li:hover {
+  .donut .donutmenu li:hover {
     transform: translateY(-4px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
     cursor: pointer;
   }
-  .donut ul li img {
-    width: 50%;
+  .donut .donutmenu li img {
+    width: 60%;
   }
-  .donut ul li h3 {
+  .donut .donutmenu li h3 {
     font-family: "Pyeongchang";
-
+    font-size: 17px;
     margin-top: 60px;
     color: #444;
+  }
+  .chev {
+    display: none;
   }
   .modalBox1 {
     position: fixed;
@@ -1270,7 +1277,7 @@ a {
     color: #404040;
     height: 65px;
     border-radius: 50px;
-    font-size: 21px;
+    font-size: 19px;
     font-weight: bolder;
     line-height: 65px;
     font-family: "YeogiOttaeJalnan";
@@ -1344,12 +1351,13 @@ a {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
   }
   .beverage ul li img {
-    width: 75%;
+    width: 80%;
   }
   .beverage ul li h3 {
     font-family: "Pyeongchang";
     margin-top: 50px;
     color: #444;
+    font-size: 17px;
     letter-spacing: 1px;
   }
   .circle-text {
@@ -1408,9 +1416,8 @@ a {
 /**/
 /**/
 /*모바일형*/
-@media (max-width: 768px) {
+@media (max-width: 720px) {
   #wrap {
-    border: 1px solid blue;
     position: relative;
     overflow-x: hidden;
   }
@@ -1418,7 +1425,7 @@ a {
   /*visual*/
   .visual {
     width: 100%;
-    min-height: 300px; /* 최소 높이만 지정하고 */
+    min-height: 200px; /* 최소 높이만 지정하고 */
     height: auto; /* 자동 조절 */
     background-color: #f2591e;
     position: relative;
@@ -1501,8 +1508,8 @@ a {
   }
   .visual .text_box {
     position: absolute;
-    width: 60%;
-    height: 180px;
+    width: 45%;
+    height: 100px;
     background-color: #f2591e;
     left: 50%;
     top: 50%;
@@ -1542,21 +1549,23 @@ a {
 
   .visual .line {
     width: 90%;
-    height: 150px;
-    border: 10px dashed #fda186;
+    height: 80px;
+    border: 5px dashed #fda186;
     align-items: center;
     display: flex;
     justify-content: center;
   }
-
+  .visual .line img {
+    width: 70%;
+  }
   /*best버튼*/
   .button {
     position: absolute;
-    top: 350px;
+    top: 170px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
-    height: 85px;
+    width: 80%;
+    height: 70px;
     background-color: #fff8e2;
     border-radius: 50px;
     display: flex;
@@ -1573,12 +1582,13 @@ a {
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
-    height: 65px;
+    height: 60px;
+    font-size: 2.5vw;
     border-radius: 50px;
-    font-size: 21px;
+
     letter-spacing: 1px;
     font-weight: bolder;
-    line-height: 65px;
+    line-height: 60px;
     font-family: "YeogiOttaeJalnan";
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   }
@@ -1602,7 +1612,7 @@ a {
   .best {
     width: 100%;
     background-color: #fff8e2;
-
+    height: 1100px;
     position: relative;
     margin: 0;
 
@@ -1624,12 +1634,17 @@ a {
   .best .best_wrap {
     margin: 0px auto;
     width: 100%;
+    height: 100%;
+    z-index: 10;
+    padding: 15% 0%;
   }
   .best .best_wrap ul {
     margin: 0px auto;
     width: 100%;
+    height: 100%;
     box-sizing: border-box;
-    padding-top: 200px;
+
+    z-index: 10;
   }
 
   .best li:hover {
@@ -1639,16 +1654,19 @@ a {
   .best ul li {
     margin: 0px auto;
     background: #fff;
-    width: 60%;
-
+    width: 75%;
+    margin-top: 5%;
     border-radius: 20px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.2s ease;
     z-index: 10;
   }
   .best ul li img {
-    width: 100%;
+    width: 50%;
     border-radius: 20px;
+  }
+  .best ul li a {
+    display: flex;
   }
   /* 브랜드 */
   .brand {
@@ -1676,24 +1694,24 @@ a {
   .old-price {
     color: #aaa;
     text-decoration: line-through;
-    font-size: 1vw;
+    font-size: 1.5vw;
   }
 
   .discount {
     color: #e60012;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 2.5vw;
   }
 
   .price {
-    font-size: 18px;
+    font-size: 3vw;
     font-weight: 700;
     color: #111;
   }
 
   .shipping {
     color: #777;
-    font-size: 0.7vw;
+    font-size: 1.5vw;
     margin-left: 4px;
   }
 
@@ -1717,10 +1735,10 @@ a {
   /* button2 */
   .button2 {
     position: absolute;
-    top: 1350px;
+    top: 1250px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 80%;
     height: 85px;
     background-color: #fff8e2;
     border-radius: 50px;
@@ -1732,6 +1750,7 @@ a {
     padding: 0px 15px;
     box-sizing: border-box;
     border: 1px solid #d1cbb9;
+    z-index: 10;
   }
 
   .button2 li {
@@ -1740,7 +1759,7 @@ a {
     color: #404040;
     height: 65px;
     border-radius: 50px;
-    font-size: 21px;
+    font-size: 3vw;
     letter-spacing: 1px;
     font-weight: bolder;
     line-height: 65px;
@@ -1759,51 +1778,80 @@ a {
   .donut {
     background-color: rgb(250, 95, 95);
     width: 100%;
-    height: 900px;
-    padding-top: 150px;
+    height: 550px;
+    padding-top: 100px;
+    position: relative;
+    overflow: hidden;
   }
   .donut .donut_wrap {
     margin: 0px auto;
-    width: 100%;
-  }
-  .donut_wrap ul {
-    margin: 0px auto;
-    width: 95%;
-    display: flex;
-    justify-content: center;
-    gap: 2%;
-    flex-wrap: wrap;
-    z-index: 10;
     position: relative;
+    width: 79%;
+    height: 80%;
 
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
 
-  .donut ul li {
-    width: calc(100% / 4 - 2.25%);
-    height: 330px;
+  .donut_wrap .donutmenu {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  .donut .donutmenu li {
+    width: 48%;
+    flex-shrink: 0;
+    height: 320px;
     background-color: white;
-    text-align: center;
-    padding-top: 60px;
-    box-sizing: border-box;
     border-radius: 30px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 30px;
-    z-index: 10;
-  }
-  .donut li:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 40px;
     cursor: pointer;
   }
-  .donut ul li img {
-    width: 50%;
-  }
-  .donut ul li h3 {
-    font-family: "Pyeongchang";
 
-    margin-top: 60px;
+  .donut .donutmenu li img {
+    width: 60%;
+  }
+  .donut .donutmenu li h3 {
+    font-family: "Pyeongchang";
+    margin-top: 40px;
     color: #444;
+  }
+
+  .chev {
+    position: absolute;
+    top: 50%;
+    left: 4%;
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+
+    transform: translateY(-50%);
+    z-index: 999;
+  }
+  .chev li {
+    background-color: rgb(255, 187, 187);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .chev li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: pink;
   }
   .modalBox1 {
     position: fixed;
@@ -1947,10 +1995,10 @@ a {
   /* button3 */
   .button3 {
     position: absolute;
-    top: 2400px;
+    top: 1900px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 80%;
     height: 85px;
     background-color: #fff8e2;
     border-radius: 50px;
@@ -1966,13 +2014,13 @@ a {
   }
 
   .button3 li {
-    letter-spacing: 1px;
     text-align: center;
     width: calc(100% / 3);
     color: #404040;
     height: 65px;
     border-radius: 50px;
-    font-size: 21px;
+    font-size: 3vw;
+    letter-spacing: 1px;
     font-weight: bolder;
     line-height: 65px;
     font-family: "YeogiOttaeJalnan";
@@ -1984,17 +2032,17 @@ a {
     background-color: #f1ead2;
     border-radius: 50px;
     color: #404040;
-    box-shadow: inset 2px 5px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 2px 3px 2px rgba(0, 0, 0, 0.3);
   }
   .beverage {
-    padding-top: 150px;
-    box-sizing: border-box;
+    margin: 0px auto;
+    background-color: #f1ead2;
     width: 100%;
-    background-color: #fff8e2;
-    height: 1800px;
+    height: 550px;
+    padding-top: 100px;
     position: relative;
     overflow: hidden;
-    margin: 0;
+    z-index: 0;
     /* z-index: -1; */
     background-image: repeating-linear-gradient(
         to right,
@@ -2013,51 +2061,84 @@ a {
   }
   .beverage .beverage_wrap {
     margin: 0px auto;
-    width: 100%;
-  }
-  .beverage ul {
-    width: 95%;
-    margin: 0px auto;
-    display: flex;
-    justify-content: space-between;
-    gap: 1%;
-    flex-wrap: wrap;
-    z-index: 10;
     position: relative;
+    width: 79%;
+    height: 80%;
 
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
   }
-  .beverage ul li {
-    width: calc(100% / 4 - 2.25%);
-    height: 350px;
+  .beverage .beveragemenu {
+    margin: 0px auto;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+  .beverage .beveragemenu li {
+    width: 48%;
+    flex-shrink: 0;
+    height: 320px;
     background-color: white;
-    text-align: center;
-    padding-top: 30px;
-    box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 20px;
-    z-index: 10;
-    position: relative;
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 40px;
   }
-  .beverage li:hover {
+  .beverage .beveragemenu li:hover {
     cursor: pointer;
     transform: translateY(-4px);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
   }
-  .beverage ul li img {
+  .beverage .beveragemenu li img {
     width: 75%;
   }
-  .beverage ul li h3 {
+  .beverage .beveragemenu li h3 {
     font-family: "Pyeongchang";
     margin-top: 50px;
     color: #444;
     letter-spacing: 1px;
   }
-  .circle-text {
+  .chev2 {
+    margin: 0px auto;
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+  .chev2 li {
+    background-color: pink;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+  .chev2 li:hover {
+    background-color: rgba(255, 255, 255, 1);
+    color: pink;
+  }
+  .circle-text,
+  .circle-text2 {
+    display: none;
+  }
+  /* .circle-text {
     position: relative;
     position: absolute;
-    width: 1300px; /* 이미지 크기에 맞게 조정 */
+    width: 1300px; 
     height: 1300px;
     margin: 0 auto;
     top: 700px;
@@ -2068,7 +2149,7 @@ a {
   .circle-text img {
     width: 100%;
     height: 100%;
-    animation: rotate 30s linear infinite; /* 10초에 한 바퀴 회전 */
+    animation: rotate 30s linear infinite; 
   }
 
   @keyframes rotate {
@@ -2092,7 +2173,7 @@ a {
   .circle-text2 img {
     width: 100%;
     height: 100%;
-    animation: rotate 30s linear infinite; /* 30초에 한 바퀴 회전 */
+    animation: rotate 30s linear infinite; 
   }
 
   @keyframes rotate {
@@ -2102,5 +2183,5 @@ a {
     to {
       transform: rotate(360deg);
     }
-  }
+  } */
 }
