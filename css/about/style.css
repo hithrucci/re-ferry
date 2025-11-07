@@ -67,7 +67,7 @@ ul {
   }
 
   /*콘텐츠 공통 크기*/
-  .inner {
+  section .inner {
     max-width: 1400px;
     width: 100%;
     margin: 0px auto;
