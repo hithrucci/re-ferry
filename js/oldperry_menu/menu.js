@@ -107,8 +107,8 @@ $(function () {
 
   function startDonutSlider() {
     donutStop = setInterval(function () {
-      $(".donutmenu").animate({ "margin-left": "-300px" }, function () {
-        $(".donutmenu li:first-child").appendTo(".donutmenu");
+      $(".donutmenu").animate({ "margin-left": "-500px" }, function () {
+        $(".donutmenu li:lt(2)").appendTo(".donutmenu");
         $(".donutmenu").css({ "margin-left": "0px" });
       });
     }, 2000);
@@ -138,7 +138,7 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopDonutSlider();
-          $(".donutmenu").animate({ "margin-left": "-300px" }, function () {
+          $(".donutmenu").animate({ "margin-left": "-250px" }, function () {
             $(".donutmenu li:first-child").appendTo(".donutmenu");
             $(".donutmenu").css({ "margin-left": "0px" });
           });
@@ -157,11 +157,11 @@ $(function () {
 
   function startBeverageSlider() {
     beverageStop = setInterval(function () {
-      $(".beveragemenu").animate({ "margin-left": "-300px" }, function () {
-        $(".beveragemenu li:first-child").appendTo(".beveragemenu");
+      $(".beveragemenu").animate({ "margin-left": "-500px" }, 800, function () {
+        $(".beveragemenu li:lt(2)").appendTo(".beveragemenu");
         $(".beveragemenu").css({ "margin-left": "0px" });
       });
-    }, 2000);
+    }, 2500);
   }
 
   function stopBeverageSlider() {
@@ -178,8 +178,8 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopBeverageSlider();
-          $(".beveragemenu li:last-child").prependTo(".beveragemenu");
-          $(".beveragemenu").css({ "margin-left": "-250px" });
+          $(".beveragemenu li:lt(2)").prependTo(".beveragemenu");
+          $(".beveragemenu").css({ "margin-left": "-500px" });
           $(".beveragemenu").animate({ "margin-left": "0px" });
           startBeverageSlider();
         });
@@ -188,8 +188,8 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopBeverageSlider();
-          $(".beveragemenu").animate({ "margin-left": "-300px" }, function () {
-            $(".beveragemenu li:first-child").appendTo(".beveragemenu");
+          $(".beveragemenu").animate({ "margin-left": "-500px" }, function () {
+            $(".beveragemenu li:lt(2)").appendTo(".beveragemenu");
             $(".beveragemenu").css({ "margin-left": "0px" });
           });
           startBeverageSlider();
