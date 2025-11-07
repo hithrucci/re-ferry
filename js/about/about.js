@@ -56,7 +56,7 @@ gsap.from("#visual img", {
   duration: 1,
   ease: "power1.out",
   rotation: -5,
-  delay: 0.2,
+  // delay: 0.2,
 });
 
 gsap.registerPlugin(ScrollTrigger);
@@ -76,8 +76,8 @@ gsap.from(".logo_bear", {
   duration: 0.5,
   scrollTrigger: {
     trigger: ".page1",
-    start: "top 30%",
-    // markers: true,
+    start: "top 20%",
+    markers: true,
   },
 });
 
@@ -86,7 +86,7 @@ gsap.from(".franchise", {
   duration: 0.5,
   scrollTrigger: {
     trigger: ".page1",
-    start: "top 30%",
+    start: "top 20%",
     // markers: true,
   },
 });
@@ -362,18 +362,4 @@ if (mobile.matches) {
       },
     }
   );
-
-  // gsap.from(".design>img", {
-  //   x: 250,
-  //   y: 150,
-  //   scale: 1,
-  //   duration: 2,
-  //   scrollTrigger: {
-  //     trigger: ".design",
-  //     start: "top 60%",
-  //     end: "bottom 10%",
-  //     scrub: 2,
-  //     markers: true,
-  //   },
-  // });
 }
