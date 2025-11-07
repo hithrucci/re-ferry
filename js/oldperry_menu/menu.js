@@ -2,8 +2,20 @@ $(function () {
   /* -------------------------------
     모달 관련 이벤트
   ------------------------------- */
+
+  // 도넛 메뉴에 data-index 추가
+  $(".donutmenu li").each(function (i) {
+    $(this).attr("data-index", i);
+  });
+
+  // 음료 메뉴에 data-index 추가
+  $(".beveragemenu li").each(function (i) {
+    $(this).attr("data-index", i);
+  });
+
+  // 도넛 클릭 이벤트 - data-index 사용
   $(".donutmenu li").on("click", function () {
-    let index = $(this).index();
+    let index = $(this).data("index"); // data-index 사용
     $(".modalBox1").addClass("on");
     $(".modalBox1 .modalImg li").removeClass("on");
     $(".modalBox1 .modalImg li").eq(index).addClass("on");
@@ -13,8 +25,9 @@ $(function () {
     $(".modalBox1").removeClass("on");
   });
 
+  // 음료 클릭 이벤트 - data-index 사용
   $(".beveragemenu li").on("click", function () {
-    let index = $(this).index();
+    let index = $(this).data("index"); // data-index 사용
     $(".modalBox2").addClass("on");
     $(".modalBox2 .modalImg li").removeClass("on");
     $(".modalBox2 .modalImg li").eq(index).addClass("on");
@@ -70,10 +83,9 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopDonutSlider();
-          $(".donutmenu").animate({ "margin-left": "-250px" }, function () {
-            $(".donutmenu li:first-child").appendTo(".donutmenu");
-            $(".donutmenu").css({ "margin-left": "0px" });
-          });
+          $(".donutmenu li:last-child").prependTo(".donutmenu");
+          $(".donutmenu").css({ "margin-left": "-250px" });
+          $(".donutmenu").animate({ "margin-left": "0px" });
           startDonutSlider();
         });
 
@@ -81,9 +93,10 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopDonutSlider();
-          $(".donutmenu li:last-child").prependTo(".donutmenu");
-          $(".donutmenu").css({ "margin-left": "-300px" });
-          $(".donutmenu").animate({ "margin-left": "0px" });
+          $(".donutmenu").animate({ "margin-left": "-300px" }, function () {
+            $(".donutmenu li:first-child").appendTo(".donutmenu");
+            $(".donutmenu").css({ "margin-left": "0px" });
+          });
           startDonutSlider();
         });
     } else {
@@ -120,10 +133,9 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopBeverageSlider();
-          $(".beveragemenu").animate({ "margin-left": "-250px" }, function () {
-            $(".beveragemenu li:first-child").appendTo(".beveragemenu");
-            $(".beveragemenu").css({ "margin-left": "0px" });
-          });
+          $(".beveragemenu li:last-child").prependTo(".beveragemenu");
+          $(".beveragemenu").css({ "margin-left": "-250px" });
+          $(".beveragemenu").animate({ "margin-left": "0px" });
           startBeverageSlider();
         });
 
@@ -131,9 +143,10 @@ $(function () {
         .off("click")
         .on("click", function () {
           stopBeverageSlider();
-          $(".beveragemenu li:last-child").prependTo(".beveragemenu");
-          $(".beveragemenu").css({ "margin-left": "-300px" });
-          $(".beveragemenu").animate({ "margin-left": "0px" });
+          $(".beveragemenu").animate({ "margin-left": "-300px" }, function () {
+            $(".beveragemenu li:first-child").appendTo(".beveragemenu");
+            $(".beveragemenu").css({ "margin-left": "0px" });
+          });
           startBeverageSlider();
         });
     } else {
