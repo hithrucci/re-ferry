@@ -77,7 +77,7 @@ gsap.from(".logo_bear", {
   scrollTrigger: {
     trigger: ".page1",
     start: "top 20%",
-    markers: true,
+    // markers: true,
   },
 });
 
