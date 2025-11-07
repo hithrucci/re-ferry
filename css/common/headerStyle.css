@@ -3,6 +3,9 @@
   #header3 {
     display: none;
   }
+  #header1:hover {
+    background-color: #fff;
+  }
   header {
   }
   header .wrap {
@@ -45,6 +48,9 @@
     left: 0px;
     top: 50%;
     transform: translateY(-50%);
+  }
+  header:hover {
+    background-color: #fff;
   }
   h1:hover .hidden {
     opacity: 1;
@@ -144,7 +150,9 @@
     padding: 0px 50px;
     box-sizing: border-box;
   }
-
+  #header2:hover {
+    background-color: #fff;
+  }
   #header2 .inner {
     display: flex;
     align-items: center;
