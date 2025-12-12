@@ -1,9 +1,11 @@
-/*header, footer 로드*/
 document.addEventListener("DOMContentLoaded", () => {
-  const basePath =
-    location.hostname === "hithrucci.github.io" ? "/re-ferry" : "";
+  const repoName = "/re-ferry";
 
-  // 공통: html 조각 삽입 함수
+  // GitHub Pages에서 프로젝트 페이지로 열렸는지 판단
+  const isGithubProject = location.pathname.startsWith(repoName);
+
+  const basePath = isGithubProject ? repoName : "";
+
   const insert = (selector, url) =>
     fetch(url)
       .then((res) => res.text())
@@ -14,17 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1) 헤더 넣기
   const headerPromise = insert("header", `${basePath}/header.html`);
 
-  // 2) 풋터 넣기 (헤더와 병렬로 해도 됨)
+  // 2) 풋터 넣기
   insert("footer", `${basePath}/footer.html`);
 
-  // 3) 헤더가 DOM에 들어간 뒤 header.js 로드
+  // 3) 헤더가 들어간 뒤 header.js 로드
   headerPromise.then(() => {
-    // 중복 로드 방지 (옵션)
     if (!document.querySelector("script[data-header-js]")) {
       const s = document.createElement("script");
-      s.src = `${basePath}/js/header.js`; // 경로는 프로젝트에 맞게
-      s.defer = true; // DOM 파싱 후 실행 (안 줘도 무방)
-      s.setAttribute("data-header-js", ""); // 중복방지 마커
+      s.src = `${basePath}/js/header.js`;
+      s.defer = true;
+      s.setAttribute("data-header-js", "");
       document.body.appendChild(s);
     }
   });
